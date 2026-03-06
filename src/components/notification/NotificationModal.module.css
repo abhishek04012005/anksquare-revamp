@@ -1,0 +1,56 @@
+/* Notification modal styles */
+.modBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+}
+
+.modContainer {
+  background: var(--background);
+  border-radius: 12px;
+  padding: 24px 32px;
+  width: 80%;
+  max-width: 360px;
+  text-align: center;
+  box-shadow: 0 8px 24px var(--shadow-color);
+  animation: fadeIn 0.3s ease;
+}
+
+.modHeader {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.modMessage {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.btnClose {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btnClose:hover {
+  background: var(--primary-hover);
+}
+
+.success {
+  color: #2e7d32;
+}
+.error {
+  color: #c62828;
+}
+.warning {
+  color: #f9a825;
+}

@@ -1,0 +1,142 @@
+/* Enquiry modal styles */
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modalContainer {
+  background: var(--background);
+  border-radius: 12px;
+  padding: 0; /* remove to allow header full-width */
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 12px 30px var(--shadow-color);
+  animation: fadeIn 0.3s ease;
+  overflow: hidden;
+}
+
+.modalHeader {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  background: var(--primary-color);
+}
+
+/* add a subtle underline effect */
+.modalHeader::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--primary-hover);
+  margin: 8px auto 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modalHeader {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.formGroup {
+  margin-bottom: 16px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.formGroup input,
+.formGroup select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  color: var(--text-primary);
+  background: var(--background-light);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px var(--accent-light);
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  flex: 1 1 45%;
+  padding: 12px 0;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btnPrimary {
+  background: var(--primary-color);
+  color: white;
+}
+
+.btnPrimary:hover {
+  background: var(--primary-hover);
+}
+
+.btnPrimary:disabled {
+  background: var(--border-color);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.btnSecondary {
+  background: var(--background-light);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.btnSecondary:hover {
+  background: var(--hover-background);
+}
+
+/* mobile adjustments */
+@media (max-width: 480px) {
+  .buttonGroup {
+    flex-direction: column;
+  }
+  .btn {
+    flex: 1 1 100%;
+  }
+}
