@@ -66,7 +66,7 @@ export default function Navbar() {
                     </div>
 
                     {/* CTA Button - Right Side */}
-                    <Link href="/contact" className={styles.bookBtn} onClick={() => setIsMenuOpen(false)}>
+                    <Link href="/contact" className={styles.contactBtn} onClick={() => setIsMenuOpen(false)}>
                         Contact Us
                     </Link>
                 </div>

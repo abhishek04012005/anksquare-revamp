@@ -5,6 +5,7 @@ import styles from './EnquiryModal.module.css';
 import { services } from '@/data/details';
 import { supabase } from '@/lib/supabase';
 import NotificationModal from '@/components/notification/NotificationModal';
+import Button from '@/components/button/Button';
 
 interface EnquiryModalProps {
   open: boolean;
@@ -118,12 +119,12 @@ export default function EnquiryModal({ open, onClose }: EnquiryModalProps) {
                 </select>
               </div>
               <div className={styles.buttonGroup}>
-                <button type="button" className={`${styles.btn} ${styles.btnSecondary}`} onClick={onClose}>
+                <Button variant="secondary" onClick={onClose}>
                   Cancel
-                </button>
-                <button type="submit" className={`${styles.btn} ${styles.btnPrimary}`} disabled={isSubmitting}>
+                </Button>
+                <Button variant="primary" type="submit" disabled={isSubmitting}>
                   {isSubmitting ? 'Submitting...' : 'Submit'}
-                </button>
+                </Button>
               </div>
             </form>
           </div>
