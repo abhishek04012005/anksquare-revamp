@@ -1,0 +1,184 @@
+.heading {
+    text-align: center;
+    margin-bottom: clamp(2rem, 5vw, 4rem);
+    padding: 0 1rem;
+    position: relative;
+}
+
+.subtitle {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--accent-light) 0%, rgba(33, 63, 97, 0.15) 100%);
+    color: var(--primary-color);
+    border-radius: 2rem;
+    font-weight: 600;
+    font-size: clamp(0.875rem, 2.5vw, 1.125rem);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(33, 63, 97, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(33, 63, 97, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.subtitle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.heading:hover .subtitle::before {
+    left: 100%;
+}
+
+.title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.1;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.highlight {
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #2e5a8c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 900;
+    text-shadow: 0 2px 4px rgba(33, 63, 97, 0.1);
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), #2e5a8c, var(--primary-color));
+    border-radius: 2px;
+    opacity: 0;
+    transform: scaleX(0);
+    transition: all 0.4s ease;
+    transform-origin: center;
+}
+
+.title:hover .highlight::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .heading {
+        margin-bottom: 2.5rem;
+        padding: 0 0.5rem;
+    }
+
+    .subtitle {
+        padding: 0.625rem 1.25rem;
+        margin-bottom: 1.25rem;
+        font-size: 0.9375rem;
+        font-weight: 700;
+        border-radius: 1.5rem;
+    }
+
+    .title {
+        font-size: clamp(1.75rem, 8vw, 2.5rem);
+        line-height: 1.15;
+    }
+}
+
+@media (max-width: 480px) {
+    .heading {
+        margin-bottom: 2rem;
+        padding: 0 0.25rem;
+    }
+
+    .subtitle {
+        padding: 0.5rem 1rem;
+        margin-bottom: 1rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+    }
+
+    .title {
+        font-size: clamp(1.5rem, 9vw, 2.25rem);
+        line-height: 1.2;
+    }
+
+    .highlight::after {
+        height: 2px;
+        bottom: -3px;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+    .heading {
+        margin-bottom: 5rem;
+    }
+
+    .title {
+        font-size: 4rem;
+    }
+
+    .subtitle {
+        font-size: 1.25rem;
+        padding: 0.875rem 1.75rem;
+    }
+}
+
+/* Animation keyframes for additional effects */
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .subtitle::before,
+    .highlight::after,
+    .heading * {
+        animation: none !important;
+        transition: none !important;
+    }
+}

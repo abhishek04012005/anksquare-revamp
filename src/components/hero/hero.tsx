@@ -49,7 +49,7 @@ const Hero = () => {
   }, [])
 
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} aria-labelledby="hero-title">
       <div className={styles.container}>
         <div className={styles.content}>
           <motion.div
@@ -58,16 +58,16 @@ const Hero = () => {
             transition={{ duration: 0.6 }}
             className={styles.textContent}
           >
-            <h1 className={styles.title}>
+            <h1 id="hero-title" className={styles.title}>
               Grow Your Online Business with Smart{' '}
               <span className={styles.highlight}>Marketplace Solutions</span>
             </h1>
             <p className={styles.description}>
               We help businesses sell their products online by taking care of their seller accounts on platforms like Amazon, Flipkart and Others. From setting up your account to improving your product listings and handling daily tasks—we manage it all so your business runs smoothly.
-              We also build custom websites that match your brand and help you look professional online. Plus, we offer branding solutions to make your business stand out and be easily recognized.            </p>
+              We also build custom websites that match your brand and help you look professional online. Plus, we offer branding solutions to make your business stand out and be easily recognized.
+            </p>
 
-
-            <div className={styles.cta}>
+            <div className={styles.cta} role="group" aria-label="Primary actions">
               <Button href="/services" variant="primary">
                 Explore Our Solutions
               </Button>
