@@ -24,4 +24,8 @@ export const navbarItems: NavbarItem[] = [
     name: "Clients",
     href: "/clients",
   },
+  {
+    name: "Testimonials",
+    href: "/testimonial",
+  },
 ];
