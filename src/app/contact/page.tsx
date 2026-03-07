@@ -22,18 +22,8 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      {/* Skip to main content link for accessibility */}
-      <a href="#main-content" className="sr-only">Skip to main content</a>
       
       <main id="main-content" role="main">
-        {/* Breadcrumb Navigation */}
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem 1.5rem 0' }}>
-          <Breadcrumbs
-            items={[
-              { label: 'Contact Us' }
-            ]}
-          />
-        </div>
 
         {/* Contact Component */}
         <Contact />

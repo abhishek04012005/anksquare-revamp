@@ -25,8 +25,6 @@ export const metadata: Metadata = {
 export default function TestimonialPage() {
   return (
     <>
-      {/* Skip to main content link for accessibility */}
-      <a href="#main-content" className="sr-only">Skip to main content</a>
 
       <main id="main-content" role="main">
         {/* Breadcrumb Navigation */}

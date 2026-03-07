@@ -17,8 +17,6 @@ export default function Home() {
 
   return (
     <>
-      {/* Skip to main content link for accessibility */}
-      <a href="#main-content" className="sr-only">Skip to main content</a>
       
       <EnquiryModal open={modalOpen} onClose={() => setModalOpen(false)} />
       
