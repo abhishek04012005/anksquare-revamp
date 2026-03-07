@@ -29,7 +29,7 @@ const Testimonial: React.FC = () => {
 
                 <Heading
                     subtitle='Testimonials'
-                    title='What Our Clients'
+                    title='What Our Clients '
                     titleHighlight='Say'
                 ></Heading>
 

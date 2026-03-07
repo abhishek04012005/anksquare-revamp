@@ -19,7 +19,7 @@ const About = () => {
         <Heading
           id="about-heading"
           subtitle="About Us"
-          title="Empowering Ecommerce Through"
+          title="Empowering Ecommerce Through "
           titleHighlight="Digital Expertise"
         />
 

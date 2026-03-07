@@ -152,8 +152,8 @@ const Contact = () => {
             <div className={styles.container}>
                 <Heading
                     id="contact-heading"
-                    title='Get in Touch'
-                    subtitle='Let&apos;s Connect'
+                    title='Get in Touch '
+                    subtitle='Let&apos;s Connect '
                     titleHighlight='Together'
                 ></Heading>
 

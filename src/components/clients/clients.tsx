@@ -26,7 +26,7 @@ const Clients = () => {
             <div className={styles.container}>
                 <Heading
                     subtitle='Clients'
-                    title='Our'
+                    title='Our '
                     titleHighlight='Clients'
                 >
                 </Heading>

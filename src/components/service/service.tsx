@@ -100,7 +100,7 @@ const Services = () => {
             <div className={styles.container}>
                 <Heading
                     subtitle="Services"
-                    title="End-to-End Ecommerce Solutions Powered By"
+                    title="End-to-End Ecommerce Solutions Powered By "
                     titleHighlight="Digital Expertise"
                 />
 
