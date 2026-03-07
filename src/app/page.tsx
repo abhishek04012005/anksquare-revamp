@@ -6,6 +6,7 @@ import Hero from '@/components/hero/hero';
 import About from '@/components/about/about';
 import Contact from '@/components/contact/contact';
 import Testimonial from '@/components/testimonial/testimonial';
+import Clients from '@/components/clients/clients';
 
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(true);
@@ -17,14 +18,15 @@ export default function Home() {
 
   return (
     <>
-      
+
       <EnquiryModal open={modalOpen} onClose={() => setModalOpen(false)} />
-      
+
       <main id="main-content" role="main">
         <Hero />
         <About />
-        <Testimonial/>
-        <Contact/>
+        <Clients />
+        <Testimonial />
+        <Contact />
       </main>
     </>
   );

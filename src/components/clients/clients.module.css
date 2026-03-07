@@ -1,0 +1,207 @@
+.clientSection {
+    padding: 6rem 1.5rem;
+    background: var(--bg-background);
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    position: relative;
+}
+
+.sliderContainer {
+    position: relative;
+    padding: 0 40px;
+    margin-top: 2rem;
+}
+
+.swiper {
+    padding: 20px 0;
+    overflow: hidden;
+}
+
+.navigationButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    border: none;
+    outline: none;
+    box-shadow: 0 4px 15px rgba(33, 63, 97, 0.2);
+}
+
+.navigationButton:hover {
+    background: #333;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.prevButton {
+    left: -20px;
+}
+
+.nextButton {
+    right: -20px;
+}
+
+.clientCard {
+    background: #fff;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(33, 63, 97, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+    border: 1px solid rgba(33, 63, 97, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.clientCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(33, 63, 97, 0.2);
+    border-color: var(--primary-color);
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    background: rgba(33, 63, 97, 0.05);
+    border-radius: 10px;
+}
+
+.clientLogo {
+    height: auto;
+    width: 100%;
+    max-width: 100px;
+    object-fit: contain;
+}
+
+.clientInfo {
+    flex: 1;
+}
+
+.clientName {
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.projectType {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.testimonialWrapper {
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.quoteIcon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    opacity: 0.7;
+}
+
+.testimonial {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-style: italic;
+    margin: 0;
+}
+
+.ctaButton {
+    display: flex;
+    gap: 1rem;
+}
+
+.ctaButtonPrimary {
+    flex: 1;
+    padding: 0.75rem 1.5rem !important;
+    text-align: center;
+}
+
+/* Swiper overrides */
+.swiper-slide {
+    height: auto;
+    opacity: 0.5;
+    transform: scale(0.9);
+    transition: all 0.3s ease;
+}
+
+.swiper-slide-active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+@media (max-width: 1024px) {
+    .sliderContainer {
+        padding: 0 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    .clientSection {
+        padding: 4rem 0;
+    }
+
+    .navigationButton {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+
+    .clientCard {
+        padding: 1.75rem;
+    }
+
+    .sliderContainer {
+        padding: 0 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .clientCard {
+        padding: 1.5rem;
+    }
+
+    .clientName {
+        font-size: 1rem;
+    }
+
+    .navigationButton {
+        width: 30px;
+        height: 30px;
+    }
+
+    .testimonial {
+        font-size: 0.85rem;
+    }
+
+    .sliderContainer {
+        padding: 0 20px;
+    }
+}

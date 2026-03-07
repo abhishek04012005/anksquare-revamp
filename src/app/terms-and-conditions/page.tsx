@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import Breadcrumbs from '@/components/seo/Breadcrumbs'
 import { contact } from '@/data/details'
 
 export const metadata: Metadata = {
