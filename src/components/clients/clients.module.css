@@ -80,15 +80,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80px;
-    background: rgba(33, 63, 97, 0.05);
+    height: 100px;
+    background: rgba(33, 63, 97, 0.08);
     border-radius: 10px;
+    padding: 1rem;
 }
 
 .clientLogo {
-    height: auto;
-    width: 100%;
-    max-width: 100px;
+    height: 60px;
+    width: auto;
+    max-width: 120px;
     object-fit: contain;
 }
 
