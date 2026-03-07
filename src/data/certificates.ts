@@ -1,7 +1,13 @@
+import { StaticImageData } from "next/image";
+import amazonImage from "../../public/assets/certificate/amazon.png"
+import flipkartImage from "../../public/assets/certificate/flipkart.png"
+import jiomartImage from "../../public/assets/certificate/jiomart.png"
+import meeshoImage from "../../public/assets/certificate/meesho.png"
+
 export interface Certificate {
   id: number;
   title: string;
-  image: string;
+  image: string | StaticImageData;
   alt: string;
   description: string;
   hasViewOption: boolean;
@@ -10,7 +16,7 @@ export interface Certificate {
   validityDate: string;
   slug: string;
   features: string[];
-  logo: string;
+  logo: string | StaticImageData;
 }
 
 
@@ -18,8 +24,8 @@ export const certificates: Certificate[] = [
   {
     id: 1,
     title: 'Amazon ATES Partner',
-    logo: './services/amazon.png',
-    image: './blog/blog1.jpg',
+    logo: amazonImage,
+    image: amazonImage,
     alt: 'Amazon ATES Certified Partner',
     description: 'Start Your ecommerce business with Certified ATES Amazon Partner',
     hasViewOption: false,
@@ -37,7 +43,7 @@ export const certificates: Certificate[] = [
   {
     id: 2,
     title: 'Flipkart Partner',
-    logo: './services/flipkart.png',
+    logo: flipkartImage,
     image: './certificates/flipkartcertificate.png',
     alt: 'Flipkart Certified Partner',
     description: 'Grow your business with Official Flipkart Partner Services',
@@ -56,7 +62,7 @@ export const certificates: Certificate[] = [
   {
     id: 3,
     title: 'JioMart Partner',
-    logo: './services/jiomart.png',
+    logo: jiomartImage,
     image: '/images/certificates/jiomart.png',
     alt: 'JioMart Partner Services',
     description: 'Expand your reach with JioMart Partner services',
@@ -75,7 +81,7 @@ export const certificates: Certificate[] = [
   {
     id: 4,
     title: 'Meesho Partner',
-    logo: './services/meesho.png',
+    logo: meeshoImage,
     image: '/images/certificates/meesho.png',
     alt: 'Meesho Partner Services',
     description: 'Scale your business with Meesho Partner solutions',

@@ -131,7 +131,7 @@ const Hero = () => {
               >
                 <div className={styles.certImageWrapper}>
                   <Image
-                    src="/"
+                    src={cert.logo}
                     alt={cert.alt}
                     width={180}
                     height={90}
