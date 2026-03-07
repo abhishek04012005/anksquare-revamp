@@ -14,7 +14,6 @@ export const webdevelopment = [
     { name: 'Business Website', href: '/service/business-website' },
     { name: 'E-commerce Website', href: '/service/ecommerce-website' },
     { name: 'Real Estate Website', href: '/service/real-estate-website' },
-    // { name: 'Education Website', href: '/service/education-website' },
 ]
 
 export const accountmanagement = [

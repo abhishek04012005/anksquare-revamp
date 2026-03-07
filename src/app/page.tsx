@@ -7,6 +7,7 @@ import About from '@/components/about/about';
 import Contact from '@/components/contact/contact';
 import Testimonial from '@/components/testimonial/testimonial';
 import Clients from '@/components/clients/clients';
+import Services from '@/components/service/service';
 
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(true);
@@ -24,6 +25,7 @@ export default function Home() {
       <main id="main-content" role="main">
         <Hero />
         <About />
+        <Services/>
         <Clients />
         <Testimonial />
         <Contact />
