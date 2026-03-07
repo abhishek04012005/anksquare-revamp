@@ -1,0 +1,261 @@
+/* About Section Styles */
+.about {
+  padding: 5rem 0;
+  background: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(33, 63, 97, 0.02) 0%, rgba(33, 63, 97, 0.05) 100%);
+  z-index: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+/* Image Section */
+.imageSection {
+  position: relative;
+}
+
+.imageBorder {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  padding: 2rem;
+  border: 2px solid rgba(33, 63, 97, 0.1);
+}
+
+.experience {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(33, 63, 97, 0.3);
+  text-align: center;
+  min-width: 120px;
+}
+
+.number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.text {
+  font-size: 0.875rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+/* Text Section */
+.textSection {
+  padding-left: 2rem;
+}
+
+.description {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  font-weight: 500;
+}
+
+/* Features */
+.features {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(33, 63, 97, 0.08);
+  transition: all 0.3s ease;
+}
+
+.featureItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: rgba(33, 63, 97, 0.15);
+}
+
+.featureIcon {
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, var(--accent-light) 0%, rgba(33, 63, 97, 0.1) 100%);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.featureTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.featureDescription {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+  font-weight: 500;
+}
+
+/* CTA Buttons */
+.cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .about {
+    padding: 3rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
+  }
+
+  .textSection {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .features {
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .featureItem {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  .featureIcon {
+    align-self: center;
+  }
+
+  .experience {
+    bottom: -15px;
+    right: -15px;
+    padding: 1rem;
+    min-width: 100px;
+  }
+
+  .number {
+    font-size: 1.5rem;
+  }
+
+  .text {
+    font-size: 0.75rem;
+  }
+
+  .cta {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 2rem 0;
+  }
+
+  .content {
+    gap: 2rem;
+  }
+
+  .featureItem {
+    padding: 1rem;
+  }
+
+  .featureIcon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.25rem;
+  }
+
+  .featureTitle {
+    font-size: 1rem;
+  }
+
+  .featureDescription {
+    font-size: 0.8125rem;
+  }
+}
+
+/* Animation keyframes */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.imageSection:hover .imageBorder {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .imageSection:hover .imageBorder,
+  .featureItem:hover {
+    animation: none;
+    transform: none;
+  }
+}

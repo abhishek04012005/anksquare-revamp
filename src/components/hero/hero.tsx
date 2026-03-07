@@ -49,7 +49,7 @@ const Hero = () => {
   }, [])
 
   return (
-    <section className={styles.hero} aria-labelledby="hero-title">
+    <section className={styles.hero} aria-labelledby="hero-title" itemScope itemType="https://schema.org/WebPage">
       <div className={styles.container}>
         <div className={styles.content}>
           <motion.div
@@ -84,12 +84,12 @@ const Hero = () => {
             className={styles.imageContainer}
           >
             <div className={styles.imageWrapper}>
-              <HeroSvg />
+              <HeroSvg aria-label="Digital solutions illustration showcasing e-commerce and marketplace management" />
             </div>
           </motion.div>
         </div>
 
-        <div className={styles.stats}>
+        <div className={styles.stats} aria-label="Company statistics">
           {[
             { number: '500+', text: 'Projects Completed' },
             { number: '300+', text: 'Happy Clients' },
@@ -99,11 +99,11 @@ const Hero = () => {
               key={index}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
-              transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-              className={styles.statItem}
+              transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+              className={styles.stat}
             >
-              <span className={styles.statNumber}>{stat.number}</span>
-              <span className={styles.statText}>{stat.text}</span>
+              <div className={styles.statNumber} aria-label={stat.text}>{stat.number}</div>
+              <div className={styles.statText}>{stat.text}</div>
             </motion.div>
           ))}
         </div>

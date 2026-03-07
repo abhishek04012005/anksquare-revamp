@@ -1,9 +1,14 @@
 import { motion } from 'framer-motion'
 import styles from './heading.module.css'
 
-const Heading = ({ subtitle, title, titleHighlight }: {
-    subtitle: string, title: string, titleHighlight: string
-}) => {
+interface HeadingProps {
+  subtitle: string
+  title: string
+  titleHighlight: string
+  id?: string
+}
+
+const Heading = ({ subtitle, title, titleHighlight, id }: HeadingProps) => {
 
     return (
         <>
@@ -24,6 +29,7 @@ const Heading = ({ subtitle, title, titleHighlight }: {
                     {subtitle}
                 </motion.span>
                 <motion.h2
+                    id={id}
                     className={styles.title}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

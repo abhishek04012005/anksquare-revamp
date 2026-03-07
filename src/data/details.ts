@@ -35,7 +35,8 @@ export const details = {
         'Sales & Performance Analytics',
         'Inventory Management',
         'Customer Service Support'
-      ]
+      ],
+      icon: '🛒'
     },
     websiteDevelopment: {
       title: 'Website Development',
@@ -45,7 +46,8 @@ export const details = {
         'SEO Optimization',
         'Performance Tuning',
         'Ongoing Support'
-      ]
+      ],
+      icon: '💻'
     },
     digitalMarketing: {
       title: 'Digital Marketing',
@@ -55,7 +57,8 @@ export const details = {
         'Google & Meta Ads',
         'Content Strategy',
         'Performance Analytics'
-      ]
+      ],
+      icon: '🚀'
     }
   },
 
