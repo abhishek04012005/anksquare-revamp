@@ -7,18 +7,18 @@ import styles from './page.module.css'
 
 export const metadata: Metadata = {
   title: 'Client Testimonials - What Our Customers Say About Ank Square',
-  description: 'Read genuine testimonials from our satisfied clients. Discover how Ank Square has helped businesses succeed with merchant account management, website development, and digital marketing services.',
-  keywords: 'client testimonials, customer reviews, Ank Square feedback, business success stories, merchant account testimonials, digital services reviews',
+  description: 'Read genuine testimonials from our satisfied clients. Discover how Ank Square has helped businesses succeed with merchant account management, website development, and digital marketing service.',
+  keywords: 'client testimonials, customer reviews, Ank Square feedback, business success stories, merchant account testimonials, digital service reviews',
   openGraph: {
     title: 'Client Testimonials - Ank Square Success Stories',
-    description: 'Real testimonials from businesses that have grown with Ank Square. See how our services have made a difference.',
+    description: 'Real testimonials from businesses that have grown with Ank Square. See how our service have made a difference.',
     url: 'https://anksquare.com/testimonial',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Client Testimonials - Ank Square',
-    description: 'Read what our clients say about our digital services and business solutions.',
+    description: 'Read what our clients say about our digital service and business solutions.',
   },
 }
 
@@ -175,7 +175,7 @@ export default function TestimonialPage() {
               '@context': 'https://schema.org',
               '@type': 'WebPage',
               name: 'Client Testimonials - Ank Square',
-              description: 'Read genuine testimonials from Ank Square clients about our digital services',
+              description: 'Read genuine testimonials from Ank Square clients about our digital service',
               url: 'https://anksquare.com/testimonial',
               mainEntity: {
                 '@type': 'Organization',

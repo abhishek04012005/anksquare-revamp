@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Ank Square - Digital Services for Business Growth | Merchant Account Management & Website Development",
-  description: "Transform your business with Ank Square's expert digital services. We specialize in merchant account management for Amazon, Flipkart & more, custom website development, and digital marketing solutions. 5+ years experience, 500+ projects completed.",
-  keywords: "digital services, merchant account management, website development, digital marketing, SEO, Amazon seller account, Flipkart seller, e-commerce solutions, business growth, online marketplace management",
+  description: "Transform your business with Ank Square's expert digital service. We specialize in merchant account management for Amazon, Flipkart & more, custom website development, and digital marketing solutions. 5+ years experience, 500+ projects completed.",
+  keywords: "digital service, merchant account management, website development, digital marketing, SEO, Amazon seller account, Flipkart seller, e-commerce solutions, business growth, online marketplace management",
   authors: [{ name: "Ank Square" }],
   creator: "Ank Square",
   publisher: "Ank Square",

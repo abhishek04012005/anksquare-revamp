@@ -14,7 +14,7 @@ export const navbarItems: NavbarItem[] = [
   },
   {
     name: "Services",
-    href: "/services",
+    href: "/service",
   },
   {
     name: "Projects",

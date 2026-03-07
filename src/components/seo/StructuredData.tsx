@@ -65,24 +65,24 @@ export default function StructuredData() {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": details.services.merchantAccountManagement.title,
-            "description": details.services.merchantAccountManagement.features.join(", ")
+            "name": details.service.merchantAccountManagement.title,
+            "description": details.service.merchantAccountManagement.features.join(", ")
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": details.services.websiteDevelopment.title,
-            "description": details.services.websiteDevelopment.features.join(", ")
+            "name": details.service.websiteDevelopment.title,
+            "description": details.service.websiteDevelopment.features.join(", ")
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": details.services.digitalMarketing.title,
-            "description": details.services.digitalMarketing.features.join(", ")
+            "name": details.service.digitalMarketing.title,
+            "description": details.service.digitalMarketing.features.join(", ")
           }
         }
       ]

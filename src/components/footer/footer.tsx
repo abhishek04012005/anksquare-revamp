@@ -27,7 +27,7 @@ const Footer = () => {
                     <div className={styles.companyInfo}>
                         <Link href="/" className={styles.logo}>
                             <Image
-                                src="./logo.svg"
+                                src="/logo.svg"
                                 alt="Anksquare"
                                 width={1000}
                                 height={1000}

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   keywords: 'client portfolio, case studies, successful projects, business solutions, Ank Square clients, design portfolio, web development projects',
   openGraph: {
     title: 'Our Clients - Ank Square Portfolio',
-    description: 'Explore our client success stories and completed projects. See the impact of our digital services.',
+    description: 'Explore our client success stories and completed projects. See the impact of our digital service.',
     url: 'https://anksquare.com/client',
     type: 'website',
   },
@@ -52,7 +52,7 @@ export default function ClientsPage() {
                 '@type': 'Organization',
                 name: 'Ank Square',
                 url: 'https://anksquare.com',
-                description: 'Digital services company providing merchant account management, website development, and digital marketing solutions',
+                description: 'Digital service company providing merchant account management, website development, and digital marketing solutions',
                 logo: 'https://anksquare.com/logo.svg'
               }
             }),

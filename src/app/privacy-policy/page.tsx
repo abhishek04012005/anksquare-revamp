@@ -88,12 +88,12 @@ export default function PrivacyPolicyPage() {
           <div style={{ lineHeight: '1.8', color: '#333' }}>
             <h3 style={{ color: '#213f61', marginBottom: '1rem', fontSize: '1.5rem' }}>1. Information We Collect</h3>
             <p style={{ marginBottom: '2rem' }}>
-              We collect information you provide directly to us, such as when you contact us, subscribe to our services, or communicate with us. This may include your name, email address, phone number, and any other information you choose to provide.
+              We collect information you provide directly to us, such as when you contact us, subscribe to our service, or communicate with us. This may include your name, email address, phone number, and any other information you choose to provide.
             </p>
 
             <h3 style={{ color: '#213f61', marginBottom: '1rem', fontSize: '1.5rem' }}>2. How We Use Your Information</h3>
             <p style={{ marginBottom: '2rem' }}>
-              We use the information we collect to provide, maintain, and improve our services, communicate with you, and comply with legal obligations. We may also use your information to send you updates about our services and respond to your inquiries.
+              We use the information we collect to provide, maintain, and improve our service, communicate with you, and comply with legal obligations. We may also use your information to send you updates about our service and respond to your inquiries.
             </p>
 
             <h3 style={{ color: '#213f61', marginBottom: '1rem', fontSize: '1.5rem' }}>3. Information Sharing</h3>
@@ -136,7 +136,7 @@ export default function PrivacyPolicyPage() {
               '@context': 'https://schema.org',
               '@type': 'WebPage',
               name: 'Privacy Policy - Ank Square',
-              description: 'Privacy policy and data protection information for Ank Square digital services',
+              description: 'Privacy policy and data protection information for Ank Square digital service',
               url: 'https://anksquare.com/privacy-policy',
               mainEntity: {
                 '@type': 'Organization',

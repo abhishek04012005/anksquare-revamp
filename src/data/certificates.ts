@@ -65,7 +65,7 @@ export const certificates: Certificate[] = [
     logo: jiomartImage,
     image: '/images/certificates/jiomart.png',
     alt: 'JioMart Partner Services',
-    description: 'Expand your reach with JioMart Partner services',
+    description: 'Expand your reach with JioMart Partner service',
     hasViewOption: false,
     certificateImage: '/images/certificates/jiomart-full.png',
     certificationDate: 'January 2024',

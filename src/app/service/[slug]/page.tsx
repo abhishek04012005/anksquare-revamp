@@ -11,7 +11,7 @@ interface Props {
   }
 }
 
-// Combine all services for lookup
+// Combine all service for lookup
 const allServices = [...marketplaceServices, ...websiteTypes, ...digitalMarketingTypes]
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -27,8 +27,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${service.title} Services - Professional Solutions by Ank Square`,
-    description: `Expert ${service.title} services for businesses. ${service.details.overview} Professional implementation with proven results.`,
-    keywords: `${service.title}, ${service.title} services, e-commerce solutions, digital marketing, web development, Ank Square`,
+    description: `Expert ${service.title} service for businesses. ${service.details.overview} Professional implementation with proven results.`,
+    keywords: `${service.title}, ${service.title} service, e-commerce solutions, digital marketing, web development, Ank Square`,
     openGraph: {
       title: `${service.title} Services - Ank Square`,
       description: service.details.overview,

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import styles from './EnquiryModal.module.css';
-import { services } from '@/data/details';
+import { service } from '@/data/details';
 import { supabase } from '@/lib/supabase';
 import NotificationModal from '@/components/notification/NotificationModal';
 import Button from '@/components/button/Button';
@@ -111,7 +111,7 @@ export default function EnquiryModal({ open, onClose }: EnquiryModalProps) {
                   onChange={e => setServiceType(e.target.value)}
                 >
                   <option value="">-- choose --</option>
-                  {Object.values(services).map(s => (
+                  {Object.values(service).map(s => (
                     <option key={s.title} value={s.title}>
                       {s.title}
                     </option>

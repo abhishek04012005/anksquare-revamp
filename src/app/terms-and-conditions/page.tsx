@@ -3,18 +3,18 @@ import { contact } from '@/data/details'
 
 export const metadata: Metadata = {
   title: 'Terms & Conditions - Ank Square Digital Services',
-  description: 'Read our terms and conditions for using Ank Square services. Understand your rights and responsibilities when working with our digital solutions.',
+  description: 'Read our terms and conditions for using Ank Square service. Understand your rights and responsibilities when working with our digital solutions.',
   keywords: 'terms and conditions, service agreement, Ank Square terms, legal terms, service policies',
   openGraph: {
     title: 'Terms & Conditions - Ank Square',
-    description: 'Legal terms and conditions for Ank Square digital services and client agreements.',
+    description: 'Legal terms and conditions for Ank Square digital service and client agreements.',
     url: 'https://anksquare.com/terms-and-conditions',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Terms & Conditions - Ank Square',
-    description: 'Review our terms and conditions for digital services.',
+    description: 'Review our terms and conditions for digital service.',
   },
 }
 
@@ -56,7 +56,7 @@ export default function TermsAndConditionsPage() {
                 marginBottom: '2rem'
               }}
             >
-              Please read these terms and conditions carefully before using our services.
+              Please read these terms and conditions carefully before using our service.
             </p>
             <p style={{ fontSize: '0.9rem', color: '#666' }}>
               Last updated: {lastUpdated}
@@ -79,12 +79,12 @@ export default function TermsAndConditionsPage() {
           <div style={{ lineHeight: '1.8', color: '#333' }}>
             <h3 style={{ color: '#213f61', marginBottom: '1rem', fontSize: '1.5rem' }}>1. Acceptance of Terms</h3>
             <p style={{ marginBottom: '2rem' }}>
-              By accessing and using Ank Square's services, you accept and agree to be bound by the terms and provision of this agreement.
+              By accessing and using Ank Square's service, you accept and agree to be bound by the terms and provision of this agreement.
             </p>
 
             <h3 style={{ color: '#213f61', marginBottom: '1rem', fontSize: '1.5rem' }}>2. Services</h3>
             <p style={{ marginBottom: '2rem' }}>
-              Ank Square provides digital services including merchant account management, website development, and digital marketing. All services are subject to availability and our standard terms.
+              Ank Square provides digital service including merchant account management, website development, and digital marketing. All service are subject to availability and our standard terms.
             </p>
 
             <h3 style={{ color: '#213f61', marginBottom: '1rem', fontSize: '1.5rem' }}>3. User Responsibilities</h3>
@@ -94,22 +94,22 @@ export default function TermsAndConditionsPage() {
 
             <h3 style={{ color: '#213f61', marginBottom: '1rem', fontSize: '1.5rem' }}>4. Payment Terms</h3>
             <p style={{ marginBottom: '2rem' }}>
-              Payment terms will be specified in individual service agreements. All fees are due as agreed upon commencement of services.
+              Payment terms will be specified in individual service agreements. All fees are due as agreed upon commencement of service.
             </p>
 
             <h3 style={{ color: '#213f61', marginBottom: '1rem', fontSize: '1.5rem' }}>5. Intellectual Property</h3>
             <p style={{ marginBottom: '2rem' }}>
-              All content, features, and functionality of our services are owned by Ank Square and are protected by copyright, trademark, and other intellectual property laws.
+              All content, features, and functionality of our service are owned by Ank Square and are protected by copyright, trademark, and other intellectual property laws.
             </p>
 
             <h3 style={{ color: '#213f61', marginBottom: '1rem', fontSize: '1.5rem' }}>6. Limitation of Liability</h3>
             <p style={{ marginBottom: '2rem' }}>
-              Ank Square shall not be liable for any indirect, incidental, special, or consequential damages arising out of or in connection with the use of our services.
+              Ank Square shall not be liable for any indirect, incidental, special, or consequential damages arising out of or in connection with the use of our service.
             </p>
 
             <h3 style={{ color: '#213f61', marginBottom: '1rem', fontSize: '1.5rem' }}>7. Termination</h3>
             <p style={{ marginBottom: '2rem' }}>
-              Either party may terminate the service agreement with written notice. Upon termination, your right to use the services will cease immediately.
+              Either party may terminate the service agreement with written notice. Upon termination, your right to use the service will cease immediately.
             </p>
 
             <h3 style={{ color: '#213f61', marginBottom: '1rem', fontSize: '1.5rem' }}>8. Governing Law</h3>
@@ -142,7 +142,7 @@ export default function TermsAndConditionsPage() {
               '@context': 'https://schema.org',
               '@type': 'WebPage',
               name: 'Terms & Conditions - Ank Square',
-              description: 'Legal terms and conditions for Ank Square digital services',
+              description: 'Legal terms and conditions for Ank Square digital service',
               url: 'https://anksquare.com/terms-and-conditions',
               mainEntity: {
                 '@type': 'Organization',

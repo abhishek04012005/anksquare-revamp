@@ -17,8 +17,8 @@ interface SEOProps {
 export function generateSEO(props: SEOProps): Metadata {
   const {
     title = "Ank Square - Digital Services for Business Growth",
-    description = "Transform your business with Ank Square's expert digital services. We specialize in merchant account management, website development, and digital marketing solutions.",
-    keywords = ["digital services", "merchant account management", "website development", "digital marketing"],
+    description = "Transform your business with Ank Square's expert digital service. We specialize in merchant account management, website development, and digital marketing solutions.",
+    keywords = ["digital service", "merchant account management", "website development", "digital marketing"],
     image = "/og-image.jpg",
     url = "https://anksquare.com",
     type = "website",
@@ -74,25 +74,25 @@ export function generateSEO(props: SEOProps): Metadata {
 export const seoConfigs = {
   home: {
     title: "Ank Square - Digital Services for Business Growth | Merchant Account Management & Website Development",
-    description: "Transform your business with Ank Square's expert digital services. We specialize in merchant account management for Amazon, Flipkart & more, custom website development, and digital marketing solutions. 5+ years experience, 500+ projects completed.",
-    keywords: ["digital services", "merchant account management", "website development", "digital marketing", "SEO", "Amazon seller account", "Flipkart seller", "e-commerce solutions"],
+    description: "Transform your business with Ank Square's expert digital service. We specialize in merchant account management for Amazon, Flipkart & more, custom website development, and digital marketing solutions. 5+ years experience, 500+ projects completed.",
+    keywords: ["digital service", "merchant account management", "website development", "digital marketing", "SEO", "Amazon seller account", "Flipkart seller", "e-commerce solutions"],
   },
 
-  services: {
+  service: {
     title: "Digital Services - Merchant Account Management, Website Development & Digital Marketing | Ank Square",
-    description: "Comprehensive digital services including merchant account management for major platforms, custom website development, and results-driven digital marketing solutions.",
-    keywords: ["merchant account management", "website development", "digital marketing", "Amazon seller services", "Flipkart account management", "e-commerce solutions"],
+    description: "Comprehensive digital service including merchant account management for major platforms, custom website development, and results-driven digital marketing solutions.",
+    keywords: ["merchant account management", "website development", "digital marketing", "Amazon seller service", "Flipkart account management", "e-commerce solutions"],
   },
 
   about: {
     title: "About Ank Square - Digital Services Expert & Founder Mukesh Kumar",
-    description: "Learn about Ank Square's mission to empower businesses with innovative digital solutions. Founded by Mukesh Kumar with 5+ years of experience in digital services.",
-    keywords: ["about Ank Square", "Mukesh Kumar", "digital services company", "business growth solutions"],
+    description: "Learn about Ank Square's mission to empower businesses with innovative digital solutions. Founded by Mukesh Kumar with 5+ years of experience in digital service.",
+    keywords: ["about Ank Square", "Mukesh Kumar", "digital service company", "business growth solutions"],
   },
 
   contact: {
     title: "Contact Ank Square - Get Your Digital Services Quote Today",
-    description: "Ready to grow your business? Contact Ank Square for expert merchant account management, website development, and digital marketing services.",
-    keywords: ["contact Ank Square", "digital services quote", "business consultation"],
+    description: "Ready to grow your business? Contact Ank Square for expert merchant account management, website development, and digital marketing service.",
+    keywords: ["contact Ank Square", "digital service quote", "business consultation"],
   },
 };

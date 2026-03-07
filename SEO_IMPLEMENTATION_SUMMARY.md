@@ -238,10 +238,10 @@ H3: Subsection headings (if needed)
 ```
 
 ### **Internal Linking Strategy**
-- Hero section → /services (Explore Solutions)
+- Hero section → /service (Explore Solutions)
 - Hero section → /contact (Get in Touch)
 - About section → /contact (Let's Work Together)
-- About section → /services (View Portfolio)
+- About section → /service (View Portfolio)
 
 ### **Mobile-First Design**
 - Responsive breakpoints: 480px, 768px, 1024px, 1200px+

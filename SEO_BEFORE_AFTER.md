@@ -302,7 +302,7 @@ const Heading = ({ subtitle, title, titleHighlight, id }: HeadingProps) => {
 - 📈 Improved conversion rates
 
 ### **Long Term (3-6 months)**
-- 🏆 Authority in digital services niche
+- 🏆 Authority in digital service niche
 - 🏆 Featured snippets
 - 🏆 Consistent top 10 rankings
 - 🏆 Sustainable organic growth

@@ -48,7 +48,7 @@ export const clients: Client[] = [
       {
         type: 'profile',
         title: 'Comprehensive Company Profile Presentation',
-        description: 'Professional company profile presentation showcasing Sharma Interiors\' services, portfolio, achievements, and client success stories. Includes detailed service descriptions, project case studies, and company vision.',
+        description: 'Professional company profile presentation showcasing Sharma Interiors\' service, portfolio, achievements, and client success stories. Includes detailed service descriptions, project case studies, and company vision.',
         presentationUrl: 'https://www.canva.com/design/DAGvBZodBng/_nXWUjFtxWzCTWjYi_ID_Q/view?embed',
       },
     ],

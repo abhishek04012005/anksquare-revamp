@@ -4,18 +4,18 @@ import Breadcrumbs from '@/components/seo/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Our Services - E-commerce Solutions & Digital Marketing | Ank Square',
-  description: 'Comprehensive digital services including merchant account management, website development, and digital marketing. Expert e-commerce solutions for Indian businesses across all major platforms.',
-  keywords: 'e-commerce services, merchant account management, website development, digital marketing, SEO services, online marketing, e-commerce platform management, web design India, digital marketing agency',
+  description: 'Comprehensive digital service including merchant account management, website development, and digital marketing. Expert e-commerce solutions for Indian businesses across all major platforms.',
+  keywords: 'e-commerce service, merchant account management, website development, digital marketing, SEO service, online marketing, e-commerce platform management, web design India, digital marketing agency',
   openGraph: {
     title: 'Our Services - Complete Digital Solutions | Ank Square',
-    description: 'Professional e-commerce account management, custom website development, and comprehensive digital marketing services for growing businesses.',
+    description: 'Professional e-commerce account management, custom website development, and comprehensive digital marketing service for growing businesses.',
     url: 'https://anksquare.com/service',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Our Services - Digital Solutions | Ank Square',
-    description: 'Expert e-commerce management, website development, and digital marketing services.',
+    description: 'Expert e-commerce management, website development, and digital marketing service.',
   },
 }
 
@@ -47,7 +47,7 @@ export default function ServicesPage() {
               '@type': 'Organization',
               name: 'Ank Square',
               url: 'https://anksquare.com',
-              description: 'Leading digital services company providing e-commerce account management, website development, and digital marketing solutions for businesses in India',
+              description: 'Leading digital service company providing e-commerce account management, website development, and digital marketing solutions for businesses in India',
               serviceType: ['E-commerce Management', 'Web Development', 'Digital Marketing'],
               areaServed: 'India',
               logo: 'https://anksquare.com/logo.svg',
@@ -71,7 +71,7 @@ export default function ServicesPage() {
                 {
                   '@type': 'Service',
                   name: 'Digital Marketing',
-                  description: 'Comprehensive digital marketing services including SEO, social media, and paid advertising'
+                  description: 'Comprehensive digital marketing service including SEO, social media, and paid advertising'
                 }
               ]
             }),

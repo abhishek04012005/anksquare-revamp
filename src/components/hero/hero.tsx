@@ -68,7 +68,7 @@ const Hero = () => {
             </p>
 
             <div className={styles.cta} role="group" aria-label="Primary actions">
-              <Button href="/services" variant="primary">
+              <Button href="/service" variant="primary">
                 Explore Our Solutions
               </Button>
               <Button href="/contact" variant="secondary">

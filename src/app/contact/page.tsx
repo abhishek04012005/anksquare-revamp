@@ -4,8 +4,8 @@ import Breadcrumbs from '@/components/seo/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Contact Ank Square - Get Your Digital Services Quote Today',
-  description: 'Ready to grow your business? Contact Ank Square for expert merchant account management, website development, and digital marketing services. Call us or fill the contact form.',
-  keywords: 'contact Ank Square, digital services quote, business consultation, merchant account help, website development inquiry',
+  description: 'Ready to grow your business? Contact Ank Square for expert merchant account management, website development, and digital marketing service. Call us or fill the contact form.',
+  keywords: 'contact Ank Square, digital service quote, business consultation, merchant account help, website development inquiry',
   openGraph: {
     title: 'Contact Ank Square - Digital Services Support',
     description: 'Get in touch with our team for digital solutions. Quick response time and personalized service.',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Contact Ank Square',
-    description: 'Reach out to Ank Square for digital services consultation and support.',
+    description: 'Reach out to Ank Square for digital service consultation and support.',
   },
 }
 
@@ -36,7 +36,7 @@ export default function ContactPage() {
               '@context': 'https://schema.org',
               '@type': 'ContactPage',
               name: 'Ank Square - Contact Us',
-              description: 'Contact form and information for Ank Square digital services company',
+              description: 'Contact form and information for Ank Square digital service company',
               url: 'https://anksquare.com/contact',
               mainEntity: {
                 '@type': 'Organization',

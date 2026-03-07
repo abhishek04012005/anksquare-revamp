@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${client.name} - Client Project by Ank Square`,
     description: `Explore the ${client.project} project completed by Ank Square. ${client.testimonial}`,
-    keywords: `${client.name}, ${client.project}, case study, project portfolio, web design, digital services`,
+    keywords: `${client.name}, ${client.project}, case study, project portfolio, web design, digital service`,
     openGraph: {
       title: `${client.name} - Ank Square Project`,
       description: client.testimonial,

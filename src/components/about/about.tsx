@@ -5,7 +5,7 @@ import styles from './About.module.css'
 import Heading from '../../components/heading/heading'
 import Button from '../../components/button/Button'
 import AboutSVG from "../../svg/AboutSVG/AboutSVG"
-import { services } from '@/data/details'
+import { service } from '@/data/details'
 
 
 
@@ -53,7 +53,7 @@ const About = () => {
             </p>
 
             <div className={styles.features}>
-              {Object.values(services).map((service, index) => (
+              {Object.values(service).map((service, index) => (
                 <motion.div
                   key={index}
                   className={styles.featureItem}
@@ -76,7 +76,7 @@ const About = () => {
               <Button href="/contact" variant="primary">
                 Let&apos;s Work Together
               </Button>
-              <Button href="/services" variant="secondary">
+              <Button href="/service" variant="secondary">
                 View Our Portfolio
               </Button>
 

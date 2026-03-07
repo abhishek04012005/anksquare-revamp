@@ -52,7 +52,7 @@ export const mainServices: MainServiceProps[] = [
     {
         id: 1,
         title: 'Merchant Account Management',
-        description: 'Professional e-commerce account management services for Indian businesses across all major online marketplaces. Our expert team provides comprehensive merchant account setup, optimization, and management solutions for Amazon, Flipkart, Meesho, and other leading e-commerce platforms. We help businesses maximize their online sales potential through strategic marketplace optimization, inventory management, and performance analytics. From account creation to ongoing support, we ensure your e-commerce success with proven strategies that drive revenue growth and customer satisfaction.',
+        description: 'Professional e-commerce account management service for Indian businesses across all major online marketplaces. Our expert team provides comprehensive merchant account setup, optimization, and management solutions for Amazon, Flipkart, Meesho, and other leading e-commerce platforms. We help businesses maximize their online sales potential through strategic marketplace optimization, inventory management, and performance analytics. From account creation to ongoing support, we ensure your e-commerce success with proven strategies that drive revenue growth and customer satisfaction.',
         features: [
             'Multi-Platform Integration',
             'Account Setup & Optimization',
@@ -61,12 +61,12 @@ export const mainServices: MainServiceProps[] = [
             'Customer Service Support'
         ],
         image: MerchantAccountSvg,
-        path: '/services/merchant-management'
+        path: '/service/merchant-management'
     },
     {
         id: 2,
         title: 'Website Development',
-        description: 'Custom website development services using modern technologies to create high-performance, SEO-friendly websites that convert visitors into customers. Our expert developers build responsive, fast-loading websites with cutting-edge features including e-commerce functionality, content management systems, and mobile optimization. We specialize in creating user-friendly interfaces that enhance user experience and drive business results. From concept to launch, we deliver scalable web solutions that grow with your business needs.',
+        description: 'Custom website development service using modern technologies to create high-performance, SEO-friendly websites that convert visitors into customers. Our expert developers build responsive, fast-loading websites with cutting-edge features including e-commerce functionality, content management systems, and mobile optimization. We specialize in creating user-friendly interfaces that enhance user experience and drive business results. From concept to launch, we deliver scalable web solutions that grow with your business needs.',
         features: [
             'Custom Design & Development',
             'Responsive UI',
@@ -75,12 +75,12 @@ export const mainServices: MainServiceProps[] = [
             'Ongoing Support'
         ],
         image: WebsiteDevelopmentSvg,
-        path: '/services/web-development'
+        path: '/service/web-development'
     },
     {
         id: 3,
         title: 'Digital Marketing',
-        description: 'Comprehensive digital marketing services designed to increase your online visibility and drive targeted traffic to your website. Our data-driven approach combines search engine optimization (SEO), social media marketing, paid advertising, and content strategy to help businesses achieve measurable results. We create customized marketing campaigns that reach your target audience across multiple channels, including Google Ads, Facebook Ads, Instagram marketing, and LinkedIn campaigns. Our team uses advanced analytics to track performance and optimize campaigns for maximum ROI.',
+        description: 'Comprehensive digital marketing service designed to increase your online visibility and drive targeted traffic to your website. Our data-driven approach combines search engine optimization (SEO), social media marketing, paid advertising, and content strategy to help businesses achieve measurable results. We create customized marketing campaigns that reach your target audience across multiple channels, including Google Ads, Facebook Ads, Instagram marketing, and LinkedIn campaigns. Our team uses advanced analytics to track performance and optimize campaigns for maximum ROI.',
         features: [
             'Search Engine Optimization (SEO)',
             'Social Media Marketing',
@@ -89,14 +89,14 @@ export const mainServices: MainServiceProps[] = [
             'Performance Analytics'
         ],
         image: SocialMediaSvg, // Replace with your actual SVG or image reference
-        path: '/services/digital-marketing'
+        path: '/service/digital-marketing'
     }
 ]
 export const marketplaceServices: SubService[] = [
     {
         id: 1,
         title: 'Amazon',
-        logo: "./services/amazon.png",
+        logo: "./service/amazon.png",
         features: [
             'Account Setup & Verification',
             'Product Listing Optimization',
@@ -129,7 +129,7 @@ export const marketplaceServices: SubService[] = [
     {
         id: 2,
         title: 'Flipkart',
-        logo: "./services/flipkart.png",
+        logo: "./service/flipkart.png",
         features: [
             'Seller Registration & KYC',
             'Catalog Management',
@@ -162,7 +162,7 @@ export const marketplaceServices: SubService[] = [
     {
         id: 3,
         title: 'Blinkit',
-        logo: "./services/blinkit.png",
+        logo: "./service/blinkit.png",
         features: [
             'Quick Commerce Integration',
             'Inventory Syncing',
@@ -195,7 +195,7 @@ export const marketplaceServices: SubService[] = [
     {
         id: 4,
         title: 'Myntra',
-        logo: "./services/myntra.png",
+        logo: "./service/myntra.png",
         features: [
             'Fashion Product Onboarding',
             'Brand Store Setup',
@@ -228,7 +228,7 @@ export const marketplaceServices: SubService[] = [
     {
         id: 5,
         title: 'Meesho',
-        logo: "./services/meesho.png",
+        logo: "./service/meesho.png",
         features: [
             'Reseller-Friendly Listings',
             'Bulk Upload Assistance',
@@ -261,7 +261,7 @@ export const marketplaceServices: SubService[] = [
     {
         id: 6,
         title: 'Ajio',
-        logo: "./services/ajio.png",
+        logo: "./service/ajio.png",
         features: [
             'Premium Fashion Onboarding',
             'Brand Guidelines Compliance',
@@ -294,7 +294,7 @@ export const marketplaceServices: SubService[] = [
     {
         id: 7,
         title: 'JioMart',
-        logo: "./services/jiomart.png",
+        logo: "./service/jiomart.png",
         features: [
             'Grocery & FMCG Listings',
             'Vendor Portal Setup',
@@ -327,7 +327,7 @@ export const marketplaceServices: SubService[] = [
     {
         id: 8,
         title: 'Nykaa',
-        logo: "./services/nykaa.png",
+        logo: "./service/nykaa.png",
         features: [
             'Beauty Product Onboarding',
             'Brand Page Design',
@@ -365,7 +365,7 @@ export const websiteTypes: SubService[] = [
     {
         id: 1,
         title: 'Business Website',
-        logo: "./services/businesswebsite.svg",
+        logo: "./service/businesswebsite.svg",
         features: [
             'Professional Design',
             'Lead Generation Forms',
@@ -398,7 +398,7 @@ export const websiteTypes: SubService[] = [
     {
         id: 2,
         title: 'E-commerce Website',
-        logo: "./services/ecommercewebsite.svg",
+        logo: "./service/ecommercewebsite.svg",
         features: [
             'Product Catalog Management',
             'Shopping Cart Integration',
@@ -431,7 +431,7 @@ export const websiteTypes: SubService[] = [
     {
         id: 3,
         title: 'Real Estate Website',
-        logo: "./services/realestatewebsite.svg",
+        logo: "./service/realestatewebsite.svg",
         features: [
             'Property Listings',
             'Virtual Tours',
@@ -464,7 +464,7 @@ export const websiteTypes: SubService[] = [
     {
         id: 4,
         title: 'Education Website',
-        logo: "./services/educationwebsite.svg",
+        logo: "./service/educationwebsite.svg",
         features: [
             'Course Management',
             'Student Enrollment',
@@ -500,7 +500,7 @@ export const digitalMarketingTypes: SubService[] = [
   {
     id: 1,
     title: 'Instagram Marketing',
-    logo: './services/instagram.png',
+    logo: './service/instagram.png',
     features: [
       'Visual Content Strategy',
       'Reels & Story Campaigns',
@@ -533,7 +533,7 @@ export const digitalMarketingTypes: SubService[] = [
   {
     id: 2,
     title: 'Facebook Marketing',
-    logo: './services/facebook.png',
+    logo: './service/facebook.png',
     features: [
       'Ad Campaigns',
       'Page Optimization',
@@ -566,7 +566,7 @@ export const digitalMarketingTypes: SubService[] = [
   {
     id: 3,
     title: 'Google Ads',
-    logo: './services/googleads.png',
+    logo: './service/googleads.png',
     features: [
       'Professional Branding',
       'Content Strategy',
@@ -599,7 +599,7 @@ export const digitalMarketingTypes: SubService[] = [
   {
     id: 4,
     title: 'YouTube Marketing',
-    logo: './services/youtube.png',
+    logo: './service/youtube.png',
     features: [
       'Video Strategy',
       'Channel Optimization',
@@ -620,7 +620,7 @@ export const digitalMarketingTypes: SubService[] = [
         { step: 3, title: 'Promotion & Ads', description: 'Run YouTube ads and cross-promote content.' }
       ],
       faq: [
-        { question: 'Do you edit videos?', answer: 'Yes, we offer basic editing and thumbnail design services.' },
+        { question: 'Do you edit videos?', answer: 'Yes, we offer basic editing and thumbnail design service.' },
         { question: 'Can I run YouTube ads?', answer: 'Yes, we manage YouTube ad campaigns for reach and conversions.' }
       ],
       pricing: [
