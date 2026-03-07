@@ -20,9 +20,8 @@ export default function StructuredData() {
       "availableLanguage": "English"
     },
     "sameAs": [
-      details.social.linkedin,
       details.social.instagram,
-      details.social.facebook
+      details.social.pinterest
     ]
   };
 

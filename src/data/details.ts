@@ -64,11 +64,11 @@ export const details = {
 
   // Social Media Links
   social: {
-    instagram: 'https://instagram.com/anksquare',
-    linkedin: 'https://linkedin.com/company/anksquare',
-    twitter: 'https://twitter.com/anksquare',
-    facebook: 'https://facebook.com/anksquare',
-    youtube: 'https://youtube.com/@anksquare',
+    instagram: 'https://www.instagram.com/anksquare/',
+    // linkedin: 'https://linkedin.com/company/anksquare',
+    pinterest: 'https://in.pinterest.com/anksquare/',
+    // facebook: 'https://facebook.com/anksquare',
+    youtube: 'https://www.youtube.com/@anksquare',
     website: 'https://anksquare.com',
     email: 'contact@anksquare.com',
     phone: '+91-9517973153',
