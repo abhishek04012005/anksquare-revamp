@@ -2822,10 +2822,42 @@ export const cities = [
 
 
 
+export interface CitySEOData {
+    population: number;
+    businessDensity: 'low' | 'medium' | 'high' | 'very-high';
+    marketSize: 'small' | 'medium' | 'large' | 'major';
+    competitionLevel: 'low' | 'medium' | 'high' | 'very-high';
+    growthRate: number; // percentage
+    coordinates: {
+        lat: number;
+        lng: number;
+    };
+    timezone: string;
+    localKeywords: string[];
+    topIndustries: string[];
+    serviceDemand: {
+        merchantManagement: 'low' | 'medium' | 'high';
+        webDevelopment: 'low' | 'medium' | 'high';
+        digitalMarketing: 'low' | 'medium' | 'high';
+        ecommerce: 'low' | 'medium' | 'high';
+    };
+    economicIndicators: {
+        avgBusinessSize: 'small' | 'medium' | 'large';
+        startupActivity: 'low' | 'medium' | 'high';
+        digitalAdoption: 'low' | 'medium' | 'high';
+    };
+    searchVolume: {
+        local: number; // monthly searches for local business terms
+        digital: number; // monthly searches for digital services
+        ecommerce: number; // monthly searches for e-commerce terms
+    };
+}
+
 export interface City {
     name: string;
     state: string;
     slug?: string;
+    seoData?: CitySEOData;
 }
 
 export function getCitySlug(cityName: string): string {
