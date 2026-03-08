@@ -27,7 +27,7 @@ export default function BlogPage() {
 
   return (
     <>
-            <Blog isSlider={false} />
+    <Blog isSlider={false} />
     </>
   )
 }

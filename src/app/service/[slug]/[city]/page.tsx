@@ -4,6 +4,7 @@ import { marketplaceServices, websiteTypes, digitalMarketingTypes, mainServices 
 import { cities, getCityBySlug, getCitySlug } from '@/data/cities'
 import Breadcrumbs from '@/components/seo/Breadcrumbs'
 import Button from '@/components/button/Button'
+import { EmojiEvents, Bolt, Business, TrackChanges } from '@mui/icons-material'
 import styles from '../service-detail.module.css'
 import cityStyles from './city-service.module.css'
 
@@ -150,7 +151,7 @@ export default async function CityServicePage({ params }: Props) {
         <section className={styles.hero}>
           <div className={styles.container}>
             <div className={styles.heroContent}>
-              <div className={cityStyles.locationBadge}>📍 {city.name}, {city.state}</div>
+              <div className={cityStyles.locationBadge}>{city.name}, {city.state}</div>
               <h1 className={styles.title}>{service.title} in {city.name}</h1>
               <p className={styles.overview}>
                 {service.details.overview} Serving businesses in {city.name} and across {city.state}.
@@ -176,22 +177,30 @@ export default async function CityServicePage({ params }: Props) {
             <h2 className={styles.sectionTitle}>Why Choose Us in {city.name}?</h2>
             <div className={cityStyles.benefitsGrid}>
               <div className={cityStyles.benefitCard}>
-                <div className={cityStyles.icon}>🏆</div>
+                <div className={cityStyles.icon}>
+                  <EmojiEvents fontSize="large" />
+                </div>
                 <h3>Local Expertise</h3>
                 <p>Deep understanding of {city.name}'s market dynamics and business ecosystem</p>
               </div>
               <div className={cityStyles.benefitCard}>
-                <div className={cityStyles.icon}>⚡</div>
+                <div className={cityStyles.icon}>
+                  <Bolt fontSize="large" />
+                </div>
                 <h3>Quick Response</h3>
                 <p>Fast support and on-site assistance for businesses in {city.name}</p>
               </div>
               <div className={cityStyles.benefitCard}>
-                <div className={cityStyles.icon}>💼</div>
+                <div className={cityStyles.icon}>
+                  <Business fontSize="large" />
+                </div>
                 <h3>Proven Track Record</h3>
                 <p>Trusted by 100+ businesses in {city.name} and {city.state}</p>
               </div>
               <div className={cityStyles.benefitCard}>
-                <div className={cityStyles.icon}>🎯</div>
+                <div className={cityStyles.icon}>
+                  <TrackChanges fontSize="large" />
+                </div>
                 <h3>Tailored Solutions</h3>
                 <p>Custom strategies for {city.name} market conditions</p>
               </div>
