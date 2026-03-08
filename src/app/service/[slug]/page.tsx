@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { marketplaceServices, websiteTypes, digitalMarketingTypes } from '@/data/service'
+import { marketplaceServices, websiteTypes, digitalMarketingTypes, mainServices } from '@/data/service'
 import Breadcrumbs from '@/components/seo/Breadcrumbs'
 import Button from '@/components/button/Button'
 import styles from './service-detail.module.css'
@@ -11,8 +11,24 @@ interface Props {
   }
 }
 
-// Combine all service for lookup
-const allServices = [...marketplaceServices, ...websiteTypes, ...digitalMarketingTypes]
+// Combine all service for lookup - handle mainServices differently since they have different structure
+const allServices = [
+  ...marketplaceServices, 
+  ...websiteTypes, 
+  ...digitalMarketingTypes,
+  // Transform mainServices to match the expected structure
+  ...mainServices.map(service => ({
+    ...service,
+    slug: service.path.replace('/service/', ''),
+    details: {
+      overview: service.description,
+      benefits: service.features.map(feature => ({ title: feature, description: feature })),
+      process: [],
+      faq: [],
+      pricing: []
+    }
+  }))
+]
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params
@@ -44,9 +60,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export function generateStaticParams() {
-  return allServices.map((service) => ({
-    slug: service.slug,
+  const mainServiceSlugs = mainServices.map(service => ({
+    slug: service.path.replace('/service/', '')
   }))
+  
+  const subServiceSlugs = allServices
+    .filter(service => !mainServices.some(main => main.path.replace('/service/', '') === service.slug))
+    .map((service) => ({
+      slug: service.slug,
+    }))
+  
+  return [...mainServiceSlugs, ...subServiceSlugs]
 }
 
 export const dynamicParams = false
@@ -112,58 +136,62 @@ export default async function ServiceDetailPage({ params }: Props) {
         </section>
 
         {/* Process Section */}
-        <section className={styles.process}>
-          <div className={styles.container}>
-            <h2 className={styles.sectionTitle}>Our Process</h2>
-            <div className={styles.processSteps}>
-              {service.details.process.map((step, index) => (
-                <div key={step.step} className={styles.stepCard}>
-                  <div className={styles.stepNumber}>{step.step}</div>
-                  <h3 className={styles.stepTitle}>{step.title}</h3>
-                  <p className={styles.stepDescription}>{step.description}</p>
-                </div>
-              ))}
+        {service.details.process.length > 0 && (
+          <section className={styles.process}>
+            <div className={styles.container}>
+              <h2 className={styles.sectionTitle}>Our Process</h2>
+              <div className={styles.processSteps}>
+                {service.details.process.map((step, index) => (
+                  <div key={step.step} className={styles.stepCard}>
+                    <div className={styles.stepNumber}>{step.step}</div>
+                    <h3 className={styles.stepTitle}>{step.title}</h3>
+                    <p className={styles.stepDescription}>{step.description}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
-        {/* Pricing Section */}
-        <section id="pricing" className={styles.pricing}>
-          <div className={styles.container}>
-            <h2 className={styles.sectionTitle}>Pricing Plans</h2>
-            <div className={styles.pricingGrid}>
-              {service.details.pricing.map((plan, index) => (
-                <div key={index} className={styles.pricingCard}>
-                  <h3 className={styles.planName}>{plan.plan}</h3>
-                  <div className={styles.price}>{plan.price}</div>
-                  <ul className={styles.planFeatures}>
-                    {plan.features.map((feature, idx) => (
-                      <li key={idx}>{feature}</li>
-                    ))}
-                  </ul>
-                  <Button variant="primary" className={styles.planButton}>
-                    Choose Plan
-                  </Button>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* FAQ Section */}
-        <section className={styles.faq}>
-          <div className={styles.container}>
-            <h2 className={styles.sectionTitle}>Frequently Asked Questions</h2>
-            <div className={styles.faqList}>
-              {service.details.faq.map((faq, index) => (
-                <div key={index} className={styles.faqItem}>
-                  <h3 className={styles.faqQuestion}>{faq.question}</h3>
-                  <p className={styles.faqAnswer}>{faq.answer}</p>
-                </div>
-              ))}
+        {service.details.faq.length > 0 && (
+          <section className={styles.faq}>
+            <div className={styles.container}>
+              <h2 className={styles.sectionTitle}>Frequently Asked Questions</h2>
+              <div className={styles.faqList}>
+                {service.details.faq.map((faq, index) => (
+                  <div key={index} className={styles.faqItem}>
+                    <h3 className={styles.faqQuestion}>{faq.question}</h3>
+                    <p className={styles.faqAnswer}>{faq.answer}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
+
+        {/* Pricing Section */}
+        {service.details.pricing.length > 0 && (
+          <section id="pricing" className={styles.pricing}>
+            <div className={styles.container}>
+              <h2 className={styles.sectionTitle}>Pricing Plans</h2>
+              <div className={styles.pricingGrid}>
+                {service.details.pricing.map((plan, index) => (
+                  <div key={index} className={styles.pricingCard}>
+                    <h3 className={styles.pricingPlan}>{plan.plan}</h3>
+                    <div className={styles.pricingPrice}>{plan.price}</div>
+                    <ul className={styles.pricingFeatures}>
+                      {plan.features.map((feature, featureIndex) => (
+                        <li key={featureIndex}>{feature}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* CTA Section */}
         <section id="contact" className={styles.cta}>
@@ -194,13 +222,15 @@ export default async function ServiceDetailPage({ params }: Props) {
                 url: 'https://anksquare.com'
               },
               serviceType: service.title,
-              offers: service.details.pricing.map(plan => ({
-                '@type': 'Offer',
-                name: plan.plan,
-                price: plan.price.replace(/[^\d]/g, ''),
-                priceCurrency: 'INR',
-                description: plan.features.join(', ')
-              }))
+              ...(service.details.pricing.length > 0 && {
+                offers: service.details.pricing.map(plan => ({
+                  '@type': 'Offer',
+                  name: plan.plan,
+                  price: plan.price.replace(/[^\d]/g, ''),
+                  priceCurrency: 'INR',
+                  description: plan.features.join(', ')
+                }))
+              })
             }),
           }}
         />

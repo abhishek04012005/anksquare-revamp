@@ -1,0 +1,165 @@
+/* City Service Page Styles */
+
+.locationBadge {
+  display: inline-block;
+  background: var(--accent-light);
+  color: var(--primary-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Local Benefits Section */
+.localBenefits {
+  padding: 6rem 1.5rem;
+  background: linear-gradient(135deg, var(--bg-background) 0%, var(--card-background) 100%);
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.benefitCard {
+  background: var(--card-background);
+  border-left: 4px solid var(--primary-color);
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefitCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px var(--shadow-color);
+}
+
+.icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.benefitCard h3 {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.benefitCard p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Location CTA Section */
+.locationCta {
+  padding: 6rem 1.5rem;
+  background: var(--primary-color);
+  color: white;
+  text-align: center;
+}
+
+.locationCta h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.locationCta p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .locationBadge {
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .benefitsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .benefitCard {
+    padding: 1.5rem;
+  }
+
+  .locationCta {
+    padding: 4rem 1.5rem;
+  }
+
+  .locationCta h2 {
+    font-size: 1.75rem;
+  }
+
+  .locationCta p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .locationBadge {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .benefitCard {
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  .icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .benefitCard h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .benefitCard p {
+    font-size: 0.9rem;
+  }
+
+  .locationCta {
+    padding: 3rem 1rem;
+  }
+
+  .locationCta h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .locationCta p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+}
