@@ -40,7 +40,7 @@ export default function EnquiryForm() {
 
     setIsSubmitting(true);
 
-    const { error: supaErr } = await supabase.from('enquiries').insert([
+    const { error: supaErr } = await supabase.from('quotes').insert([
       {
         name,
         mobile,

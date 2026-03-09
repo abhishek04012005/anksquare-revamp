@@ -23,7 +23,7 @@ export default function Navbar() {
 
     // WhatsApp message
     const whatsappMessage = encodeURIComponent(messages.whatsapp.default);
-    const whatsappUrl = `https://wa.me/${social.whatsapp.replace(/\D/g, '')}?text=${whatsappMessage}`;
+    const whatsappUrl = `https://wa.me/91${social.whatsapp.replace(/\D/g, '').slice(-10)}?text=${whatsappMessage}`;
 
     return (
         <>
