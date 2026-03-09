@@ -7,7 +7,6 @@ import Button from '../../components/button/Button'
 import EnquiryModal from '../enquiry/EnquiryModal'
 import { mainServices, marketplaceServices, websiteTypes, digitalMarketingTypes, MainServiceProps, SubService } from '../../data/service'
 
-import { StaticImageData } from 'next/image';
 import Heading from '../../components/heading/heading'
 
 interface MainServiceComponentProps {

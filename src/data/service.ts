@@ -1,4 +1,14 @@
 import { FC } from 'react'
+import { StaticImageData } from 'next/image'
+import AjioImage from "../../public/assets/services/ajio.png"
+import FlipkartImage from "../../public/assets/services/flipkart.png"
+import BlinkitImage from "../../public/assets/services/blinkit.png"
+import MyntraImage from "../../public/assets/services/myntra.png"
+import MeeshoImage from "../../public/assets/services/meesho.png"
+import JioMartImage from "../../public/assets/services/jiomart.png"
+import NykaaImage from "../../public/assets/services/nykaa.png" 
+import AmazonImage from "../../public/assets/services/amazon.png"
+
 import MerchantAccountSvg from "../svg/AccountManagerSVG/AccountManagerSVG.jsx"
 import WebsiteDevelopmentSvg from "../svg/WebDevelopmentSVG/WebDevelopmentSVG.jsx"
 import SocialMediaSvg from "../svg/SocialMediaSVG/SocialMediaSVG.jsx"
@@ -41,7 +51,7 @@ export interface MainServiceProps {
 export interface SubService {
     id: number
     title: string
-    logo: string
+    logo: string | StaticImageData
     features: string[]
     path: string
     slug: string
@@ -261,7 +271,7 @@ export const marketplaceServices: SubService[] = [
     {
         id: 6,
         title: 'Ajio',
-        logo: "./service/ajio.png",
+        logo: AjioImage,
         features: [
             'Premium Fashion Onboarding',
             'Brand Guidelines Compliance',
