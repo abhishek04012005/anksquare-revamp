@@ -3,11 +3,10 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter, usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { 
-    FiGrid, FiMessageSquare, FiPhone, 
-    FiLogOut, FiMenu, FiX, FiUser 
+import {
+    FiGrid, FiMessageSquare, FiPhone,
+    FiLogOut, FiMenu, FiX, FiUser
 } from 'react-icons/fi'
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import styles from './AdminNavbar.module.css'
 
 const menuItems = [
@@ -32,26 +31,16 @@ const AdminNavbar = () => {
     const router = useRouter()
     const pathname = usePathname()
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-    const [userName, setUserName] = useState<string | null>(null)
-    const supabase = createClientComponentClient()
-
-    useEffect(() => {
-        const getUser = async () => {
-            const { data: { user } } = await supabase.auth.getUser()
-            setUserName(user?.email?.split('@')[0] || 'Admin')
-        }
-        getUser()
-    }, [supabase.auth])
 
     const handleLogout = async () => {
         try {
             // Clear authentication data
             document.cookie = 'adminAuth=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;'
             localStorage.removeItem('adminAuth')
-            
+
             // Add small delay to ensure cookies are cleared
             await new Promise(resolve => setTimeout(resolve, 100))
-            
+
             router.push('/admin/login')
         } catch (error) {
             console.error('Error logging out:', error)
@@ -101,7 +90,7 @@ const AdminNavbar = () => {
                         <div className={styles.userSection}>
                             <div className={styles.userInfo}>
                                 <FiUser />
-                                <span>{userName}</span>
+                                <span>Admin</span>
                             </div>
                             <button 
                                 className={styles.logoutButton}
