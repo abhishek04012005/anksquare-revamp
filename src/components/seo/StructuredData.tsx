@@ -1,4 +1,5 @@
 import { details } from '@/data/details';
+import FAQSchema, { ankSquareFAQs } from './FAQSchema';
 
 export default function StructuredData() {
   const organizationSchema = {
@@ -39,8 +40,8 @@ export default function StructuredData() {
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "28.6139",
-      "longitude": "77.2090"
+      "latitude": "25.5941", // Patna coordinates
+      "longitude": "85.1376"
     },
     "openingHours": "Mo-Fr 09:00-18:00",
     "priceRange": "$$"
@@ -89,6 +90,23 @@ export default function StructuredData() {
     }
   };
 
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": details.profile.nameCompany,
+    "url": "https://anksquare.com",
+    "description": details.about.missionStatement,
+    "publisher": {
+      "@type": "Organization",
+      "name": details.profile.nameCompany
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://anksquare.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  };
+
   return (
     <>
       <script
@@ -109,6 +127,13 @@ export default function StructuredData() {
           __html: JSON.stringify(serviceSchema),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteSchema),
+        }}
+      />
+      <FAQSchema faqs={ankSquareFAQs} />
     </>
   );
 }
