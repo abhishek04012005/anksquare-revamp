@@ -51,12 +51,7 @@
   border: 2px solid var(--border-color);
 }
 
-.secondary:hover:not(:disabled) {
-  background: var(--accent-light);
-  border-color: var(--primary-color);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px var(--shadow-color);
-}
+
 
 .secondary:active:not(:disabled) {
   transform: translateY(0);
