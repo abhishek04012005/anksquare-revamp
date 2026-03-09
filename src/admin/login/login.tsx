@@ -6,6 +6,8 @@ import { motion } from 'framer-motion'
 import { FiUser, FiLock, FiEye, FiEyeOff } from 'react-icons/fi'
 import { supabase } from '../../lib/supabase'
 import styles from './Login.module.css'
+import { profile } from '@/data/details';
+
 
 const Login = () => {
     const router = useRouter()
@@ -35,12 +37,13 @@ const Login = () => {
                 return
             }
 
-            // Store auth flag
-            document.cookie = 'adminAuth=true; path=/'
+            // Store auth flag with 7-day expiration
+            const expirationDate = new Date()
+            expirationDate.setTime(expirationDate.getTime() + (7 * 24 * 60 * 60 * 1000))
+            document.cookie = `adminAuth=true; path=/; expires=${expirationDate.toUTCString()}`
             localStorage.setItem('adminAuth', 'true')
 
-            router.push('/admin/dashboard/')
-            router.refresh()
+            router.push('/admin/dashboard')
         } catch (err) {
             console.error('Login error:', err)
             setErrorMessage('Login failed. Please try again.')
@@ -65,7 +68,7 @@ const Login = () => {
             >
                 <div className={styles.logoContainer}>
                     <Image
-                        src="./logo.svg"
+                        src={profile.logo}
                         alt="Anksquare Logo"
                         width={150}
                         height={50}

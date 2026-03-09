@@ -45,7 +45,13 @@ const AdminNavbar = () => {
 
     const handleLogout = async () => {
         try {
-            await supabase.auth.signOut()
+            // Clear authentication data
+            document.cookie = 'adminAuth=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;'
+            localStorage.removeItem('adminAuth')
+            
+            // Add small delay to ensure cookies are cleared
+            await new Promise(resolve => setTimeout(resolve, 100))
+            
             router.push('/admin/login')
         } catch (error) {
             console.error('Error logging out:', error)
