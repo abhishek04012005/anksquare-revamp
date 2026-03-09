@@ -6,6 +6,7 @@ import styles from './service.module.css'
 import Button from '../../components/button/Button'
 import EnquiryModal from '../enquiry/EnquiryModal'
 import { mainServices, marketplaceServices, websiteTypes, digitalMarketingTypes, MainServiceProps, SubService } from '../../data/service'
+import { StaticImageData } from 'next/image'
 
 import Heading from '../../components/heading/heading'
 
@@ -64,6 +65,18 @@ const MainService = ({ service, isReversed }: MainServiceComponentProps) => {
 }
 
 const SubServiceCard = ({ service }: { service: SubService }) => {
+    // normalize logo paths; Next/Image requires valid URLs or imported data
+    const resolveLogo = (logo: string | StaticImageData) => {
+        if (typeof logo === 'string') {
+            // legacy relative paths were stored as "./service/xxx.png"; convert to public asset path
+            if (logo.startsWith('./service/')) {
+                return `/assets/services/${logo.substring('./service/'.length)}`
+            }
+            return logo
+        }
+        return logo
+    }
+
     return (
         <motion.div
             className={styles.subCard}
@@ -74,7 +87,7 @@ const SubServiceCard = ({ service }: { service: SubService }) => {
         >
             <div className={styles.logoContainer}>
                 <Image
-                    src={`/assets${service.logo}`}
+                    src={resolveLogo(service.logo)}
                     alt={service.title}
                     className={styles.serviceLogo}
                     height={60}

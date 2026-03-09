@@ -171,27 +171,7 @@ export default async function ServiceDetailPage({ params }: Props) {
           </section>
         )}
 
-        {/* Pricing Section */}
-        {service.details.pricing.length > 0 && (
-          <section id="pricing" className={styles.pricing}>
-            <div className={styles.container}>
-              <h2 className={styles.sectionTitle}>Pricing Plans</h2>
-              <div className={styles.pricingGrid}>
-                {service.details.pricing.map((plan, index) => (
-                  <div key={index} className={styles.pricingCard}>
-                    <h3 className={styles.pricingPlan}>{plan.plan}</h3>
-                    <div className={styles.pricingPrice}>{plan.price}</div>
-                    <ul className={styles.pricingFeatures}>
-                      {plan.features.map((feature, featureIndex) => (
-                        <li key={featureIndex}>{feature}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
+        
 
         {/* CTA Section */}
         <section id="contact" className={styles.cta}>
