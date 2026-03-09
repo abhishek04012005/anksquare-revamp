@@ -164,7 +164,7 @@ export default async function CityServicePage({ params }: Props) {
                 ))}
               </div>
               <div className={styles.ctaButtons}>
-                <Button variant="primary" href="#contact">Get Started in {city.name}</Button>
+                <Button variant="primary" href="#contact">Contact Us in {city.name}</Button>
                 <Button variant="secondary" href={`/service/${service.slug}`}>View All Details</Button>
               </div>
             </div>
@@ -258,28 +258,6 @@ export default async function CityServicePage({ params }: Props) {
           </section>
         )}
 
-        {/* Pricing Section */}
-        {service.details.pricing.length > 0 && (
-          <section id="pricing" className={styles.pricing}>
-            <div className={styles.container}>
-              <h2 className={styles.sectionTitle}>Pricing Plans for {city.name}</h2>
-              <div className={styles.pricingGrid}>
-                {service.details.pricing.map((plan, index) => (
-                  <div key={index} className={styles.pricingCard}>
-                    <h3 className={styles.pricingPlan}>{plan.plan}</h3>
-                    <div className={styles.pricingPrice}>{plan.price}</div>
-                    <ul className={styles.pricingFeatures}>
-                      {plan.features.map((feature, featureIndex) => (
-                        <li key={featureIndex}>{feature}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-
         {/* Location CTA Section */}
         <section className={cityStyles.locationCta}>
           <div className={styles.container}>
@@ -288,7 +266,6 @@ export default async function CityServicePage({ params }: Props) {
               Connect with our {service.title} experts in {city.name}. We understand the unique challenges and opportunities in {city.name}, {city.state}.
             </p>
             <div className={styles.ctaButtons}>
-              <Button variant="primary" href="#contact">Schedule a Free Consultation</Button>
               <Button variant="secondary" href="/contact">Contact Us Today</Button>
             </div>
           </div>

@@ -113,8 +113,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                 ))}
               </div>
               <div className={styles.ctaButtons}>
-                <Button variant="primary" href="#contact">Get Started</Button>
-                <Button variant="secondary" href="#pricing">View Pricing</Button>
+                <Button variant="primary">Contact Us</Button>
               </div>
             </div>
           </div>
@@ -181,7 +180,7 @@ export default async function ServiceDetailPage({ params }: Props) {
               Contact us today to discuss your {service.title} requirements and get a customized solution for your business.
             </p>
             <div className={styles.ctaButtons}>
-              <Button variant="primary" href="/contact">Contact Us</Button>
+              <Button variant="primary">Contact Us</Button>
               <Button variant="secondary" href="/service">View All Services</Button>
             </div>
           </div>
