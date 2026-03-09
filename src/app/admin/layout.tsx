@@ -1,16 +1,9 @@
-import AdminNavbar from '@/adminNavbar/AdminNavbar'
+import AdminLayoutClient from './AdminLayoutClient'
 
 export default function AdminLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  return (
-    <>
-      <AdminNavbar />
-      <main>
-        {children}
-      </main>
-    </>
-  )
+  return <AdminLayoutClient>{children}</AdminLayoutClient>
 }
