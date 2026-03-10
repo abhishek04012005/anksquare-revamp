@@ -164,6 +164,11 @@ const ClientProjectView: FC<ClientProjectViewProps> = ({ slug }) => {
         </div>
 
         <div className={styles.contactSection}>
+          <h2 className={styles.contactTitle}>Ready to Start Your Project?</h2>
+          <p className={styles.contactMessage}>
+            Have questions about our services or want to discuss your next project? 
+            Get in touch with us today!
+          </p>
           <Button variant="secondary" onClick={() => setIsEnquiryModalOpen(true)}>
             Contact Us
           </Button>
