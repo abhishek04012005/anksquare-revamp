@@ -26,7 +26,7 @@ export default function ClientsPage() {
 
       <main id="main-content" role="main">
         {/* Clients Component */}
-        <Clients />
+        <Clients isSlider={false} />
 
         {/* Structured Data for Organization */}
         <script

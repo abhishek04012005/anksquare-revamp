@@ -1,5 +1,5 @@
 export interface ProjectWork {
-  type:  'logo' | 'website' | 'visitingCard' | 'profile' | 'business' | 'letterHead'
+  type: 'logo' | 'website' | 'visitingCard' | 'profile' | 'business' | 'letterHead'
   title: string
   description: string
   images?: string[]
@@ -74,7 +74,7 @@ export const clients: Client[] = [
         images: ["/sah-constructions/website.png"],
         url: 'https://www.sahconstructions.com',
       },
-       {
+      {
         type: 'visitingCard',
         title: 'Premium Business Card & Professional Stationery',
         description: 'Professional business card design with premium finishes reflecting construction industry standards. Modern typography and sophisticated color palette create a memorable impression for client meetings and networking events.',
@@ -86,7 +86,7 @@ export const clients: Client[] = [
         description: 'Comprehensive company profile presentation detailing Sah Constructions\' experience, project portfolio, technical expertise, and construction capabilities. Designed to impress clients and partners with professional achievements and industry knowledge.',
         presentationUrl: 'https://www.canva.com/design/DAGwgeklyeU/IlGwBotTtDGvBn16-HdYUQ/view?embed',
       },
-       {
+      {
         type: 'letterHead',
         title: 'Professional Company Letterhead Design',
         description: 'Custom-designed company letterhead featuring the Sah Constructions brand identity. Professional layout suitable for official correspondence, proposals, and formal documentation. Premium design that reinforces brand authority.',
@@ -150,7 +150,7 @@ export const clients: Client[] = [
       //   images: ["./client/sl-engineers/website.png"],
       //   url: 'https://sl-engineerings.com',
       // },
-        {
+      {
         type: 'visitingCard',
         title: 'Professional Business Card & Executive Stationery Design',
         description: 'Premium business card and corporate stationery design reflecting SL Engineerings\' professional brand identity. Modern typography and clean design elements appropriate for the engineering and healthcare industries. Print-ready materials for client meetings and formal correspondence.',
@@ -164,4 +164,56 @@ export const clients: Client[] = [
       },
     ],
   },
+  {
+    "id": 5,
+    "name": "Rehas",
+    "slug": "rehas",
+    "logo": "/rehas/logo.svg",
+    "project": "Spiritual Wellness Platform & Healing Content Branding",
+    "testimonial": "Rehas required a calm, meaningful, and spiritually aligned digital platform to share knowledge about chakras, healing, and wellness. Ank Square delivered a peaceful and modern website with clear content structure and strong branding. The final result created a powerful online presence that connects with people seeking mindfulness, spiritual growth, and holistic health.",
+    "workDone": [
+      {
+        "type": "logo",
+        "title": "Spiritual Brand Identity & Healing Logo Design",
+        "description": "Custom logo design and brand identity for Rehas focused on spiritual healing, chakra energy, and inner balance. The logo incorporates calming elements and symbolic colors representing spiritual growth, mindfulness, and holistic wellness.",
+        "images": ["/rehas/logo.svg"]
+      },
+      {
+        "type": "website",
+        "title": "Spiritual Wellness & Chakra Knowledge Website",
+        "description": "Designed and developed a modern spiritual wellness website for Rehas focused on chakra education, meditation guidance, and holistic healing practices. The platform features calming design aesthetics, structured chakra information, and responsive layout to create a peaceful and engaging user experience.",
+        "images": ["/rehas/website.png"],
+        "url": "https://rehas.in"
+      },
+      {
+        "type": "visitingCard",
+        "title": "Wellness Brand Business Card & Stationery Design",
+        "description": "Minimal and calming business card design reflecting the Rehas spiritual wellness identity. The design uses soft colors, spiritual symbolism, and clean typography to represent healing, mindfulness, and holistic energy balance.",
+        "images": ["/rehas/visitingcard.svg"]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Manish K Verma",
+    "slug": "manish-k-verma",
+    "logo": "/manishkverma/logo.png",
+    "project": "Professional Personal Portfolio Website & Digital Identity",
+    "testimonial": "Manish K Verma wanted a professional online portfolio to present his work, skills, and achievements in a clean and impactful way. Ank Square created a modern portfolio platform that effectively highlights his projects, experience, and personal brand. The result is a professional digital presence that supports career growth and networking opportunities.",
+    "workDone": [
+      {
+        "type": "logo",
+        "title": "Personal Brand Identity & Logo Design",
+        "description": "Custom personal logo and brand identity design for Manish K Verma. The design reflects professionalism, creativity, and a strong digital presence. The logo helps establish a recognizable personal brand across the website, portfolio, and professional platforms.",
+        "images": ["/manishkverma/logo.png"]
+      },
+      {
+        "type": "website",
+        "title": "Modern Personal Portfolio Website",
+        "description": "Designed and developed a modern personal portfolio website for Manish K Verma showcasing professional skills, projects, achievements, and experience. The website features a clean UI, responsive design, and structured sections including about, portfolio, and contact to create a strong professional online presence.",
+        "images": ["/manishkverma/website.png"],
+        "url": "https://manishkverma.in"
+      }
+    ]
+  }
 ]

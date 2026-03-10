@@ -16,10 +16,56 @@ import 'swiper/css/navigation';
 import Heading from '../../components/heading/heading';
 import Button from '../../components/button/Button';
 
+interface ClientsProps {
+    isSlider?: boolean;
+}
 
-
-const Clients = () => {
+const Clients: React.FC<ClientsProps> = ({ isSlider = true }) => {
     const swiperRef = useRef<SwiperType | null>(null);
+
+    if (!isSlider) {
+        // Grid layout for client listing page
+        return (
+            <section className={styles.clientSection}>
+                <div className={styles.container}>
+                    <Heading
+                        subtitle='Clients'
+                        title='Our '
+                        titleHighlight='Clients'
+                    />
+                    <div className={styles.gridContainer}>
+                        {clients.map((client) => (
+                            <div key={client.id} className={styles.clientCard}>
+                                <div className={styles.logoContainer}>
+                                    <Image
+                                        src={`/assets/client${client.logo}`}
+                                        alt={client.name}
+                                        width={120}
+                                        height={60}
+                                        className={styles.clientLogo}
+                                    />
+                                </div>
+                                <div className={styles.clientInfo}>
+                                    <h3 className={styles.clientName}>{client.name}</h3>
+                                    <p className={styles.projectType}>{client.project}</p>
+                                    <div className={styles.testimonialWrapper}>
+                                        <FormatQuoteIcon className={styles.quoteIcon} />
+                                        <p className={styles.testimonial}>{client.testimonial}</p>
+                                    </div>
+                                </div>
+
+                                <div className={styles.ctaButton}>
+                                    <Button className={styles.ctaButtonPrimary}
+                                        variant='primary' href={`/client/${client.slug}`}>View Project
+                                    </Button>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+        );
+    }
 
     return (
         <section className={styles.clientSection}>
