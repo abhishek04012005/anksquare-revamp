@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { marketplaceServices, websiteTypes, digitalMarketingTypes, mainServices } from '@/data/service'
-import Breadcrumbs from '@/components/seo/Breadcrumbs'
 import ServiceDetailClient from './service-detail-client'
 import styles from './service-detail.module.css'
 

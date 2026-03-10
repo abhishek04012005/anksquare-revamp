@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react'
-import Breadcrumbs from '@/components/seo/Breadcrumbs'
 import Button from '@/components/button/Button'
 import EnquiryModal from '@/components/enquiry/EnquiryModal'
 import { EmojiEvents, Bolt, Business, TrackChanges } from '@mui/icons-material'
@@ -41,17 +40,6 @@ export default function CityServiceClient({ service, city, citySlug }: CityServi
       <a href="#main-content" className="sr-only">Skip to main content</a>
 
       <main id="main-content" role="main">
-        {/* Breadcrumb Navigation */}
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem 1.5rem 0' }}>
-          <Breadcrumbs
-            items={[
-              { label: 'Services', href: '/service' },
-              { label: service.title, href: `/service/${service.slug}` },
-              { label: `${city.name}, ${city.state}` }
-            ]}
-          />
-        </div>
-
         {/* City Service Header */}
         <section className={styles.hero}>
           <div className={styles.container}>

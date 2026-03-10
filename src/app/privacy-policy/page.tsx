@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import Breadcrumbs from '@/components/seo/Breadcrumbs'
 import { contact } from '@/data/details'
 
 export const metadata: Metadata = {
@@ -27,15 +26,6 @@ export default function PrivacyPolicyPage() {
 
 
       <main id="main-content" role="main">
-        {/* Breadcrumb Navigation */}
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem 1.5rem 0' }}>
-          <Breadcrumbs
-            items={[
-              { label: 'Privacy Policy' }
-            ]}
-          />
-        </div>
-
         {/* Hero Section */}
         <section
           style={{

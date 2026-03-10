@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import BlogDetail from '@/components/blog/blogdetail/blogdetails'
-import Breadcrumbs from '@/components/seo/Breadcrumbs'
 import { blogPosts } from '@/data/blog'
 
 interface BlogPostPageProps {
@@ -94,12 +93,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     }
   }
 
-  const breadcrumbItems = [
-    { label: 'Home', href: '/' },
-    { label: 'Blog', href: '/blog' },
-    { label: post.title, href: `/blog/${post.slug}` }
-  ]
-
   return (
     <>
       {/* Skip to main content link for accessibility */}
@@ -114,11 +107,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       />
 
       <main id="main-content" role="main">
-        {/* Breadcrumb Navigation */}
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem 1.5rem 0' }}>
-          <Breadcrumbs items={breadcrumbItems} />
-        </div>
-
         {/* Blog Detail Section */}
         <BlogDetail />
       </main>

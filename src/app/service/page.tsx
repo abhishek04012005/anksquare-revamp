@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 import Services from '@/components/service/service'
-import Breadcrumbs from '@/components/seo/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Our Services - E-commerce Solutions & Digital Marketing | Ank Square',
@@ -26,15 +25,6 @@ export default function ServicesPage() {
       <a href="#main-content" className="sr-only">Skip to main content</a>
 
       <main id="main-content" role="main">
-        {/* Breadcrumb Navigation */}
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem 1.5rem 0' }}>
-          <Breadcrumbs
-            items={[
-              { label: 'Our Services' }
-            ]}
-          />
-        </div>
-
         {/* Services Component */}
         <Services />
 

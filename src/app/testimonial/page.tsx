@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import { FaStar, FaQuoteLeft } from 'react-icons/fa'
-import Breadcrumbs from '@/components/seo/Breadcrumbs'
 import { testimonials } from '@/data/testimonial'
 import styles from './page.module.css'
 
@@ -27,15 +26,6 @@ export default function TestimonialPage() {
     <>
 
       <main id="main-content" role="main">
-        {/* Breadcrumb Navigation */}
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem 1.5rem 0' }}>
-          <Breadcrumbs
-            items={[
-              { label: 'Testimonials' }
-            ]}
-          />
-        </div>
-
         {/* Hero Section */}
         <section
           className={styles.heroSection}

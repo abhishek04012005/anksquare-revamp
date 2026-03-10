@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 import Contact from '@/components/contact/contact'
-import Breadcrumbs from '@/components/seo/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Contact Ank Square - Get Your Digital Services Quote Today',

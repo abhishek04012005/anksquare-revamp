@@ -13,20 +13,6 @@
   margin-bottom: 3rem;
 }
 
-.breadcrumb {
-  color: var(--text-secondary);
-  margin-bottom: 1.5rem;
-}
-
-.breadcrumb a {
-  color: var(--primary-color);
-  transition: color 0.3s ease;
-}
-
-.breadcrumb a:hover {
-  color: var(--primary-hover);
-}
-
 .title {
   font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 800;

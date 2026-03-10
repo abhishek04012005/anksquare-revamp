@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 import Clients from '@/components/clients/clients'
-import Breadcrumbs from '@/components/seo/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Our Clients - Successful Projects by Ank Square',
@@ -26,15 +25,6 @@ export default function ClientsPage() {
       <a href="#main-content" className="sr-only">Skip to main content</a>
 
       <main id="main-content" role="main">
-        {/* Breadcrumb Navigation */}
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem 1.5rem 0' }}>
-          <Breadcrumbs
-            items={[
-              { label: 'Our Clients' }
-            ]}
-          />
-        </div>
-
         {/* Clients Component */}
         <Clients />
 

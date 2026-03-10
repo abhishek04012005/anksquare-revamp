@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 import Blog from '@/components/blog/blog'
-import Breadcrumbs from '@/components/seo/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Blog - Digital Marketing Insights & E-commerce Trends | Ank Square',
@@ -20,11 +19,6 @@ export const metadata: Metadata = {
 }
 
 export default function BlogPage() {
-  const breadcrumbItems = [
-    { label: 'Home', href: '/' },
-    { label: 'Blog', href: '/blog' }
-  ]
-
   return (
     <>
     <Blog isSlider={false} />
