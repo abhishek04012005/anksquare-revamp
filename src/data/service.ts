@@ -496,142 +496,275 @@ export const websiteTypes: SubService[] = [
                 { plan: 'Advanced LMS', price: '₹39,999', features: ['Unlimited Courses', 'Quizzes & Certificates', 'Admin Dashboard'] }
             ]
         }
+    },
+    {
+        "id": 5,
+        "title": "Interior Design Website",
+        "logo": "./service/educationwebsite.svg",
+        "features": [
+            "Project Showcase",
+            "Client Consultation Booking",
+            "Design Gallery"
+        ],
+        "path": "/interior",
+        "slug": "interior",
+        "details": {
+            "overview": "Our Interior Design Website service helps interior designers showcase their work, attract new clients, and manage consultations online.",
+            "benefits": [
+                { "title": "Portfolio Showcase", "description": "Display completed projects with images, videos, and design details." },
+                { "title": "Client Consultation", "description": "Allow visitors to book design consultations directly from the website." },
+                { "title": "Lead Generation", "description": "Capture inquiries from potential clients looking for interior design services." }
+            ],
+            "process": [
+                { "step": 1, "title": "Design Planning", "description": "Understand brand style, services, and target clients." },
+                { "step": 2, "title": "Website Development", "description": "Build gallery sections, service pages, and contact forms." },
+                { "step": 3, "title": "Launch & Optimization", "description": "Deploy the website with SEO optimization for better reach." }
+            ],
+            "faq": [
+                { "question": "Can I upload my own projects?", "answer": "Yes, we provide an admin panel to add or edit projects anytime." },
+                { "question": "Will the website be mobile friendly?", "answer": "Yes, the website will be fully responsive on all devices." }
+            ],
+            "pricing": [
+                { "plan": "Starter Interior Site", "price": "₹14,999", "features": ["Project Gallery", "Contact Form", "Responsive Design"] },
+                { "plan": "Professional Interior Site", "price": "₹34,999", "features": ["Unlimited Projects", "Booking System", "SEO Optimization"] }
+            ]
+        }
+    },
+    {
+        "id": 6,
+        "title": "Construction Website",
+        "logo": "./service/educationwebsite.svg",
+        "features": [
+            "Project Portfolio",
+            "Service Listings",
+            "Quote Request"
+        ],
+        "path": "/construction",
+        "slug": "construction",
+        "details": {
+            "overview": "Our Construction Website service helps builders and contractors showcase projects, highlight services, and generate leads online.",
+            "benefits": [
+                { "title": "Project Showcase", "description": "Display completed and ongoing construction projects with details." },
+                { "title": "Service Highlight", "description": "Promote services such as residential, commercial, and renovation work." },
+                { "title": "Quote Requests", "description": "Allow potential clients to request project quotes online." }
+            ],
+            "process": [
+                { "step": 1, "title": "Requirement Analysis", "description": "Understand construction services, projects, and company profile." },
+                { "step": 2, "title": "Website Development", "description": "Build service pages, project galleries, and inquiry forms." },
+                { "step": 3, "title": "Deployment", "description": "Launch the website with SEO and mobile optimization." }
+            ],
+            "faq": [
+                { "question": "Can I add new projects later?", "answer": "Yes, you can easily update and add projects from the admin dashboard." },
+                { "question": "Will my website appear on Google?", "answer": "Yes, we provide basic SEO optimization for better search visibility." }
+            ],
+            "pricing": [
+                { "plan": "Basic Construction Site", "price": "₹15,999", "features": ["Project Gallery", "Service Pages", "Contact Form"] },
+                { "plan": "Advanced Construction Site", "price": "₹36,999", "features": ["Unlimited Projects", "Quote Request System", "SEO Optimization"] }
+            ]
+        }
+    },
+    {
+        "id": 7,
+        "title": "Astrology Website",
+        "logo": "./service/educationwebsite.svg",
+        "features": [
+            "Horoscope Content",
+            "Online Consultation",
+            "Appointment Booking"
+        ],
+        "path": "/astrology",
+        "slug": "astrology",
+        "details": {
+            "overview": "Our Astrology Website service helps astrologers connect with clients, offer horoscope services, and manage online consultations.",
+            "benefits": [
+                { "title": "Daily Horoscope", "description": "Publish daily, weekly, or monthly horoscope content." },
+                { "title": "Online Consultation", "description": "Allow clients to book astrology consultations online." },
+                { "title": "Spiritual Branding", "description": "Create a professional online presence for astrology services." }
+            ],
+            "process": [
+                { "step": 1, "title": "Service Planning", "description": "Define astrology services, consultation types, and content." },
+                { "step": 2, "title": "Website Development", "description": "Build horoscope sections, booking system, and service pages." },
+                { "step": 3, "title": "Launch", "description": "Deploy the website and optimize it for search engines." }
+            ],
+            "faq": [
+                { "question": "Can clients book appointments online?", "answer": "Yes, we integrate an online appointment booking system." },
+                { "question": "Can I post daily horoscope updates?", "answer": "Yes, you can easily update horoscope posts through the admin panel." }
+            ],
+            "pricing": [
+                { "plan": "Basic Astrology Site", "price": "₹13,999", "features": ["Service Pages", "Contact Form", "Horoscope Blog"] },
+                { "plan": "Premium Astrology Site", "price": "₹32,999", "features": ["Online Booking", "Payment Integration", "SEO Optimization"] }
+            ]
+        }
+    },
+    {
+        "id": 8,
+        "title": "Portfolio Website",
+        "logo": "./service/educationwebsite.svg",
+        "features": [
+            "Project Showcase",
+            "Personal Branding",
+            "Contact & Resume"
+        ],
+        "path": "/portfolio",
+        "slug": "portfolio",
+        "details": {
+            "overview": "Our Portfolio Website service helps professionals showcase their work, skills, and achievements in a modern digital portfolio.",
+            "benefits": [
+                { "title": "Professional Branding", "description": "Create a strong personal brand with a modern website." },
+                { "title": "Project Showcase", "description": "Display your best projects, case studies, and achievements." },
+                { "title": "Career Opportunities", "description": "Attract clients or employers through an impressive online portfolio." }
+            ],
+            "process": [
+                { "step": 1, "title": "Profile Planning", "description": "Understand your profession, projects, and achievements." },
+                { "step": 2, "title": "Design & Development", "description": "Create a modern portfolio layout with project sections." },
+                { "step": 3, "title": "Launch", "description": "Publish the portfolio website and connect it with your domain." }
+            ],
+            "faq": [
+                { "question": "Can I update my projects later?", "answer": "Yes, you can easily add or update projects anytime." },
+                { "question": "Can I link my social media profiles?", "answer": "Yes, we integrate social media and contact links." }
+            ],
+            "pricing": [
+                { "plan": "Basic Portfolio", "price": "₹7,999", "features": ["Project Gallery", "About Section", "Contact Form"] },
+                { "plan": "Premium Portfolio", "price": "₹19,999", "features": ["Unlimited Projects", "Resume Download", "SEO Optimization"] }
+            ]
+        }
     }
+
 ]
 
 export const digitalMarketingTypes: SubService[] = [
-  {
-    id: 1,
-    title: 'Instagram Marketing',
-    logo: './service/instagram.png',
-    features: [
-      'Visual Content Strategy',
-      'Reels & Story Campaigns',
-      'Hashtag Optimization'
-    ],
-    path: '/instagram-marketing',
-    slug: 'instagram-marketing',
-    details: {
-      overview: 'Our Instagram Marketing service helps brands grow through engaging visuals, reels, and targeted campaigns that drive discovery and interaction.',
-      benefits: [
-        { title: 'Audience Engagement', description: 'Connect with followers through stories, reels, and interactive posts.' },
-        { title: 'Brand Visibility', description: 'Use trending hashtags and visual storytelling to boost reach.' },
-        { title: 'Lead Generation', description: 'Drive traffic to your website or product pages via bio links and swipe-ups.' }
-      ],
-      process: [
-        { step: 1, title: 'Profile Audit', description: 'Review your current Instagram presence and identify growth opportunities.' },
-        { step: 2, title: 'Content Planning', description: 'Design a calendar of posts, reels, and stories aligned with your goals.' },
-        { step: 3, title: 'Campaign Execution', description: 'Launch and monitor campaigns with performance tracking.' }
-      ],
-      faq: [
-        { question: 'Do you create reels?', answer: 'Yes, we design and edit reels tailored to your brand and audience.' },
-        { question: 'Can I track engagement?', answer: 'Absolutely. We provide weekly reports with insights on reach, likes, and clicks.' }
-      ],
-      pricing: [
-        { plan: 'Starter', price: '₹9,999', features: ['15 Posts', '5 Reels', 'Hashtag Strategy'] },
-        { plan: 'Growth', price: '₹19,999', features: ['30 Posts', '10 Reels', 'Story Highlights & Analytics'] }
-      ]
+    {
+        id: 1,
+        title: 'Instagram Marketing',
+        logo: './service/instagram.png',
+        features: [
+            'Visual Content Strategy',
+            'Reels & Story Campaigns',
+            'Hashtag Optimization'
+        ],
+        path: '/instagram-marketing',
+        slug: 'instagram-marketing',
+        details: {
+            overview: 'Our Instagram Marketing service helps brands grow through engaging visuals, reels, and targeted campaigns that drive discovery and interaction.',
+            benefits: [
+                { title: 'Audience Engagement', description: 'Connect with followers through stories, reels, and interactive posts.' },
+                { title: 'Brand Visibility', description: 'Use trending hashtags and visual storytelling to boost reach.' },
+                { title: 'Lead Generation', description: 'Drive traffic to your website or product pages via bio links and swipe-ups.' }
+            ],
+            process: [
+                { step: 1, title: 'Profile Audit', description: 'Review your current Instagram presence and identify growth opportunities.' },
+                { step: 2, title: 'Content Planning', description: 'Design a calendar of posts, reels, and stories aligned with your goals.' },
+                { step: 3, title: 'Campaign Execution', description: 'Launch and monitor campaigns with performance tracking.' }
+            ],
+            faq: [
+                { question: 'Do you create reels?', answer: 'Yes, we design and edit reels tailored to your brand and audience.' },
+                { question: 'Can I track engagement?', answer: 'Absolutely. We provide weekly reports with insights on reach, likes, and clicks.' }
+            ],
+            pricing: [
+                { plan: 'Starter', price: '₹9,999', features: ['15 Posts', '5 Reels', 'Hashtag Strategy'] },
+                { plan: 'Growth', price: '₹19,999', features: ['30 Posts', '10 Reels', 'Story Highlights & Analytics'] }
+            ]
+        }
+    },
+    {
+        id: 2,
+        title: 'Facebook Marketing',
+        logo: './service/facebook.png',
+        features: [
+            'Ad Campaigns',
+            'Page Optimization',
+            'Audience Targeting'
+        ],
+        path: '/facebook-marketing',
+        slug: 'facebook-marketing',
+        details: {
+            overview: 'Our Facebook Marketing service helps businesses reach targeted audiences through paid ads, optimized pages, and community engagement.',
+            benefits: [
+                { title: 'Targeted Reach', description: 'Run ads based on location, interests, and demographics.' },
+                { title: 'Page Growth', description: 'Optimize your business page for credibility and conversions.' },
+                { title: 'Lead Funnels', description: 'Use lead forms and messenger bots to capture inquiries.' }
+            ],
+            process: [
+                { step: 1, title: 'Audience Research', description: 'Define your ideal customer and ad targeting strategy.' },
+                { step: 2, title: 'Ad Setup & Design', description: 'Create compelling ad creatives and copy.' },
+                { step: 3, title: 'Monitoring & Optimization', description: 'Track performance and adjust campaigns for better ROI.' }
+            ],
+            faq: [
+                { question: 'Do you manage ad budgets?', answer: 'Yes, we help allocate and optimize your ad spend for maximum results.' },
+                { question: 'Can I run lead generation ads?', answer: 'Definitely. We specialize in Facebook Lead Ads and Messenger campaigns.' }
+            ],
+            pricing: [
+                { plan: 'Basic Ads', price: '₹12,999', features: ['2 Campaigns', 'Ad Creatives', 'Audience Setup'] },
+                { plan: 'Advanced Ads', price: '₹24,999', features: ['Multiple Campaigns', 'Retargeting', 'Performance Reports'] }
+            ]
+        }
+    },
+    {
+        id: 3,
+        title: 'Google Ads',
+        logo: './service/googleads.png',
+        features: [
+            'Professional Branding',
+            'Content Strategy',
+            'Connection Outreach'
+        ],
+        path: '/google-ads',
+        slug: 'google-ads',
+        details: {
+            overview: 'Our LinkedIn Marketing service helps professionals and B2B brands build authority, grow networks, and generate qualified leads.',
+            benefits: [
+                { title: 'Thought Leadership', description: 'Share valuable insights and build credibility in your industry.' },
+                { title: 'Lead Generation', description: 'Connect with decision-makers through targeted outreach and messaging.' },
+                { title: 'Profile Optimization', description: 'Enhance your company page and personal profile for visibility.' }
+            ],
+            process: [
+                { step: 1, title: 'Profile Audit', description: 'Review and optimize your LinkedIn presence.' },
+                { step: 2, title: 'Content Planning', description: 'Create posts, articles, and engagement strategies.' },
+                { step: 3, title: 'Outreach & Reporting', description: 'Connect with prospects and track engagement.' }
+            ],
+            faq: [
+                { question: 'Do you write LinkedIn posts?', answer: 'Yes, we craft professional content tailored to your audience.' },
+                { question: 'Can I use LinkedIn for B2B leads?', answer: 'Absolutely. It’s one of the best platforms for B2B outreach.' }
+            ],
+            pricing: [
+                { plan: 'Starter', price: '₹11,999', features: ['Profile Setup', '10 Posts', 'Connection Strategy'] },
+                { plan: 'Pro Network', price: '₹22,999', features: ['20 Posts', 'Outreach Campaigns', 'Lead Tracking'] }
+            ]
+        }
+    },
+    {
+        id: 4,
+        title: 'YouTube Marketing',
+        logo: './service/youtube.png',
+        features: [
+            'Video Strategy',
+            'Channel Optimization',
+            'Ad Campaigns'
+        ],
+        path: '/youtube-marketing',
+        slug: 'youtube-marketing',
+        details: {
+            overview: 'Our YouTube Marketing service helps brands grow through engaging video content, optimized channels, and targeted ad campaigns.',
+            benefits: [
+                { title: 'Video Visibility', description: 'Boost views and subscribers with SEO-friendly titles and thumbnails.' },
+                { title: 'Audience Retention', description: 'Create content that keeps viewers engaged and coming back.' },
+                { title: 'Monetization Support', description: 'Help you reach monetization thresholds and optimize ad revenue.' }
+            ],
+            process: [
+                { step: 1, title: 'Channel Audit', description: 'Evaluate your current content and branding.' },
+                { step: 2, title: 'Content Planning', description: 'Design a video calendar with scripts and visuals.' },
+                { step: 3, title: 'Promotion & Ads', description: 'Run YouTube ads and cross-promote content.' }
+            ],
+            faq: [
+                { question: 'Do you edit videos?', answer: 'Yes, we offer basic editing and thumbnail design service.' },
+                { question: 'Can I run YouTube ads?', answer: 'Yes, we manage YouTube ad campaigns for reach and conversions.' }
+            ],
+            pricing: [
+                { plan: 'Starter Channel', price: '₹14,999', features: ['5 Videos', 'Channel Setup', 'SEO Optimization'] },
+                { plan: 'Growth Channel', price: '₹29,999', features: ['10+ Videos', 'Ad Campaigns', 'Analytics Reports'] }
+            ]
+        }
     }
-  },
-  {
-    id: 2,
-    title: 'Facebook Marketing',
-    logo: './service/facebook.png',
-    features: [
-      'Ad Campaigns',
-      'Page Optimization',
-      'Audience Targeting'
-    ],
-    path: '/facebook-marketing',
-    slug: 'facebook-marketing',
-    details: {
-      overview: 'Our Facebook Marketing service helps businesses reach targeted audiences through paid ads, optimized pages, and community engagement.',
-      benefits: [
-        { title: 'Targeted Reach', description: 'Run ads based on location, interests, and demographics.' },
-        { title: 'Page Growth', description: 'Optimize your business page for credibility and conversions.' },
-        { title: 'Lead Funnels', description: 'Use lead forms and messenger bots to capture inquiries.' }
-      ],
-      process: [
-        { step: 1, title: 'Audience Research', description: 'Define your ideal customer and ad targeting strategy.' },
-        { step: 2, title: 'Ad Setup & Design', description: 'Create compelling ad creatives and copy.' },
-        { step: 3, title: 'Monitoring & Optimization', description: 'Track performance and adjust campaigns for better ROI.' }
-      ],
-      faq: [
-        { question: 'Do you manage ad budgets?', answer: 'Yes, we help allocate and optimize your ad spend for maximum results.' },
-        { question: 'Can I run lead generation ads?', answer: 'Definitely. We specialize in Facebook Lead Ads and Messenger campaigns.' }
-      ],
-      pricing: [
-        { plan: 'Basic Ads', price: '₹12,999', features: ['2 Campaigns', 'Ad Creatives', 'Audience Setup'] },
-        { plan: 'Advanced Ads', price: '₹24,999', features: ['Multiple Campaigns', 'Retargeting', 'Performance Reports'] }
-      ]
-    }
-  },
-  {
-    id: 3,
-    title: 'Google Ads',
-    logo: './service/googleads.png',
-    features: [
-      'Professional Branding',
-      'Content Strategy',
-      'Connection Outreach'
-    ],
-    path: '/google-ads',
-    slug: 'google-ads',
-    details: {
-      overview: 'Our LinkedIn Marketing service helps professionals and B2B brands build authority, grow networks, and generate qualified leads.',
-      benefits: [
-        { title: 'Thought Leadership', description: 'Share valuable insights and build credibility in your industry.' },
-        { title: 'Lead Generation', description: 'Connect with decision-makers through targeted outreach and messaging.' },
-        { title: 'Profile Optimization', description: 'Enhance your company page and personal profile for visibility.' }
-      ],
-      process: [
-        { step: 1, title: 'Profile Audit', description: 'Review and optimize your LinkedIn presence.' },
-        { step: 2, title: 'Content Planning', description: 'Create posts, articles, and engagement strategies.' },
-        { step: 3, title: 'Outreach & Reporting', description: 'Connect with prospects and track engagement.' }
-      ],
-      faq: [
-        { question: 'Do you write LinkedIn posts?', answer: 'Yes, we craft professional content tailored to your audience.' },
-        { question: 'Can I use LinkedIn for B2B leads?', answer: 'Absolutely. It’s one of the best platforms for B2B outreach.' }
-      ],
-      pricing: [
-        { plan: 'Starter', price: '₹11,999', features: ['Profile Setup', '10 Posts', 'Connection Strategy'] },
-        { plan: 'Pro Network', price: '₹22,999', features: ['20 Posts', 'Outreach Campaigns', 'Lead Tracking'] }
-      ]
-    }
-  },
-  {
-    id: 4,
-    title: 'YouTube Marketing',
-    logo: './service/youtube.png',
-    features: [
-      'Video Strategy',
-      'Channel Optimization',
-      'Ad Campaigns'
-    ],
-    path: '/youtube-marketing',
-    slug: 'youtube-marketing',
-    details: {
-      overview: 'Our YouTube Marketing service helps brands grow through engaging video content, optimized channels, and targeted ad campaigns.',
-      benefits: [
-        { title: 'Video Visibility', description: 'Boost views and subscribers with SEO-friendly titles and thumbnails.' },
-        { title: 'Audience Retention', description: 'Create content that keeps viewers engaged and coming back.' },
-        { title: 'Monetization Support', description: 'Help you reach monetization thresholds and optimize ad revenue.' }
-      ],
-      process: [
-        { step: 1, title: 'Channel Audit', description: 'Evaluate your current content and branding.' },
-        { step: 2, title: 'Content Planning', description: 'Design a video calendar with scripts and visuals.' },
-        { step: 3, title: 'Promotion & Ads', description: 'Run YouTube ads and cross-promote content.' }
-      ],
-      faq: [
-        { question: 'Do you edit videos?', answer: 'Yes, we offer basic editing and thumbnail design service.' },
-        { question: 'Can I run YouTube ads?', answer: 'Yes, we manage YouTube ad campaigns for reach and conversions.' }
-      ],
-      pricing: [
-        { plan: 'Starter Channel', price: '₹14,999', features: ['5 Videos', 'Channel Setup', 'SEO Optimization'] },
-        { plan: 'Growth Channel', price: '₹29,999', features: ['10+ Videos', 'Ad Campaigns', 'Analytics Reports'] }
-      ]
-    }
-  }
 ];
 
 
