@@ -147,6 +147,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
       <EnquiryModal
         open={enquiryModalOpen}
         onClose={() => setEnquiryModalOpen(false)}
+        selectedService={service.title}
       />
     </>
   )

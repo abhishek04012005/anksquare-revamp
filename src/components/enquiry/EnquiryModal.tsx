@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './EnquiryModal.module.css';
 import { service } from '@/data/details';
 import { supabase } from '@/lib/supabase';
@@ -10,69 +10,98 @@ import Button from '@/components/button/Button';
 interface EnquiryModalProps {
   open: boolean;
   onClose: () => void;
+  selectedService?: string;
 }
 
-export default function EnquiryModal({ open, onClose }: EnquiryModalProps) {
-  const [name, setName] = useState('');
-  const [mobile, setMobile] = useState('');
-  const [serviceType, setServiceType] = useState('');
-  const [notificationOpen, setNotificationOpen] = useState(false);
-  const [notificationType, setNotificationType] = useState<'success'|'error'|'warning'>('success');
-  const [notificationMessage, setNotificationMessage] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const handleMobileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.replace(/\D/g, '').slice(0, 10);
-    setMobile(value);
-  };
+interface FormData {
+  name: string;
+  phone: string;
+  service: string;
+}
+
+interface FormErrors {
+  name: string;
+  phone: string;
+}
+
+export default function EnquiryModal({ open, onClose, selectedService }: EnquiryModalProps) {
+  const [formData, setFormData] = useState<FormData>({
+    name: '',
+    phone: '',
+    service: selectedService || '',
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
+  const [errors, setErrors] = useState<FormErrors>({
+    name: '',
+    phone: ''
+  })
+
+  // Lock body scroll when popup is open
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : 'unset'
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [open])
+
+  // Update service if selectedService changes
+  useEffect(() => {
+    if (selectedService) {
+      setFormData(prev => ({ ...prev, service: selectedService }))
+    }
+  }, [selectedService])
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    if (!name || !mobile || !serviceType) {
-      setNotificationType('warning');
-      setNotificationMessage('All fields are required.');
-      setNotificationOpen(true);
-      return;
+    const nameValid = /^[A-Za-z\s]+$/.test(formData.name.trim())
+    const phoneValid = /^[6-9]\d{9}$/.test(formData.phone)
+
+    if (!nameValid || !phoneValid) {
+      setErrors({
+        name: nameValid ? '' : 'Please enter a valid name',
+        phone: phoneValid ? '' : 'Please enter a valid 10-digit number'
+      })
+      return
     }
 
-    if (mobile.length !== 10) {
-      setNotificationType('warning');
-      setNotificationMessage('Please enter a valid 10-digit mobile number.');
-      setNotificationOpen(true);
-      return;
-    }
+    setIsSubmitting(true)
 
-    setIsSubmitting(true);
+    try {
+      const { error } = await supabase
+        .from('quotes')
+        .insert([
+          {
+            name: formData.name.trim(),
+            phone: formData.phone.trim(),
+            service: formData.service,
+            status: 'pending'
+          }
+        ])
 
-    const { error: supaErr } = await supabase.from('quotes').insert([
-      {
-        name,
-        mobile,
-        service_type: serviceType,
-        submitted_at: new Date().toISOString(),
-      },
-    ]);
+      if (error) throw error
 
-    setIsSubmitting(false);
+      setSubmitted(true)
 
-    if (supaErr) {
-      setNotificationType('error');
-      setNotificationMessage('Submission failed, please try again later.');
-      setNotificationOpen(true);
-      console.error(supaErr);
-    } else {
-      setNotificationType('success');
-      setNotificationMessage('Your enquiry has been submitted successfully.');
-      setNotificationOpen(true);
-      setName('');
-      setMobile('');
-      setServiceType('');
-      // Close the enquiry modal after successful submission
+      // Auto-close after 2 seconds
       setTimeout(() => {
-        onClose();
-      }, 2000); // Close after 2 seconds to show success message
+        onClose()
+        setSubmitted(false)
+        setFormData({
+          name: '',
+          phone: '',
+          service: selectedService || '',
+        })
+        setErrors({ name: '', phone: '' })
+      }, 2000)
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      alert('Something went wrong. Please try again.')
+    } finally {
+      setIsSubmitting(false)
     }
-  };
+  }
 
   if (!open) return null;
 
@@ -82,60 +111,64 @@ export default function EnquiryModal({ open, onClose }: EnquiryModalProps) {
         <div className={styles.modalContainer} onClick={e => e.stopPropagation()}>
           <h2 className={styles.modalHeader}>Enquiry Form</h2>
           <div style={{ padding: '24px' }}>
-            <form onSubmit={handleSubmit}>
-              <div className={styles.formGroup}>
-                <label htmlFor="name">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  value={name}
-                  onChange={e => setName(e.target.value)}
-                />
+            {submitted ? (
+              <div className={styles.successMessage}>
+                <p>Thank you! Your enquiry has been submitted successfully.</p>
               </div>
-              <div className={styles.formGroup}>
-                <label htmlFor="mobile">Mobile Number</label>
-                <input
-                  type="tel"
-                  id="mobile"
-                  value={mobile}
-                  onChange={handleMobileChange}
-                  placeholder="Enter 10-digit mobile number"
-                  maxLength={10}
-                />
-              </div>
-              <div className={styles.formGroup}>
-                <label htmlFor="service">Service Type</label>
-                <select
-                  id="service"
-                  value={serviceType}
-                  onChange={e => setServiceType(e.target.value)}
-                >
-                  <option value="">-- choose --</option>
-                  {Object.values(service).map(s => (
-                    <option key={s.title} value={s.title}>
-                      {s.title}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className={styles.buttonGroup}>
-                <Button variant="secondary" onClick={onClose}>
-                  Cancel
-                </Button>
-                <Button variant="primary" type="submit" disabled={isSubmitting}>
-                  {isSubmitting ? 'Submitting...' : 'Submit'}
-                </Button>
-              </div>
-            </form>
+            ) : (
+              <form onSubmit={handleSubmit}>
+                <div className={styles.formGroup}>
+                  <label htmlFor="name">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    value={formData.name}
+                    onChange={e => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                    className={errors.name ? styles.error : ''}
+                  />
+                  {errors.name && <span className={styles.errorText}>{errors.name}</span>}
+                </div>
+                <div className={styles.formGroup}>
+                  <label htmlFor="phone">Mobile Number</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    value={formData.phone}
+                    onChange={e => setFormData(prev => ({ ...prev, phone: e.target.value.replace(/\D/g, '').slice(0, 10) }))}
+                    placeholder="Enter 10-digit mobile number"
+                    maxLength={10}
+                    className={errors.phone ? styles.error : ''}
+                  />
+                  {errors.phone && <span className={styles.errorText}>{errors.phone}</span>}
+                </div>
+                <div className={styles.formGroup}>
+                  <label htmlFor="service">Service Type</label>
+                  <select
+                    id="service"
+                    value={formData.service}
+                    onChange={e => setFormData(prev => ({ ...prev, service: e.target.value }))}
+                  >
+                    <option value="">-- choose --</option>
+                    {Object.values(service).map(s => (
+                      <option key={s.title} value={s.title}>
+                        {s.title}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div className={styles.buttonGroup}>
+                  <Button variant="secondary" onClick={onClose}>
+                    Cancel
+                  </Button>
+                  <Button variant="primary" type="submit" disabled={isSubmitting}>
+                    {isSubmitting ? 'Submitting...' : 'Submit'}
+                  </Button>
+                </div>
+              </form>
+            )}
           </div>
         </div>
       </div>
-      <NotificationModal
-        open={notificationOpen}
-        type={notificationType}
-        message={notificationMessage}
-        onClose={() => setNotificationOpen(false)}
-      />
     </>
   );
 }

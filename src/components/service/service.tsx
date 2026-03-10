@@ -59,6 +59,7 @@ const MainService = ({ service, isReversed }: MainServiceComponentProps) => {
             <EnquiryModal
                 open={showQuote}
                 onClose={() => setShowQuote(false)}
+                selectedService={service.title}
             />
         </div>
     )

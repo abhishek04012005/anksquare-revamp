@@ -234,6 +234,7 @@ export default function CityServiceClient({ service, city, citySlug }: CityServi
       <EnquiryModal
         open={enquiryModalOpen}
         onClose={() => setEnquiryModalOpen(false)}
+        selectedService={service.title}
       />
     </>
   )

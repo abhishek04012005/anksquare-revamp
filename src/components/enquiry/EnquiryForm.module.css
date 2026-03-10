@@ -167,3 +167,23 @@
   outline: 2px solid var(--primary-color);
   outline-offset: 2px;
 }
+
+.input.error,
+.select.error {
+  border-color: #ef4444;
+}
+
+.errorText {
+  color: #ef4444;
+  font-size: 0.8rem;
+  margin-top: 4px;
+  display: block;
+}
+
+.successMessage {
+  text-align: center;
+  padding: 20px;
+  color: #22c55e;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
