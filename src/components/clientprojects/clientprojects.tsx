@@ -9,6 +9,8 @@ import ArticleIcon from '@mui/icons-material/Article'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import { clients, Client } from '@/data/client'
 import styles from './clientprojects.module.css'
+import EnquiryModal from '@/components/enquiry/EnquiryModal'
+import Button from '@/components/button/Button'
 
 
 interface ClientProjectViewProps {
@@ -27,6 +29,7 @@ const workTypeIcons = {
 
 const ClientProjectView: FC<ClientProjectViewProps> = ({ slug }) => {
   const [selectedType, setSelectedType] = useState<string | null>(null)
+  const [isEnquiryModalOpen, setIsEnquiryModalOpen] = useState(false)
 
 
   const client = useMemo<Client | undefined>(
@@ -159,7 +162,18 @@ const ClientProjectView: FC<ClientProjectViewProps> = ({ slug }) => {
             </motion.div>
           ))}
         </div>
+
+        <div className={styles.contactSection}>
+          <Button variant="secondary" onClick={() => setIsEnquiryModalOpen(true)}>
+            Contact Us
+          </Button>
+        </div>
       </div>
+
+      <EnquiryModal
+        open={isEnquiryModalOpen}
+        onClose={() => setIsEnquiryModalOpen(false)}
+      />
     </section>
   )
 }

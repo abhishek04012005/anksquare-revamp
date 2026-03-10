@@ -280,3 +280,9 @@
     background: rgba(0, 0, 0, 0.3);
   }
 }
+
+.contactSection {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 2rem 0;
+}
