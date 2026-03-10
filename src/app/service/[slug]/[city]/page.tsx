@@ -63,56 +63,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export function generateStaticParams() {
-  const params: Array<{ slug: string; city: string }> = []
-
-  // Generate params for all main services with all cities
-  mainServices.forEach(mainService => {
-    const slug = mainService.path.replace('/service/', '')
-    cities.forEach(city => {
-      params.push({
-        slug,
-        city: getCitySlug(city.name)
-      })
-    })
-  })
-
-  // Generate params for popular marketplace services
-  const popularMarketplaceServices = ['amazon', 'flipkart', 'meesho', 'shopsy']
-  marketplaceServices
-    .filter(service => popularMarketplaceServices.some(popular => 
-      service.slug.toLowerCase().includes(popular.toLowerCase())
-    ))
-    .forEach(service => {
-      cities.forEach(city => {
-        params.push({
-          slug: service.slug,
-          city: getCitySlug(city.name)
-        })
-      })
-    })
-
-  // Limit to top 50 cities for website and digital marketing to keep build time reasonable
-  const topCities = cities.slice(0, 50)
-  
-  websiteTypes.forEach(service => {
-    topCities.forEach(city => {
-      params.push({
-        slug: service.slug,
-        city: getCitySlug(city.name)
-      })
-    })
-  })
-
-  digitalMarketingTypes.forEach(service => {
-    topCities.forEach(city => {
-      params.push({
-        slug: service.slug,
-        city: getCitySlug(city.name)
-      })
-    })
-  })
-
-  return params
+  // Return empty - all city service pages will be dynamic
+  return []
 }
 
 export const dynamicParams = true

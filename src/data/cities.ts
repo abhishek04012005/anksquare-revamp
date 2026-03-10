@@ -2758,6 +2758,9 @@ export const cities = [
     { "name": "Sundsvall", "state": "Vasternorrland County" },
     { "name": "Umea", "state": "Vasterbotten County" },
     { "name": "Lulea", "state": "Norrbotten County" },
+    {"name": "California", "state": "California" },
+    {"name": "New York", "state": "New York" },
+    {"name": "Texas", "state": "Texas" },
 
     //united arab emirates
     { "name": "Dubai", "state": "Dubai" },

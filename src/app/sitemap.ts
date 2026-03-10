@@ -67,24 +67,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  // City service pages (dynamic)
+  // City service pages (dynamic for all services)
   const cityServicePages: MetadataRoute.Sitemap = []
-  const serviceSlugs = [
-    'merchant-management',
-    'web-development',
-    'digital-marketing'
-  ]
-
-  serviceSlugs.forEach(serviceSlug => {
-    cities.forEach(city => {
-      cityServicePages.push({
-        url: `${baseUrl}/service/${serviceSlug}/${getCitySlug(city.name)}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly' as const,
-        priority: 0.6,
-      })
-    })
-  })
+  // Removed: City pages are now dynamic routes - will be rendered on-demand
 
   // Client project pages
   const clientPages = [

@@ -38,12 +38,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export function generateStaticParams() {
-  return clients.map((client) => ({
-    slug: client.slug,
-  }))
+  // Return empty - all client project pages will be dynamic
+  return []
 }
 
-export const dynamicParams = false
+export const dynamicParams = true
 
 export default async function ClientProjectPage({ params }: Props) {
   const resolvedParams = await params
