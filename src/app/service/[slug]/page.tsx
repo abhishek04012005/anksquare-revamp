@@ -59,20 +59,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export function generateStaticParams() {
-  const mainServiceSlugs = mainServices.map(service => ({
-    slug: service.path.replace('/service/', '')
-  }))
-  
-  const subServiceSlugs = allServices
-    .filter(service => !mainServices.some(main => main.path.replace('/service/', '') === service.slug))
-    .map((service) => ({
-      slug: service.slug,
-    }))
-  
-  return [...mainServiceSlugs, ...subServiceSlugs]
+  // Return empty array for dynamic rendering
+  return []
 }
 
-export const dynamicParams = false
+export const dynamicParams = true
 
 export default async function ServiceDetailPage({ params }: Props) {
   const resolvedParams = await params
