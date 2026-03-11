@@ -39,12 +39,12 @@ export const clients: Client[] = [
         images: ["/sharma-interiors/website.png"],
         url: 'https://abhishek04012005.github.io/interiorssharma/',
       },
-      {
-        type: 'visitingCard',
-        title: 'Professional Business Card & Stationery Design',
-        description: 'Custom-designed business cards with premium finishes, incorporating the brand\'s visual identity. Features modern typography, elegant color scheme, and professional layout. Print-ready design with attention to every detail.',
-        images: ["/sharma-interiors/visitingcard.png"],
-      },
+      // {
+      //   type: 'visitingCard',
+      //   title: 'Professional Business Card & Stationery Design',
+      //   description: 'Custom-designed business cards with premium finishes, incorporating the brand\'s visual identity. Features modern typography, elegant color scheme, and professional layout. Print-ready design with attention to every detail.',
+      //   images: ["/sharma-interiors/visitingcard.png"],
+      // },
       {
         type: 'profile',
         title: 'Comprehensive Company Profile Presentation',
