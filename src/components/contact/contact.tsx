@@ -7,6 +7,8 @@ import NotificationModal from '@/components/notification/NotificationModal'
 import { contact } from '@/data/details'
 import { supabase } from '@/lib/supabase'
 
+const fullAddress = `${contact.address.street.replace(/,\s*$/, '')}, ${contact.address.city}, ${contact.address.state} ${contact.address.zipCode}, ${contact.address.country}`
+
 const contactInfo = [
     {
         icon: <FiMail />,
@@ -23,8 +25,8 @@ const contactInfo = [
     {
         icon: <FiMapPin />,
         title: 'Visit Us',
-        content: `${contact.address.city}, ${contact.address.state}, ${contact.address.country}`,
-        link: 'https://maps.google.com'
+        content: fullAddress,
+        link: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`
     }
 ]
 

@@ -1,5 +1,4 @@
 'use client'
-import { useState, useEffect } from 'react'
 import styles from './hero.module.css'
 import Button from '@/components/button/Button'
 import HeroSvg from "../../svg/HeroSVG/HeroSVG"
@@ -41,12 +40,6 @@ export const heroCards: HeroCard[] = [
 
 
 const Hero = () => {
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    setIsVisible(true)
-  }, [])
-
   return (
     <section className={styles.hero} aria-labelledby="hero-title" itemScope itemType="https://schema.org/WebPage">
       <div className={styles.container}>

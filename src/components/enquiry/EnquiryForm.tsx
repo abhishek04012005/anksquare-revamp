@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { service } from '@/data/details';
 import { supabase } from '@/lib/supabase';
 import Button from '@/components/button/Button';
@@ -17,8 +17,15 @@ interface FormErrors {
   phone: string;
 }
 
-export default function EnquiryForm() {
-  const defaultService = service.websiteDevelopment.title
+interface EnquiryFormProps {
+  selectedService?: string;
+}
+
+export default function EnquiryForm({ selectedService }: EnquiryFormProps) {
+  const availableServices = Object.values(service).map(item => item.title)
+  const defaultService = availableServices.includes(selectedService || '')
+    ? (selectedService as string)
+    : service.websiteDevelopment.title
 
   const [formData, setFormData] = useState<FormData>({
     name: '',
@@ -31,6 +38,10 @@ export default function EnquiryForm() {
     name: '',
     phone: ''
   })
+
+  useEffect(() => {
+    setFormData(prev => ({ ...prev, service: defaultService }))
+  }, [defaultService])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()

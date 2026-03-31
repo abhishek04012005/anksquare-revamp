@@ -126,10 +126,14 @@
 
 .buttonGroup {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
   margin-top: 24px;
+}
+
+.buttonGroup > * {
+  width: 100%;
 }
 
 /* mobile adjustments */

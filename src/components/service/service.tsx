@@ -1,9 +1,8 @@
 'use client'
-import { useState, FC } from 'react'
+import { FC } from 'react'
 import Image from 'next/image'
 import styles from './service.module.css'
 import Button from '../../components/button/Button'
-import EnquiryModal from '../enquiry/EnquiryModal'
 import { mainServices, marketplaceServices, websiteTypes, digitalMarketingTypes, MainServiceProps, SubService } from '../../data/service'
 import { StaticImageData } from 'next/image'
 
@@ -15,8 +14,6 @@ interface MainServiceComponentProps {
 }
 
 const MainService = ({ service, isReversed }: MainServiceComponentProps) => {
-    const [showQuote, setShowQuote] = useState(false)
-
     return (
         <div className={`${styles.mainService} ${isReversed ? styles.reversed : ''}`}>
             <div
@@ -41,15 +38,9 @@ const MainService = ({ service, isReversed }: MainServiceComponentProps) => {
                 </ul>
                 <div className={styles.mainButtons}>
                     <Button href={service.path} variant="primary">View More</Button>
-                    <Button onClick={() => setShowQuote(true)} variant="secondary">Get Quote</Button>
+                    <Button href={`/enquiry?service=${encodeURIComponent(service.title)}`} variant="secondary">Enquiry Now</Button>
                 </div>
             </div>
-
-            <EnquiryModal
-                open={showQuote}
-                onClose={() => setShowQuote(false)}
-                selectedService={service.title}
-            />
         </div>
     )
 }

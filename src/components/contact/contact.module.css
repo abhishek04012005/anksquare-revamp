@@ -48,7 +48,7 @@
 
 .infoCard {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
   padding: 1.5rem;
   background-color: var(--card-background);
@@ -84,6 +84,8 @@
 .infoContent p {
   font-size: 0.95rem;
   color: var(--text-secondary);
+  line-height: 1.6;
+  word-break: break-word;
 }
 
 .form {

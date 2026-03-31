@@ -48,7 +48,7 @@ const Footer = () => {
                             </div>
                             <div className={styles.contactItem}>
                                 <FiMapPin />
-                                <span>{contact.address.street}, {contact.address.city}, {contact.address.state}, {contact.address.country} - {contact.address.zipCode}</span>
+                                <span>{contact.address.street} {contact.address.city}, {contact.address.state}, {contact.address.country} - {contact.address.zipCode}</span>
                             </div>
                         </div>
                     </div>
