@@ -71,8 +71,8 @@ export const details = {
     youtube: 'https://www.youtube.com/@anksquare',
     website: 'https://anksquare.com',
     email: 'contact@anksquare.com',
-    phone: '+91-9517973153',
-    whatsapp: '919517973153',
+    phone: '+91-9939337638',
+    whatsapp: '919939337638',
   },
   // Contact Information
   contact: {

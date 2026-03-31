@@ -449,8 +449,4 @@
     white-space: nowrap;
     flex-shrink: 0;
   }
-
-  .projectImageSrc {
-    height: 120px;
-  }
 }

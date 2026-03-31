@@ -133,10 +133,10 @@ const ProjectsClient: React.FC = () => {
                         <Image
                           src={resolveClientAsset(project.images[0])}
                           alt={project.title}
-                          width={400}
-                          height={250}
+                          fill
                           className={styles.projectImageSrc}
                           priority={false}
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                       </div>
                     )}
