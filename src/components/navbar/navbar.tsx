@@ -41,7 +41,6 @@ export default function Navbar() {
                         </div>
                     </Link>
 
-                    {/* Mobile Toggle */}
                     <button
                         className={`${styles.menuToggle} ${isMenuOpen ? styles.active : ''}`}
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
