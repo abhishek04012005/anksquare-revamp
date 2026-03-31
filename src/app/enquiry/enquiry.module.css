@@ -5,6 +5,19 @@
   padding-top: 6rem;
 }
 
+.pageIntro {
+  max-width: 900px;
+  margin: 0 auto 1rem;
+}
+
+.pageIntroText {
+  max-width: 760px;
+  margin: -1.5rem auto 0;
+  text-align: center;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
 .contentGrid {
   display: grid;
   grid-template-columns: 1fr;
@@ -98,10 +111,17 @@
 }
 
 .serviceCard h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 0.75rem;
+}
+
+.serviceIcon {
+  font-size: 1.25rem;
 }
 
 .serviceCard p {
@@ -166,6 +186,10 @@
 
   .contentGrid {
     gap: 2rem;
+  }
+
+  .pageIntroText {
+    margin-top: -1rem;
   }
 
   .sectionHeading {

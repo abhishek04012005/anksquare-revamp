@@ -10,7 +10,7 @@ import {
 } from 'react-icons/fa';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperType } from 'swiper';
-import { Navigation, Autoplay } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import styles from './testimonial.module.css';
@@ -52,18 +52,12 @@ const Testimonial: React.FC = () => {
                     </button>
 
                     <Swiper
-                        modules={[Navigation, Autoplay]}
+                        modules={[Navigation]}
                         spaceBetween={30}
                         slidesPerView={1}
-                        loop
-                        speed={1000}
+                        speed={0}
                         onSwiper={(swiper) => {
                             swiperRef.current = swiper;
-                        }}
-                        autoplay={{
-                            delay: 3000,
-                            disableOnInteraction: false,
-                            pauseOnMouseEnter: true
                         }}
                         breakpoints={{
                             640: { slidesPerView: 2, spaceBetween: 20 },

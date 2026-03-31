@@ -1,6 +1,5 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import { Phone, Sms, WhatsApp, Check, Archive, Search, Filter, Inbox, Close } from '@mui/icons-material'
 import { supabase } from '@/lib/supabase'
 import styles from './ContactDashboard.module.css'
@@ -212,21 +211,15 @@ const ContactDashboard = () => {
                 </div>
             </div>
 
-            <AnimatePresence>
+            
                 {selectedContact && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
+                    <div
                         className={styles.modal}
                         onClick={() => setSelectedContact(null)}
                     >
-                        <motion.div
+                        <div
                             className={styles.modalContent}
                             onClick={(e) => e.stopPropagation()}
-                            initial={{ y: 50, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            exit={{ y: 50, opacity: 0 }}
                         >
                             <button
                                 className={styles.closeModal}
@@ -244,10 +237,10 @@ const ContactDashboard = () => {
                             <div className={styles.messageContent}>
                                 Message: {selectedContact.message}
                             </div>
-                        </motion.div>
-                    </motion.div>
+                        </div>
+                    </div>
                 )}
-            </AnimatePresence>
+            
         </div>
     )
 }

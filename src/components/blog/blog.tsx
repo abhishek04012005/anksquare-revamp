@@ -2,10 +2,9 @@
 import React, { useRef } from 'react';
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import type { Swiper as SwiperType } from 'swiper';
-import { Navigation, Autoplay } from 'swiper/modules'
+import { Navigation } from 'swiper/modules'
 import { FiClock, FiUser } from 'react-icons/fi'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 import styles from './blog.module.css'
@@ -22,10 +21,7 @@ interface BlogProps {
 
 const BlogCard = ({ post }: { post: BlogPost }) => {
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+        <div
             className={styles.blogCard}
         >
             <Link href={`/blog/${post.slug}`} className={styles.imageWrapper}>
@@ -59,7 +55,7 @@ const BlogCard = ({ post }: { post: BlogPost }) => {
                     <FaChevronRight className={styles.arrow} />
                 </Button>
             </div>
-        </motion.div>
+        </div>
     )
 }
 
@@ -81,18 +77,12 @@ const Blog: React.FC<BlogProps> = ({ isSlider = true }) => {
                 {isSlider ? (
                     <div className={styles.sliderContainer}>
                         <Swiper
-                            modules={[Navigation, Autoplay]}
+                            modules={[Navigation]}
                             spaceBetween={30}
                             slidesPerView={1}
-                            loop
-                            speed={1000}
+                            speed={0}
                             onSwiper={(swiper) => {
                                 swiperRef.current = swiper;
-                            }}
-                            autoplay={{
-                                delay: 3000,
-                                disableOnInteraction: false,
-                                pauseOnMouseEnter: true
                             }}
                             breakpoints={{
                                 640: { slidesPerView: 2, spaceBetween: 20 },

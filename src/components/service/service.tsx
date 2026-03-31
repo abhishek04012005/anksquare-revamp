@@ -1,7 +1,6 @@
 'use client'
 import { useState, FC } from 'react'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
 import styles from './service.module.css'
 import Button from '../../components/button/Button'
 import EnquiryModal from '../enquiry/EnquiryModal'
@@ -20,41 +19,31 @@ const MainService = ({ service, isReversed }: MainServiceComponentProps) => {
 
     return (
         <div className={`${styles.mainService} ${isReversed ? styles.reversed : ''}`}>
-            <motion.div
+            <div
                 className={styles.imageSection}
-                initial={{ opacity: 0, x: isReversed ? 50 : -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
             >
                 <service.image />
-            </motion.div>
+            </div>
 
-            <motion.div
+            <div
                 className={styles.contentSection}
-                initial={{ opacity: 0, x: isReversed ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
             >
                 <h2 className={styles.mainTitle}>{service.title}</h2>
                 <p className={styles.mainDescription}>{service.description}</p>
                 <ul className={styles.mainFeatures}>
                     {service.features.map((feature, index) => (
-                        <motion.li
+                        <li
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
                         >
                             {feature}
-                        </motion.li>
+                        </li>
                     ))}
                 </ul>
                 <div className={styles.mainButtons}>
                     <Button href={service.path} variant="primary">View More</Button>
                     <Button onClick={() => setShowQuote(true)} variant="secondary">Get Quote</Button>
                 </div>
-            </motion.div>
+            </div>
 
             <EnquiryModal
                 open={showQuote}
@@ -79,12 +68,8 @@ const SubServiceCard = ({ service }: { service: SubService }) => {
     }
 
     return (
-        <motion.div
+        <div
             className={styles.subCard}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            whileHover={{ y: -5 }}
         >
             <div className={styles.logoContainer}>
                 <Image
@@ -104,7 +89,7 @@ const SubServiceCard = ({ service }: { service: SubService }) => {
             <Button href={`/service/${service.slug}`} variant="primary" className={styles.viewDetails}>
                 View Details
             </Button>
-        </motion.div>
+        </div>
     )
 }
 const Services = () => {

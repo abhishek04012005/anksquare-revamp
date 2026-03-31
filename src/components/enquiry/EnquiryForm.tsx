@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { service } from '@/data/details';
 import { supabase } from '@/lib/supabase';
-import NotificationModal from '@/components/notification/NotificationModal';
 import Button from '@/components/button/Button';
 import styles from './EnquiryForm.module.css';
 
@@ -19,10 +18,12 @@ interface FormErrors {
 }
 
 export default function EnquiryForm() {
+  const defaultService = service.websiteDevelopment.title
+
   const [formData, setFormData] = useState<FormData>({
     name: '',
     phone: '',
-    service: '',
+    service: defaultService,
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
@@ -69,7 +70,7 @@ export default function EnquiryForm() {
         setFormData({
           name: '',
           phone: '',
-          service: '',
+          service: defaultService,
         })
         setErrors({ name: '', phone: '' })
       }, 2000)

@@ -1,6 +1,5 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import { Phone, Sms, WhatsApp, Check, Archive, Search, Filter, Schedule, CheckCircle, PhoneForwarded, Close } from '@mui/icons-material'
 import { supabase } from '@/lib/supabase'
 import styles from './EnquiryDashboard.module.css'
@@ -204,21 +203,15 @@ const QuoteDashboard = () => {
         </div>
       </div>
 
-      <AnimatePresence>
+      
         {selectedQuote && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+          <div
             className={styles.modal}
             onClick={() => setSelectedQuote(null)}
           >
-            <motion.div
+            <div
               className={styles.modalContent}
               onClick={(e) => e.stopPropagation()}
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 50, opacity: 0 }}
             >
               <button
                 className={styles.closeModal}
@@ -289,10 +282,10 @@ const QuoteDashboard = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         )}
-      </AnimatePresence>
+      
     </div>
   )
 }

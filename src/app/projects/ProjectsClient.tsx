@@ -1,6 +1,5 @@
 'use client'
 import React, { useState, useMemo } from 'react'
-import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { clients, ProjectWork } from '@/data/client'
 import styles from './projects.module.css'
@@ -99,11 +98,8 @@ const ProjectsClient: React.FC = () => {
             {/* Projects Grid */}
             <div className={styles.projectsGrid}>
               {filteredProjects.map((project, index) => (
-                <motion.div
+                <div
                   key={`${project.clientSlug}-${project.type}-${index}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.05 }}
                   className={styles.projectCard}
                 >
                   <div className={styles.projectHeader}>
@@ -170,7 +166,7 @@ const ProjectsClient: React.FC = () => {
                       Contact Now
                     </Button>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>

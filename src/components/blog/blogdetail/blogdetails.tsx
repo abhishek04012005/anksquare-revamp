@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 import { FiClock, FiUser, FiCalendar, FiLinkedin, FiTwitter, FiFacebook } from 'react-icons/fi'
 import { blogPosts, BlogPost } from '../../../data/blog'
 import styles from './blogdetails.module.css'
@@ -42,19 +41,13 @@ const BlogDetail: React.FC = () => {
     <article className={styles.blogDetail}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+          <h1
             className={styles.title}
           >
             {post.title}
-          </motion.h1>
+          </h1>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+          <div
             className={styles.meta}
           >
             <div className={styles.metaItem}>
@@ -69,14 +62,11 @@ const BlogDetail: React.FC = () => {
               <FiClock className={styles.icon} />
               <span>{post.readTime}</span>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         <div className={styles.content}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+          <div
             className={styles.mainContent}
           >
             <div className={styles.featuredImage}>
@@ -133,12 +123,9 @@ const BlogDetail: React.FC = () => {
                 </button>
               </div>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.aside
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+          <aside
             className={styles.sidebar}
           >
 
@@ -164,7 +151,7 @@ const BlogDetail: React.FC = () => {
                 </Link>
               ))}
             </div>
-          </motion.aside>
+          </aside>
         </div>
       </div>
     </article>

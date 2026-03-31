@@ -28,7 +28,7 @@ const Footer = () => {
                         <Link href="/" className={styles.logo}>
                             <Image
                                 src="/logo.svg"
-                                alt="Anksquare"
+                                alt="Ank square"
                                 width={1000}
                                 height={1000}
                                 className={styles.logoImage}
@@ -92,7 +92,7 @@ const Footer = () => {
 
                 <div className={styles.bottomBar}>
                     <div className={styles.copyright}>
-                        © {year} Anksquare. All rights reserved.
+                        © {year} Ank Square. All rights reserved.
                     </div>
                     <div className={styles.social}>
                         {socialLinks.map((link, index) => (

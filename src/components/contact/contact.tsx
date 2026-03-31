@@ -1,6 +1,5 @@
 'use client'
 import { useState } from 'react'
-import { motion } from 'framer-motion'
 import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi'
 import styles from './contact.module.css'
 import Heading from '../../components/heading/heading'
@@ -158,10 +157,7 @@ const Contact = () => {
                 ></Heading>
 
                 <div className={styles.content}>
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
+                    <div
                         className={styles.contactInfo}
                     >
                         {contactInfo.map((info, index) => (
@@ -180,12 +176,9 @@ const Contact = () => {
                                 </div>
                             </a>
                         ))}
-                    </motion.div>
+                    </div>
 
-                    <motion.form
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6, delay: 0.3 }}
+                    <form
                         onSubmit={handleSubmit}
                         className={styles.form}
                         aria-labelledby="contact-form-heading"
@@ -248,13 +241,10 @@ const Contact = () => {
                         >
                             {isSubmitting ? 'Sending...' : 'Send Message'}
                         </button>
-                    </motion.form>
+                    </form>
                 </div>
-                <motion.div
+                <div
                     className={styles.mapSection}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
                 >
                     <h2 style={{ marginBottom: '1.5rem', fontSize: '1.5rem' }}>Visit Our Office Location</h2>
                     <div className={styles.mapWrapper}>
@@ -270,7 +260,7 @@ const Contact = () => {
                             aria-label="Google Map showing Ank Square office location in Patna"
                         />
                     </div>
-                </motion.div>
+                </div>
             </div>
 
             {/* Success/Error Notification Modal */}

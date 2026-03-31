@@ -1,7 +1,6 @@
 'use client'
 import React, { FC, useMemo, useState } from 'react'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
 import ImageIcon from '@mui/icons-material/Image'
 import LanguageIcon from '@mui/icons-material/Language'
 import CreditCardIcon from '@mui/icons-material/CreditCard'
@@ -109,11 +108,8 @@ const ClientProjectView: FC<ClientProjectViewProps> = ({ slug }) => {
 
         <div className={styles.workGrid}>
           {filteredWork.map((work, index) => (
-            <motion.div
+            <div
               key={`${work.type}-${index}`}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
               className={styles.workCard}
             >
               <h3 className={styles.workTitle}>{work.title}</h3>
@@ -159,7 +155,7 @@ const ClientProjectView: FC<ClientProjectViewProps> = ({ slug }) => {
                   />
                 </div>
               )}
-            </motion.div>
+            </div>
           ))}
         </div>
 

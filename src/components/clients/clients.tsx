@@ -8,7 +8,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { clients } from '@/data/client';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Autoplay } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
 
 import 'swiper/css';
@@ -93,18 +93,12 @@ const Clients: React.FC<ClientsProps> = ({ isSlider = true }) => {
                     </button>
 
                     <Swiper
-                        modules={[Navigation, Autoplay]}
+                        modules={[Navigation]}
                         spaceBetween={30}
                         slidesPerView={1}
-                        loop={true}
-                        speed={1000}
+                        speed={0}
                         onBeforeInit={(swiper) => {
                             swiperRef.current = swiper;
-                        }}
-                        autoplay={{
-                            delay: 3000,
-                            disableOnInteraction: false,
-                            pauseOnMouseEnter: true
                         }}
                         breakpoints={{
                             640: {

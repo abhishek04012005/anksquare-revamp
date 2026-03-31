@@ -75,6 +75,28 @@
     transform-origin: center;
 }
 
+.light .subtitle {
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: none;
+}
+
+.light .title {
+    color: #ffffff;
+}
+
+.light .highlight {
+    background: linear-gradient(135deg, #ffffff 0%, #dcecff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.light .highlight::after {
+    background: linear-gradient(90deg, #ffffff, #dcecff, #ffffff);
+}
+
 .title:hover .highlight::after {
     opacity: 1;
     transform: scaleX(1);

@@ -1,6 +1,5 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import {
     FiMail, FiPhone, FiMessageSquare, FiCheck, FiX,
     FiArchive, FiSearch, FiFilter, FiClock, FiCheckCircle
@@ -243,9 +242,8 @@ const AdminDashboard = () => {
                             </div>
                         ) : (
                             filteredItems.map((item) => (
-                                <motion.div
+                                <div
                                     key={`${item.type}-${item.id}`}
-                                    layoutId={`${item.type}-${item.id}`}
                                     className={`${styles.itemCard} ${styles[item.status]}`}
                                     onClick={() => setSelectedItem(item)}
                                 >
@@ -335,28 +333,22 @@ const AdminDashboard = () => {
                                             )}
                                         </div>
                                     </div>
-                                </motion.div>
+                                </div>
                             ))
                         )}
                     </div>
                 </div>
             </div>
 
-            <AnimatePresence>
+            
                 {selectedItem && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
+                    <div
                         className={styles.modal}
                         onClick={() => setSelectedItem(null)}
                     >
-                        <motion.div
+                        <div
                             className={styles.modalContent}
                             onClick={(e) => e.stopPropagation()}
-                            initial={{ y: 50, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            exit={{ y: 50, opacity: 0 }}
                         >
                             <button
                                 className={styles.closeModal}
@@ -459,10 +451,10 @@ const AdminDashboard = () => {
                                     </button>
                                 )}
                             </div>
-                        </motion.div>
-                    </motion.div>
+                        </div>
+                    </div>
                 )}
-            </AnimatePresence>
+            
         </div>
     )
 }

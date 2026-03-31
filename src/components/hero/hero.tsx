@@ -1,6 +1,5 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
 import styles from './hero.module.css'
 import Button from '@/components/button/Button'
 import HeroSvg from "../../svg/HeroSVG/HeroSVG"
@@ -52,10 +51,7 @@ const Hero = () => {
     <section className={styles.hero} aria-labelledby="hero-title" itemScope itemType="https://schema.org/WebPage">
       <div className={styles.container}>
         <div className={styles.content}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
-            transition={{ duration: 0.6 }}
+          <div
             className={styles.textContent}
           >
             <h1 id="hero-title" className={styles.title}>
@@ -75,18 +71,15 @@ const Hero = () => {
                 Get in Touch
               </Button>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: isVisible ? 1 : 0, scale: isVisible ? 1 : 0.9 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+          <div
             className={styles.imageContainer}
           >
             <div className={styles.imageWrapper}>
               <HeroSvg aria-label="Digital solutions illustration showcasing e-commerce and marketplace management" />
             </div>
-          </motion.div>
+          </div>
         </div>
 
         <div className={styles.stats} aria-label="Company statistics">
@@ -95,38 +88,25 @@ const Hero = () => {
             { number: '300+', text: 'Happy Clients' },
             { number: '5+', text: 'Years Experience' }
           ].map((stat, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
-              transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
               className={styles.stat}
             >
               <div className={styles.statNumber} aria-label={stat.text}>{stat.number}</div>
               <div className={styles.statText}>{stat.text}</div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+        <div
           className={styles.certificateSection}
         >
           <h2 className={styles.certSectionTitle}>Work With Certified e-Commerce Account Management Partner Only</h2>
           <div className={styles.certContainer}>
             {certificates.map((cert, index) => (
-              <motion.div
+              <div
                 key={cert.id}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: isVisible ? 1 : 0, scale: isVisible ? 1 : 0.9 }}
-                transition={{ duration: 0.6, delay: 0.5 + index * 0.2 }}
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: '0 10px 20px rgba(0,0,0,0.1)'
-                }}
                 className={styles.certificateCard}
               >
                 <div className={styles.certImageWrapper}>
@@ -143,10 +123,10 @@ const Hero = () => {
                   <p className={styles.certDescription}>{cert.description}</p>
                   
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
       </div>
     </section>

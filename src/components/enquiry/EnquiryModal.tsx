@@ -25,10 +25,12 @@ interface FormErrors {
 }
 
 export default function EnquiryModal({ open, onClose, selectedService }: EnquiryModalProps) {
+  const defaultService = service.websiteDevelopment.title
+
   const [formData, setFormData] = useState<FormData>({
     name: '',
     phone: '',
-    service: selectedService || '',
+    service: selectedService || defaultService,
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
@@ -47,10 +49,8 @@ export default function EnquiryModal({ open, onClose, selectedService }: Enquiry
 
   // Update service if selectedService changes
   useEffect(() => {
-    if (selectedService) {
-      setFormData(prev => ({ ...prev, service: selectedService }))
-    }
-  }, [selectedService])
+    setFormData(prev => ({ ...prev, service: selectedService || defaultService }))
+  }, [selectedService, defaultService])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -91,7 +91,7 @@ export default function EnquiryModal({ open, onClose, selectedService }: Enquiry
         setFormData({
           name: '',
           phone: '',
-          service: selectedService || '',
+          service: selectedService || defaultService,
         })
         setErrors({ name: '', phone: '' })
       }, 2000)
@@ -109,6 +109,14 @@ export default function EnquiryModal({ open, onClose, selectedService }: Enquiry
     <>
       <div className={styles.modalBackdrop} onClick={onClose}>
         <div className={styles.modalContainer} onClick={e => e.stopPropagation()}>
+          <button
+            type="button"
+            className={styles.closeButton}
+            onClick={onClose}
+            aria-label="Close enquiry popup"
+          >
+            ×
+          </button>
           <h2 className={styles.modalHeader}>Enquiry Form</h2>
           <div style={{ padding: '24px' }}>
             {submitted ? (
@@ -123,6 +131,7 @@ export default function EnquiryModal({ open, onClose, selectedService }: Enquiry
                     type="text"
                     id="name"
                     value={formData.name}
+                    placeholder='Enter Your Name'
                     onChange={e => setFormData(prev => ({ ...prev, name: e.target.value }))}
                     className={errors.name ? styles.error : ''}
                   />
@@ -157,9 +166,6 @@ export default function EnquiryModal({ open, onClose, selectedService }: Enquiry
                   </select>
                 </div>
                 <div className={styles.buttonGroup}>
-                  <Button variant="secondary" onClick={onClose}>
-                    Cancel
-                  </Button>
                   <Button variant="primary" type="submit" disabled={isSubmitting}>
                     {isSubmitting ? 'Submitting...' : 'Submit'}
                   </Button>

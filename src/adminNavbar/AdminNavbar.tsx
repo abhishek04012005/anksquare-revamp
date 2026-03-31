@@ -1,8 +1,7 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter, usePathname } from 'next/navigation'
-import { motion, AnimatePresence } from 'framer-motion'
 import {
     FiGrid, FiMessageSquare, FiPhone,
     FiLogOut, FiMenu, FiX, FiUser
@@ -77,10 +76,7 @@ const AdminNavbar = () => {
                                         {item.icon}
                                         <span>{item.title}</span>
                                         {pathname === item.path && (
-                                            <motion.div
-                                                className={styles.activeIndicator}
-                                                layoutId="activeIndicator"
-                                            />
+                                            <div className={styles.activeIndicator} />
                                         )}
                                     </Link>
                                 </li>
@@ -105,17 +101,14 @@ const AdminNavbar = () => {
             </nav>
             
             {/* Mobile menu backdrop */}
-            <AnimatePresence>
+            
                 {isMobileMenuOpen && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
+                    <div
                         className={styles.backdrop}
                         onClick={() => setIsMobileMenuOpen(false)}
                     />
                 )}
-            </AnimatePresence>
+            
         </>
     )
 }

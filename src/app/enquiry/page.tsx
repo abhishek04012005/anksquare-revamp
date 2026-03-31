@@ -1,5 +1,7 @@
 import { Metadata } from 'next'
 import EnquiryForm from '@/components/enquiry/EnquiryForm'
+import Heading from '@/components/heading/heading'
+import { about, contact, profile, service, social } from '@/data/details'
 import styles from './enquiry.module.css'
 import {
   Lightbulb,
@@ -28,13 +30,24 @@ export default function EnquiryPage() {
     <>
       {/* Main Content */}
       <main className={styles.mainContent}>
+        <section className={styles.pageIntro}>
+          <Heading
+            subtitle="Get Started"
+            title="Grow Your Business With "
+            titleHighlight={profile.nameCompany}
+          />
+          <p className={styles.pageIntroText}>{about.missionStatement}</p>
+        </section>
+
         <div className={styles.contentGrid}>
 
           {/* Why Choose Us Section */}
           <section className={styles.whyChooseSection}>
-            <h2 className={styles.sectionHeading}>
-              Why Choose Ank Square?
-            </h2>
+            <Heading
+              subtitle="Why Choose Us"
+              title="Why Choose "
+              titleHighlight={profile.nameCompany}
+            />
             <div className={styles.benefitsGrid}>
               <div className={styles.benefitItem}>
                 <Lightbulb className={styles.benefitIcon} />
@@ -74,53 +87,55 @@ export default function EnquiryPage() {
 
           {/* Services Overview */}
           <section className={styles.servicesSection}>
-            <h2 className={styles.serviceSectionHeading}>
-              Our Services
-            </h2>
+            <Heading
+              subtitle="Our Expertise"
+              title="Explore Our "
+              titleHighlight="Services"
+            />
             <div className={styles.servicesGrid}>
-              <div className={styles.serviceCard}>
-                <h3>Merchant Account Management</h3>
-                <p>Professional management of your e-commerce accounts across all major platforms</p>
-              </div>
-              <div className={styles.serviceCard}>
-                <h3>Website Development</h3>
-                <p>Custom websites built with modern technologies and SEO optimization</p>
-              </div>
-              <div className={styles.serviceCard}>
-                <h3>Digital Marketing</h3>
-                <p>Comprehensive digital marketing strategies to grow your online presence</p>
-              </div>
+              {Object.values(service).map((item) => (
+                <div key={item.title} className={styles.serviceCard}>
+                  <h3>
+                    <span className={styles.serviceIcon}>{item.icon}</span>
+                    {item.title}
+                  </h3>
+                  <p>{item.features.slice(0, 3).join(' • ')}</p>
+                </div>
+              ))}
             </div>
           </section>
 
           {/* Contact Information */}
           <section className={styles.contactSection}>
-            <h2 className={styles.contactSectionHeading}>
-              Need Immediate Assistance?
-            </h2>
+            <Heading
+              subtitle="Need Help Now?"
+              title="Get in Touch With "
+              titleHighlight={profile.nameCompany}
+              theme="light"
+            />
             <div className={styles.contactMethodsGrid}>
               <div className={styles.contactMethod}>
                 <Phone className={styles.contactMethodIcon} />
                 <div>
                   <h3>Call Us</h3>
-                  <p>+91-XXXXXXXXXX</p>
-                  <p>Mon-Fri: 9AM - 6PM IST</p>
+                  <p>{contact.phone}</p>
+                  <p>{contact.timezone}</p>
                 </div>
               </div>
               <div className={styles.contactMethod}>
                 <Email className={styles.contactMethodIcon} />
                 <div>
                   <h3>Email Us</h3>
-                  <p>info@anksquare.com</p>
+                  <p>{contact.email}</p>
                   <p>We respond within 24 hours</p>
                 </div>
               </div>
               <div className={styles.contactMethod}>
                 <Chat className={styles.contactMethodIcon} />
                 <div>
-                  <h3>Live Chat</h3>
-                  <p>Available on our website</p>
-                  <p>Instant support for quick queries</p>
+                  <h3>Visit Website</h3>
+                  <p>{social.website}</p>
+                  <p>{contact.address.city}, {contact.address.state}</p>
                 </div>
               </div>
             </div>

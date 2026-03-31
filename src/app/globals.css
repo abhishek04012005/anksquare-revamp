@@ -77,3 +77,19 @@ a {
   border-radius: 4px;
   z-index: 9999;
 }
+
+/* Global no-animation mode */
+*,
+*::before,
+*::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+
+@media (hover: hover) {
+  *:hover {
+    animation: none !important;
+    transition: none !important;
+  }
+}
