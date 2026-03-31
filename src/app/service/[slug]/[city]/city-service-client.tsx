@@ -1,8 +1,7 @@
 'use client';
 
-import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import Button from '@/components/button/Button'
-import EnquiryModal from '@/components/enquiry/EnquiryModal'
 import { EmojiEvents, Bolt, Business, TrackChanges } from '@mui/icons-material'
 import styles from '../service-detail.module.css'
 import cityStyles from './city-service.module.css'
@@ -32,7 +31,14 @@ interface CityServiceClientProps {
 }
 
 export default function CityServiceClient({ service, city, citySlug }: CityServiceClientProps) {
-  const [enquiryModalOpen, setEnquiryModalOpen] = useState(false)
+  const router = useRouter()
+
+  const handleEnquiryClick = () => {
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('selectedEnquiryService', service.title)
+    }
+    router.push('/enquiry')
+  }
 
   return (
     <>
@@ -57,7 +63,7 @@ export default function CityServiceClient({ service, city, citySlug }: CityServi
                 ))}
               </div>
               <div className={styles.ctaButtons}>
-                <Button variant="secondary" onClick={() => setEnquiryModalOpen(true)}>Contact Us in {city.name}</Button>
+                <Button variant="primary" onClick={handleEnquiryClick}>Enquiry Now in {city.name}</Button>
                 <Button variant="secondary" href={`/service/${service.slug}`}>View All Details</Button>
               </div>
             </div>
@@ -159,7 +165,7 @@ export default function CityServiceClient({ service, city, citySlug }: CityServi
               Connect with our {service.title} experts in {city.name}. We understand the unique challenges and opportunities in {city.name}, {city.state}.
             </p>
             <div className={styles.ctaButtons}>
-              <Button variant="secondary" onClick={() => setEnquiryModalOpen(true)}>Contact Us Today</Button>
+              <Button variant="primary" onClick={handleEnquiryClick}>Contact Us Today</Button>
             </div>
           </div>
         </section>
@@ -230,12 +236,6 @@ export default function CityServiceClient({ service, city, citySlug }: CityServi
           }}
         />
       </main>
-
-      <EnquiryModal
-        open={enquiryModalOpen}
-        onClose={() => setEnquiryModalOpen(false)}
-        selectedService={service.title}
-      />
     </>
   )
 }

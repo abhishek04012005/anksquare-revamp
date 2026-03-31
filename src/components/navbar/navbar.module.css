@@ -143,6 +143,10 @@
   white-space: nowrap;
 }
 
+.mobileContactItem {
+  display: none;
+}
+
 .contactBtn:hover {
   background: var(--primary-hover);
   transform: translateY(-2px);
@@ -240,6 +244,10 @@
   /* Hide contact button on mobile */
   .contactBtn {
     display: none;
+  }
+
+  .mobileContactItem {
+    display: block;
   }
 
   .whatsappButton {

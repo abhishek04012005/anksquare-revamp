@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from 'react'
-import EnquiryModal from '../components/enquiry/EnquiryModal'
+import { useEffect, useState } from 'react'
+import EnquiryModal from '@/components/enquiry/EnquiryModal'
 import Hero from '@/components/hero/hero'
 import About from '@/components/about/about'
 import Contact from '@/components/contact/contact'
@@ -11,11 +11,20 @@ import Services from '@/components/service/service'
 import Blog from '@/components/blog/blog'
 
 export default function Home() {
-  const [modalOpen, setModalOpen] = useState(true)
+  const [modalOpen, setModalOpen] = useState(false)
 
-  // open on initial render
   useEffect(() => {
-    setModalOpen(true)
+    if (typeof window === 'undefined') return
+
+    const hasShownPopup = sessionStorage.getItem('homeEnquiryModalShown')
+    if (hasShownPopup) return
+
+    const timer = window.setTimeout(() => {
+      setModalOpen(true)
+      sessionStorage.setItem('homeEnquiryModalShown', 'true')
+    }, 1000)
+
+    return () => window.clearTimeout(timer)
   }, [])
 
   return (

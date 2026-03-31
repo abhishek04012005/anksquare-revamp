@@ -1,5 +1,6 @@
 'use client'
 import { FC } from 'react'
+import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import styles from './service.module.css'
 import Button from '../../components/button/Button'
@@ -14,6 +15,15 @@ interface MainServiceComponentProps {
 }
 
 const MainService = ({ service, isReversed }: MainServiceComponentProps) => {
+    const router = useRouter()
+
+    const handleEnquiryClick = () => {
+        if (typeof window !== 'undefined') {
+            sessionStorage.setItem('selectedEnquiryService', service.title)
+        }
+        router.push('/enquiry')
+    }
+
     return (
         <div className={`${styles.mainService} ${isReversed ? styles.reversed : ''}`}>
             <div
@@ -38,7 +48,7 @@ const MainService = ({ service, isReversed }: MainServiceComponentProps) => {
                 </ul>
                 <div className={styles.mainButtons}>
                     <Button href={service.path} variant="primary">View More</Button>
-                    <Button href={`/enquiry?service=${encodeURIComponent(service.title)}`} variant="secondary">Enquiry Now</Button>
+                    <Button onClick={handleEnquiryClick} variant="secondary">Enquiry Now</Button>
                 </div>
             </div>
         </div>

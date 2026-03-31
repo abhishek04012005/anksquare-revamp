@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import Button from '@/components/button/Button'
-import EnquiryModal from '@/components/enquiry/EnquiryModal'
+import Heading from '@/components/heading/heading'
 import styles from './service-detail.module.css'
 
 interface Service {
@@ -23,18 +23,25 @@ interface ServiceDetailClientProps {
 }
 
 export default function ServiceDetailClient({ service }: ServiceDetailClientProps) {
-  const [enquiryModalOpen, setEnquiryModalOpen] = useState(false)
+  const router = useRouter()
+
+  const handleEnquiryClick = () => {
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('selectedEnquiryService', service.title)
+    }
+    router.push('/enquiry')
+  }
 
   return (
     <>
       {/* Skip to main content link for accessibility */}
-      <a href="#main-content" className="sr-only">Skip to main content</a>
 
       <main id="main-content" role="main">
         {/* Service Header */}
         <section className={styles.hero}>
           <div className={styles.container}>
             <div className={styles.heroContent}>
+              <span className={styles.heroBadge}>Professional Digital Service</span>
               <h1 className={styles.title}>{service.title} Services</h1>
               <p className={styles.overview}>{service.details.overview}</p>
               <div className={styles.heroFeatures}>
@@ -45,7 +52,8 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                 ))}
               </div>
               <div className={styles.ctaButtons}>
-                <Button variant="secondary" onClick={() => setEnquiryModalOpen(true)}>Contact Us</Button>
+                <Button variant="primary" onClick={handleEnquiryClick}>Enquiry Now</Button>
+                <Button variant="secondary" href="/service">View All Services</Button>
               </div>
             </div>
           </div>
@@ -54,10 +62,15 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
         {/* Benefits Section */}
         <section className={styles.benefits}>
           <div className={styles.container}>
-            <h2 className={styles.sectionTitle}>Key Benefits</h2>
+            <Heading
+              subtitle="Key Benefits"
+              title="Why Choose "
+              titleHighlight={service.title}
+            />
             <div className={styles.benefitsGrid}>
               {service.details.benefits.map((benefit, index) => (
                 <div key={index} className={styles.benefitCard}>
+                  <span className={styles.benefitNumber}>{String(index + 1).padStart(2, '0')}</span>
                   <h3 className={styles.benefitTitle}>{benefit.title}</h3>
                   <p className={styles.benefitDescription}>{benefit.description}</p>
                 </div>
@@ -70,7 +83,11 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
         {service.details.process.length > 0 && (
           <section className={styles.process}>
             <div className={styles.container}>
-              <h2 className={styles.sectionTitle}>Our Process</h2>
+              <Heading
+                subtitle="How We Work"
+                title="Our Proven "
+                titleHighlight="Process"
+              />
               <div className={styles.processSteps}>
                 {service.details.process.map((step, index) => (
                   <div key={step.step} className={styles.stepCard}>
@@ -88,7 +105,11 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
         {service.details.faq.length > 0 && (
           <section className={styles.faq}>
             <div className={styles.container}>
-              <h2 className={styles.sectionTitle}>Frequently Asked Questions</h2>
+              <Heading
+                subtitle="FAQ"
+                title="Frequently Asked "
+                titleHighlight="Questions"
+              />
               <div className={styles.faqList}>
                 {service.details.faq.map((faq, index) => (
                   <div key={index} className={styles.faqItem}>
@@ -104,17 +125,21 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
         {/* CTA Section */}
         <section id="contact" className={styles.cta}>
           <div className={styles.container}>
-            <h2 className={styles.ctaTitle}>Ready to Get Started?</h2>
+            <Heading
+              subtitle="Ready to Grow?"
+              title="Start Your "
+              titleHighlight="Enquiry Today"
+              theme="light"
+            />
             <p className={styles.ctaDescription}>
-              Contact us today to discuss your {service.title} requirements and get a customized solution for your business.
+              Contact us today to discuss your {service.title} requirements and get a customized solution tailored to your business goals.
             </p>
             <div className={styles.ctaButtons}>
-              <Button variant="secondary" onClick={() => setEnquiryModalOpen(true)}>Contact Us</Button>
+              <Button variant="primary" onClick={handleEnquiryClick}>Enquiry Now</Button>
               <Button variant="secondary" href="/service">View All Services</Button>
             </div>
           </div>
         </section>
-
         {/* Structured Data */}
         <script
           type="application/ld+json"
@@ -143,12 +168,6 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
           }}
         />
       </main>
-
-      <EnquiryModal
-        open={enquiryModalOpen}
-        onClose={() => setEnquiryModalOpen(false)}
-        selectedService={service.title}
-      />
     </>
   )
 }

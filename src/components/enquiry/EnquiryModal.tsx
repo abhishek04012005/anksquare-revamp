@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 import styles from './EnquiryModal.module.css';
 import { service } from '@/data/details';
 import { supabase } from '@/lib/supabase';
-import NotificationModal from '@/components/notification/NotificationModal';
 import Button from '@/components/button/Button';
 
 interface EnquiryModalProps {
@@ -33,7 +32,6 @@ export default function EnquiryModal({ open, onClose, selectedService }: Enquiry
     service: selectedService || defaultService,
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitted, setSubmitted] = useState(false)
   const [errors, setErrors] = useState<FormErrors>({
     name: '',
     phone: ''
@@ -82,19 +80,13 @@ export default function EnquiryModal({ open, onClose, selectedService }: Enquiry
 
       if (error) throw error
 
-      setSubmitted(true)
-
-      // Auto-close after 2 seconds
-      setTimeout(() => {
-        onClose()
-        setSubmitted(false)
-        setFormData({
-          name: '',
-          phone: '',
-          service: selectedService || defaultService,
-        })
-        setErrors({ name: '', phone: '' })
-      }, 2000)
+      setFormData({
+        name: '',
+        phone: '',
+        service: selectedService || defaultService,
+      })
+      setErrors({ name: '', phone: '' })
+      onClose()
     } catch (error) {
       console.error('Error submitting form:', error)
       alert('Something went wrong. Please try again.')
@@ -119,11 +111,6 @@ export default function EnquiryModal({ open, onClose, selectedService }: Enquiry
           </button>
           <h2 className={styles.modalHeader}>Enquiry Form</h2>
           <div style={{ padding: '24px' }}>
-            {submitted ? (
-              <div className={styles.successMessage}>
-                <p>Thank you! Your enquiry has been submitted successfully.</p>
-              </div>
-            ) : (
               <form onSubmit={handleSubmit}>
                 <div className={styles.formGroup}>
                   <label htmlFor="name">Name</label>
@@ -171,7 +158,6 @@ export default function EnquiryModal({ open, onClose, selectedService }: Enquiry
                   </Button>
                 </div>
               </form>
-            )}
           </div>
         </div>
       </div>

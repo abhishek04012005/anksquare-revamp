@@ -62,6 +62,11 @@ export default function Navbar() {
                                     </Link>
                                 </li>
                             ))}
+                            <li className={styles.mobileContactItem}>
+                                <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
+                                    Contact Us
+                                </Link>
+                            </li>
                         </ul>
                     </div>
 

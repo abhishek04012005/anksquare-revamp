@@ -17,15 +17,11 @@ interface FormErrors {
   phone: string;
 }
 
-interface EnquiryFormProps {
-  selectedService?: string;
-}
+const availableServices = Object.values(service).map(item => item.title)
+const fallbackService = service.websiteDevelopment.title
 
-export default function EnquiryForm({ selectedService }: EnquiryFormProps) {
-  const availableServices = Object.values(service).map(item => item.title)
-  const defaultService = availableServices.includes(selectedService || '')
-    ? (selectedService as string)
-    : service.websiteDevelopment.title
+export default function EnquiryForm() {
+  const defaultService = fallbackService
 
   const [formData, setFormData] = useState<FormData>({
     name: '',
@@ -40,7 +36,14 @@ export default function EnquiryForm({ selectedService }: EnquiryFormProps) {
   })
 
   useEffect(() => {
-    setFormData(prev => ({ ...prev, service: defaultService }))
+    if (typeof window === 'undefined') return
+
+    const storedService = sessionStorage.getItem('selectedEnquiryService')
+
+    if (storedService && availableServices.includes(storedService)) {
+      setFormData(prev => ({ ...prev, service: storedService }))
+      sessionStorage.removeItem('selectedEnquiryService')
+    }
   }, [defaultService])
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -81,7 +84,7 @@ export default function EnquiryForm({ selectedService }: EnquiryFormProps) {
         setFormData({
           name: '',
           phone: '',
-          service: defaultService,
+          service: formData.service,
         })
         setErrors({ name: '', phone: '' })
       }, 2000)
@@ -96,7 +99,17 @@ export default function EnquiryForm({ selectedService }: EnquiryFormProps) {
   return (
     <>
       <div className={styles.formContainer}>
-        <h2 className={styles.formTitle}>Send us your enquiry</h2>
+        <div className={styles.formHeader}>
+          <span className={styles.formBadge}>Quick Enquiry</span>
+          <h2 className={styles.formTitle}>Send us your enquiry</h2>
+          <p className={styles.formDescription}>
+            Share a few details about your requirement and our team will connect with you within 24 hours.
+          </p>
+          <div className={styles.selectedServicePill}>
+            <span>Selected service:</span>
+            <strong>{formData.service}</strong>
+          </div>
+        </div>
         {submitted ? (
           <div className={styles.successMessage}>
             <p>Thank you! Your enquiry has been submitted successfully. We will get back to you within 24 hours.</p>

@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import EnquiryForm from '@/components/enquiry/EnquiryForm'
 import Heading from '@/components/heading/heading'
-import { about, contact, profile, service, social } from '@/data/details'
+import { profile } from '@/data/details'
 import styles from './enquiry.module.css'
 import {
   Lightbulb,
@@ -25,15 +25,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function EnquiryPage({
-  searchParams,
-}: {
-  searchParams?: { [key: string]: string | string[] | undefined }
-}) {
-  const selectedService = typeof searchParams?.service === 'string'
-    ? searchParams.service
-    : undefined
-
+export default function EnquiryPage() {
   return (
     <>
       {/* Main Content */}
@@ -54,7 +46,7 @@ export default function EnquiryPage({
 
           {/* Enquiry Form */}
           <section className={styles.enquiryFormSection}>
-            <EnquiryForm selectedService={selectedService} />
+            <EnquiryForm />
           </section>
 
           
