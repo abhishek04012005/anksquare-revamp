@@ -11,21 +11,14 @@ const BlogDetail: React.FC = () => {
   const params = useParams()
   const slug = params.slug as string
   const [post, setPost] = useState<BlogPost | null>(null)
-  const [relatedPosts, setRelatedPosts] = useState<BlogPost[]>([])
 
   useEffect(() => {
     const currentPost = blogPosts.find(p => p.slug === slug)
     if (currentPost) {
       setPost(currentPost)
-      // Find related posts in same category
-      const related = blogPosts
-        .filter(p => p.category === currentPost.category && p.id !== currentPost.id)
-        .slice(0, 3)
-      setRelatedPosts(related)
     }
   }, [slug])
 
-  // Format date for display
   const formatDate = (dateString: string) => {
     const date = new Date(dateString)
     return date.toLocaleDateString('en-US', {
@@ -40,75 +33,57 @@ const BlogDetail: React.FC = () => {
   return (
     <article className={styles.blogDetail}>
       <div className={styles.container}>
-        <div className={styles.header}>
-          <h1
-            className={styles.title}
-          >
-            {post.title}
-          </h1>
-
-          <div
-            className={styles.meta}
-          >
-            <div className={styles.metaItem}>
-              <FiUser className={styles.icon} />
-              <span>{post.author}</span>
-            </div>
-            <div className={styles.metaItem}>
-              <FiCalendar className={styles.icon} />
-              <span>{formatDate(post.date)}</span>
-            </div>
-            <div className={styles.metaItem}>
-              <FiClock className={styles.icon} />
-              <span>{post.readTime}</span>
-            </div>
-          </div>
+        {/* Featured Image */}
+        <div className={styles.featuredImage}>
+          <Image
+            src={post.image}
+            alt={post.title}
+            width={1200}
+            height={600}
+            priority
+            className={styles.image}
+          />
+          <span className={styles.category}>{post.category}</span>
         </div>
 
-        <div className={styles.content}>
-          <div
-            className={styles.mainContent}
-          >
-            <div className={styles.featuredImage}>
-              <Image
-                src={post.image}
-                alt={post.title}
-                width={1200}
-                height={600}
-                priority
-                className={styles.image}
-              />
-              <span className={styles.category}>{post.category}</span>
-            </div>
+        {/* Content Section */}
+        <div className={styles.contentWrapper}>
+          <div className={styles.mainContent}>
+            {/* Title */}
+            <div className={styles.header}>
+              <h1 className={styles.title}>{post.title}</h1>
 
-            <div className={styles.articleContent}>
-              <p className={styles.excerpt}>{post.excerpt}</p>
-
-              {/* Sample content sections - replace with actual content */}
-              <h2>Introduction</h2>
-              <p>Detailed introduction goes here...</p>
-
-              <h2>Key Points</h2>
-              <ul>
-                <li>First major point with explanation</li>
-                <li>Second major point with details</li>
-                <li>Third important consideration</li>
-              </ul>
-
-              <h2>Analysis</h2>
-              <p>In-depth analysis section goes here...</p>
-
-              <div className={styles.quote}>
-                <blockquote>
-                  &quot;Important quote or highlight from the article goes here.&quot;
-                </blockquote>
-                <cite>- Expert Name</cite>
+              <div className={styles.meta}>
+                <div className={styles.metaItem}>
+                  <FiUser className={styles.icon} />
+                  <span>{post.author}</span>
+                </div>
+                <div className={styles.metaItem}>
+                  <FiCalendar className={styles.icon} />
+                  <span>{formatDate(post.date)}</span>
+                </div>
+                <div className={styles.metaItem}>
+                  <FiClock className={styles.icon} />
+                  <span>{post.readTime}</span>
+                </div>
               </div>
-
-              <h2>Conclusion</h2>
-              <p>Concluding thoughts and takeaways...</p>
             </div>
 
+            {/* Excerpt */}
+            <p className={styles.excerpt}>{post.excerpt}</p>
+
+            {/* Content Sections */}
+            <div className={styles.articleContent}>
+              {post.sections &&
+                post.sections.map((section, index) => (
+                  <div key={index} className={styles.section}>
+                    <h2 className={styles.sectionTitle}>{section.subtitle}</h2>
+                    <p className={styles.sectionContent}>{section.content}</p>
+                  </div>
+                ))}
+            </div>
+
+            {/* Share Section */}
             <div className={styles.share}>
               <span>Share this article:</span>
               <div className={styles.socialLinks}>
@@ -124,34 +99,6 @@ const BlogDetail: React.FC = () => {
               </div>
             </div>
           </div>
-
-          <aside
-            className={styles.sidebar}
-          >
-
-            <div className={styles.relatedPosts}>
-              <h3>Related Articles</h3>
-              {relatedPosts.map((relatedPost) => (
-                <Link
-                  key={relatedPost.id}
-                  href={`/blog/${relatedPost.slug}`}
-                  className={styles.relatedPost}
-                >
-                  <Image
-                    src={relatedPost.image}
-                    alt={relatedPost.title}
-                    width={100}
-                    height={60}
-                    className={styles.relatedImage}
-                  />
-                  <div className={styles.relatedInfo}>
-                    <h4>{relatedPost.title}</h4>
-                    <span>{formatDate(relatedPost.date)}</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </aside>
         </div>
       </div>
     </article>
