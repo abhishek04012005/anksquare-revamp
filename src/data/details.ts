@@ -79,7 +79,7 @@ export const details = {
     email: 'contact@anksquare.com',
     phone: '+91-9939337638',
     address: {
-      street: 'Ank Square Pvt. Ltd., Ramjaipal Road, Opp. Gola Road, Near Hotel Magadh Palace,',
+      street: 'Ank Square Pvt. Ltd., Ramjaipal Road, Opp. Gola Road, Near Hotel Magadh Palace',
       city: 'Patna',
       state: 'Bihar',
       country: 'India',
