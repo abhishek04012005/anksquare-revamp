@@ -92,7 +92,7 @@ const Footer = () => {
 
                 <div className={styles.bottomBar}>
                     <div className={styles.copyright}>
-                        © {year} Ank Square. All rights reserved.
+                        © {year} Ank Square Pvt. Ltd. All rights reserved.
                     </div>
                     <div className={styles.social}>
                         {socialLinks.map((link, index) => (
