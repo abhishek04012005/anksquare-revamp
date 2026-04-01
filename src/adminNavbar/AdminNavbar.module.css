@@ -39,6 +39,14 @@
     cursor: pointer;
 }
 
+@media (max-width: 768px) {
+    .brand {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+
 .menuContainer {
     display: flex;
     align-items: center;

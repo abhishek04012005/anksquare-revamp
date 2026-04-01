@@ -187,7 +187,7 @@ const AdminDashboard = () => {
 
                 <div className={styles.controls}>
                     <div className={styles.viewToggle}>
-                        {(['all', 'contacts', 'enquiries'] as const).map((view) => (
+                        {(['all'] as const).map((view) => (
                             <button
                                 key={view}
                                 className={`${styles.viewButton} ${currentView === view ? styles.active : ''}`}
