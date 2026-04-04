@@ -8,6 +8,7 @@ import { navbarItems } from '@/data/navbar';
 import { profile, social } from '@/data/details';
 import { messages } from '@/data/message';
 import WhatsApp from '@mui/icons-material/WhatsApp';
+import { supabase } from '@/lib/supabase';
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,6 +21,33 @@ export default function Navbar() {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    // Track WhatsApp clicks
+    const trackWhatsAppClick = async () => {
+        try {
+            const clickData = {
+                user_agent: navigator.userAgent,
+                referrer: document.referrer,
+                page_url: window.location.href,
+                device_type: /Mobile|Android|iP(hone|od|ad)/.test(navigator.userAgent) ? 'mobile' : 'desktop',
+                browser_info: {
+                    language: navigator.language,
+                    platform: navigator.platform,
+                    cookieEnabled: navigator.cookieEnabled,
+                    onLine: navigator.onLine
+                }
+            };
+
+            // Send tracking data to Supabase (don't wait for it to avoid blocking the redirect)
+            supabase.from('whatsapp_clicks').insert([clickData]).then(({ error }) => {
+                if (error) {
+                    console.error('Error tracking WhatsApp click:', error);
+                }
+            });
+        } catch (error) {
+            console.error('Error tracking WhatsApp click:', error);
+        }
+    };
 
     // WhatsApp message
     const whatsappMessage = encodeURIComponent(messages.whatsapp.default);
@@ -84,6 +112,7 @@ export default function Navbar() {
                 className={styles.whatsappButton}
                 aria-label="Chat on WhatsApp"
                 title="Chat on WhatsApp"
+                onClick={trackWhatsAppClick}
             >
                 <WhatsApp className={styles.whatsappIcon} />
             </a>

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useRouter, usePathname } from 'next/navigation'
 import {
     FiGrid, FiMessageSquare, FiPhone,
-    FiLogOut, FiMenu, FiX, FiUser
+    FiLogOut, FiMenu, FiX, FiUser, FiMessageCircle
 } from 'react-icons/fi'
 import styles from './AdminNavbar.module.css'
 
@@ -23,6 +23,11 @@ const menuItems = [
         title: 'Enquiries',
         icon: <FiPhone />,
         path: '/admin/enquiries'
+    },
+    {
+        title: 'WhatsApp',
+        icon: <FiMessageCircle />,
+        path: '/admin/whatsapp'
     }
 ]
 
