@@ -70,8 +70,8 @@ const Blog: React.FC<BlogProps> = ({ isSlider = true }) => {
             <div className={styles.container}>
                 <Heading
                     subtitle='Latest Updates'
-                    title='Insights From Our'
-                    titleHighlight='Blog'
+                    title='Insights From Our '
+                    titleHighlight=' Blog'
                 />
 
                 {isSlider ? (
