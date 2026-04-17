@@ -163,7 +163,7 @@ const ProjectsClient: React.FC = () => {
                       variant="primary"
                       onClick={() => handleContactClick(`${getWorkTypeLabel(project.type)} - ${project.clientName}`)}
                     >
-                      Contact Now
+                      Enquiry Now
                     </Button>
                   </div>
                 </div>
