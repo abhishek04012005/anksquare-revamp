@@ -270,10 +270,13 @@
   background: var(--accent-light);
   position: relative;
   min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .projectImageSrc {
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
