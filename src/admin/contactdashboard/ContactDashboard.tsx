@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react'
 import { Phone, Sms, WhatsApp, Check, Archive, Search, Filter, Inbox, Close } from '@mui/icons-material'
 import { supabase } from '@/lib/supabase'
+import { Loader } from '@/components/loader'
 import styles from './ContactDashboard.module.css'
 
 interface Contact {
@@ -132,7 +133,11 @@ const ContactDashboard = () => {
 
                 <div className={styles.content}>
                     {loading ? (
-                        <div className={styles.loading}>Loading...</div>
+                        <Loader 
+                            message="Loading contacts..." 
+                            type="wave" 
+                            size="default" 
+                        />
                     ) : filteredContacts.length === 0 ? (
                         <div className={styles.empty}>No contacts found</div>
                     ) : (

@@ -1,0 +1,231 @@
+.skeletonContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.skeletonItem {
+    background: linear-gradient(90deg, 
+        var(--skeleton-base, #e2e8f0) 25%,
+        var(--skeleton-highlight, #f1f5f9) 50%,
+        var(--skeleton-base, #e2e8f0) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+    border-radius: 0.5rem;
+    height: 1rem;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Skeleton for text lines */
+.skeletonLine {
+    height: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.skeletonLine.short {
+    width: 80%;
+}
+
+.skeletonLine.medium {
+    width: 90%;
+}
+
+.skeletonLine.full {
+    width: 100%;
+}
+
+/* Skeleton for cards */
+.skeletonCard {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: var(--card-background, #ffffff);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skeletonCardHeader {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.skeletonAvatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.skeletonCardContent {
+    flex: 1;
+}
+
+.skeletonTitle {
+    height: 1.25rem;
+    margin-bottom: 0.75rem;
+    border-radius: 0.25rem;
+}
+
+.skeletonText {
+    height: 0.875rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+/* Skeleton for table rows */
+.skeletonTable {
+    width: 100%;
+}
+
+.skeletonTableRow {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color, #e2e8f0);
+}
+
+.skeletonTableCell {
+    flex: 1;
+    height: 1rem;
+    border-radius: 0.25rem;
+}
+
+.skeletonTableCell.narrow {
+    flex: 0 0 15%;
+}
+
+.skeletonTableCell.wide {
+    flex: 0 0 30%;
+}
+
+/* Skeleton for images */
+.skeletonImage {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.skeletonImageSmall {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 0.5rem;
+}
+
+/* Skeleton for buttons */
+.skeletonButton {
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    width: 100px;
+    margin-right: 0.5rem;
+}
+
+/* Grid of skeletons */
+.skeletonGrid {
+    display: grid;
+    gap: 1rem;
+}
+
+.skeletonGrid.cols2 {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.skeletonGrid.cols3 {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.skeletonGrid.cols4 {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+/* Dashboard skeleton */
+.dashboardSkeleton {
+    padding: 1.5rem;
+}
+
+.dashboardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.dashboardTitle {
+    height: 2rem;
+    width: 250px;
+    border-radius: 0.25rem;
+}
+
+.dashboardStats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.dashboardStatItem {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: var(--card-background, #ffffff);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dashboardStatNumber {
+    height: 1.5rem;
+    width: 100px;
+    margin-bottom: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.dashboardStatLabel {
+    height: 0.875rem;
+    width: 120px;
+    border-radius: 0.25rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .skeletonGrid.cols2,
+    .skeletonGrid.cols3,
+    .skeletonGrid.cols4 {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboardStats {
+        grid-template-columns: 1fr;
+    }
+
+    .skeletonTableRow {
+        flex-direction: column;
+    }
+
+    .skeletonTableCell,
+    .skeletonTableCell.narrow,
+    .skeletonTableCell.wide {
+        flex: 1;
+    }
+}
+
+/* Loading animation - pulse effect alternative */
+.skeletonItemPulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}

@@ -1,7 +1,7 @@
 import { getNumberOfSitemapChunks } from '@/lib/sitemap-utils'
 
 export async function GET(request: Request) {
-  const baseUrl = 'https://anksquare.com'
+  const baseUrl = 'https://www.anksquare.com'
   
   try {
     const numberOfChunks = getNumberOfSitemapChunks()

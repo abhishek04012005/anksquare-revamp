@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react'
 import { Phone, Sms, WhatsApp, Check, Archive, Search, Filter, Schedule, CheckCircle, PhoneForwarded, Close } from '@mui/icons-material'
 import { supabase } from '@/lib/supabase'
+import { Loader } from '@/components/loader'
 import styles from './EnquiryDashboard.module.css'
 
 interface Quote {
@@ -121,10 +122,11 @@ const QuoteDashboard = () => {
 
         <div className={styles.content}>
           {loading ? (
-            <div className={styles.loading}>
-              <div className={styles.spinner}></div>
-              <span>Loading quotes...</span>
-            </div>
+            <Loader 
+              message="Loading quotes..." 
+              type="bars" 
+              size="default" 
+            />
           ) : filteredQuotes.length === 0 ? (
             <div className={styles.empty}>
               <Search sx={{ fontSize: 40 }} />

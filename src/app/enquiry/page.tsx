@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Enquiry - Get Started with Ank Square',
     description: 'Ready to grow your business? Contact us for expert e-commerce and digital marketing solutions.',
-    url: 'https://anksquare.com/enquiry',
+    url: 'https://www.anksquare.com/enquiry',
     type: 'website',
   },
 }

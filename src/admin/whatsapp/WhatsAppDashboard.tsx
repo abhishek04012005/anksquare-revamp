@@ -5,6 +5,7 @@ import {
     Language, AccessTime, BarChart, Search, GetApp
 } from '@mui/icons-material'
 import { supabase } from '@/lib/supabase'
+import { Loader } from '@/components/loader'
 import styles from './WhatsAppDashboard.module.css'
 
 interface WhatsAppClick {
@@ -120,10 +121,11 @@ const WhatsAppDashboard = () => {
 
     if (loading) {
         return (
-            <div className={styles.loading}>
-                <div className={styles.spinner}></div>
-                <p>Loading WhatsApp analytics...</p>
-            </div>
+            <Loader 
+                message="Loading WhatsApp analytics..." 
+                type="dots" 
+                size="large" 
+            />
         )
     }
 

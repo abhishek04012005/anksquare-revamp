@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Our Clients - Ank Square Portfolio',
     description: 'Explore our client success stories and completed projects. See the impact of our digital service.',
-    url: 'https://anksquare.com/client',
+    url: 'https://www.anksquare.com/client',
     type: 'website',
   },
   twitter: {
@@ -37,13 +37,13 @@ export default function ClientsPage() {
               '@type': 'CollectionPage',
               name: 'Ank Square Clients',
               description: 'Portfolio of successful projects and clients served by Ank Square',
-              url: 'https://anksquare.com/client',
+              url: 'https://www.anksquare.com/client',
               mainEntity: {
                 '@type': 'Organization',
                 name: 'Ank Square',
-                url: 'https://anksquare.com',
+                url: 'https://www.anksquare.com',
                 description: 'Digital service company providing merchant account management, website development, and digital marketing solutions',
-                logo: 'https://anksquare.com/logo.svg'
+                logo: 'https://www.anksquare.com/logo.svg'
               }
             }),
           }}

@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title,
       description,
-      url: `https://anksquare.com/service/digital-marketing/${resolvedParams.slug}`,
+      url: `https://www.anksquare.com/service/digital-marketing/${resolvedParams.slug}`,
       type: 'website',
     },
     twitter: {

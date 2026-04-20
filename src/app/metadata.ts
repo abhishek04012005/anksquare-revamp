@@ -22,7 +22,7 @@ export const homepageMetadata: Metadata = {
   openGraph: {
     title: 'Ank Square - Digital Services for Business Growth',
     description: 'Expert merchant account management, custom website development, and digital marketing solutions. 500+ projects completed with 300+ happy clients.',
-    url: 'https://anksquare.com',
+    url: 'https://www.anksquare.com',
     siteName: 'Ank Square',
     type: 'website',
     locale: 'en_US',

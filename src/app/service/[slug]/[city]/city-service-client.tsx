@@ -179,7 +179,7 @@ export default function CityServiceClient({ service, city, citySlug }: CityServi
               '@type': 'LocalBusiness',
               name: `Ank Square - ${service.title} in ${city.name}`,
               description: `Professional ${service.title} service in ${city.name}, ${city.state}`,
-              url: `https://anksquare.com/service/${service.slug}/${citySlug}`,
+              url: `https://www.anksquare.com/service/${service.slug}/${citySlug}`,
               telephone: '+91-XXXXXXXXXX',
               areaServed: {
                 '@type': 'City',
@@ -195,7 +195,7 @@ export default function CityServiceClient({ service, city, citySlug }: CityServi
               },
               serviceType: service.title,
               priceRange: '$$',
-              image: 'https://anksquare.com/logo.svg',
+              image: 'https://www.anksquare.com/logo.svg',
               sameAs: [
                 'https://www.instagram.com/anksquare',
                 'https://www.facebook.com/anksquare'
@@ -220,7 +220,7 @@ export default function CityServiceClient({ service, city, citySlug }: CityServi
               provider: {
                 '@type': 'Organization',
                 name: 'Ank Square',
-                url: 'https://anksquare.com'
+                url: 'https://www.anksquare.com'
               },
               serviceType: service.title,
               ...(service.details.pricing.length > 0 && {

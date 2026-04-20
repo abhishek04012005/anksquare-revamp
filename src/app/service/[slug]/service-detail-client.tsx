@@ -152,7 +152,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
               provider: {
                 '@type': 'Organization',
                 name: 'Ank Square',
-                url: 'https://anksquare.com'
+                url: 'https://www.anksquare.com'
               },
               serviceType: service.title,
               ...(service.details.pricing.length > 0 && {

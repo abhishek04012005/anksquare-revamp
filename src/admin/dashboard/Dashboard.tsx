@@ -5,6 +5,7 @@ import {
     FiArchive, FiSearch, FiFilter, FiClock, FiCheckCircle
 } from 'react-icons/fi'
 import { supabase } from '@/lib/supabase'
+import { Loader } from '@/components/loader'
 import styles from './Dashboard.module.css'
 
 interface Contact {
@@ -231,10 +232,7 @@ const AdminDashboard = () => {
                 <div className={styles.content}>
                     <div className={styles.itemsList}>
                         {loading ? (
-                            <div className={styles.loading}>
-                                <div className={styles.spinner}></div>
-                                <span>Loading...</span>
-                            </div>
+                            <Loader message="Loading dashboard data..." type="spinner" size="default" />
                         ) : filteredItems.length === 0 ? (
                             <div className={styles.empty}>
                                 <FiSearch size={40} />
