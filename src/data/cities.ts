@@ -2758,9 +2758,9 @@ export const cities = [
     { "name": "Sundsvall", "state": "Vasternorrland County" },
     { "name": "Umea", "state": "Vasterbotten County" },
     { "name": "Lulea", "state": "Norrbotten County" },
-    {"name": "California", "state": "California" },
-    {"name": "New York", "state": "New York" },
-    {"name": "Texas", "state": "Texas" },
+    { "name": "California", "state": "California" },
+    { "name": "New York", "state": "New York" },
+    { "name": "Texas", "state": "Texas" },
 
     //united arab emirates
     { "name": "Dubai", "state": "Dubai" },
@@ -2817,7 +2817,20 @@ export const cities = [
     { "name": "Newport", "state": "Wales" },
     { "name": "Belfast", "state": "Northern Ireland" },
     { "name": "Derry", "state": "Northern Ireland" },
-    { "name": "Lisburn", "state": "Northern Ireland" }
+    { "name": "Lisburn", "state": "Northern Ireland" },
+
+
+    // Spain
+    { "name": "Madrid", "state": "Community of Madrid" },
+    { "name": "Barcelona", "state": "Catalonia" },
+    { "name": "Valencia", "state": "Valencian Community" },
+    { "name": "Seville", "state": "Andalusia" },
+    { "name": "Zaragoza", "state": "Aragon" },
+    { "name": "Málaga", "state": "Andalusia" },
+    { "name": "Murcia", "state": "Region of Murcia" },
+    { "name": "Palma", "state": "Balearic Islands" },
+    { "name": "Las Palmas", "state": "Canary Islands" },
+    { "name": "Bilbao", "state": "Basque Country" }
 
 
 ] as const;
