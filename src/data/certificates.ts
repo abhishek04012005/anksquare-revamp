@@ -31,7 +31,7 @@ export const certificates: Certificate[] = [
     hasViewOption: false,
     certificateImage: './blog/blog1.jpg',
     certificationDate: 'January 2024',
-    validityDate: 'January 2025',
+    validityDate: 'January 2026',
     slug: 'amazon-ates-partner',
     features: [
       'Official Amazon Technical Service Partner',
@@ -50,7 +50,7 @@ export const certificates: Certificate[] = [
     hasViewOption: false,
     certificateImage: './certificates/flipkartcertificate.png',
     certificationDate: 'January 2024',
-    validityDate: 'January 2025',
+    validityDate: 'January 2026',
     slug: 'flipkart-partner',
     features: [
       'Certified Flipkart Service Partner',
@@ -69,7 +69,7 @@ export const certificates: Certificate[] = [
     hasViewOption: false,
     certificateImage: '/images/certificates/jiomart-full.png',
     certificationDate: 'January 2024',
-    validityDate: 'January 2025',
+    validityDate: 'January 2026',
     slug: 'jiomart-partner',
     features: [
       'JioMart Seller Services',
@@ -88,7 +88,7 @@ export const certificates: Certificate[] = [
     hasViewOption: false,
     certificateImage: '/images/certificates/meesho-full.png',
     certificationDate: 'January 2024',
-    validityDate: 'January 2025',
+    validityDate: 'January 2026',
     slug: 'meesho-partner',
     features: [
       'Meesho Seller Support',

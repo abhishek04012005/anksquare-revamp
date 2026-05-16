@@ -18,15 +18,15 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     id: 1,
-    title: "The Future of Digital Marketing in 2025",
+    title: "The Future of Digital Marketing in 2026",
     excerpt: "Explore the emerging trends, AI tools, and consumer behaviors that will shape digital marketing in the coming years.",
-    content: "Digital marketing is evolving rapidly with AI, voice search, and hyper-personalization leading the way. In 2025, brands will need to focus on data-driven strategies, immersive content, and seamless customer journeys to stay competitive.",
+    content: "Digital marketing is evolving rapidly with AI, voice search, and hyper-personalization leading the way. In 2026, brands will need to focus on data-driven strategies, immersive content, and seamless customer journeys to stay competitive.",
     image: "/assets/blog/blog1.jpg",
     author: "Mukesh Kumar",
-    date: "2025-01-15",
+    date: "2026-01-15",
     readTime: "28 min read",
     category: "Digital Marketing",
-    slug: "future-of-digital-marketing-2025",
+    slug: "future-of-digital-marketing-2026",
     sections: [
       {
         subtitle: "The Rise of Artificial Intelligence in Marketing",
@@ -38,7 +38,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         subtitle: "Voice Search and Smart Assistants",
-        content: "The proliferation of smart speakers, voice-activated mobile devices, and AI-powered voice assistants has fundamentally changed how consumers search for information and make purchasing decisions. Voice search optimization has become a critical component of modern digital marketing strategy that brands can no longer afford to ignore. With more than 50% of all searches now expected to be voice-based by 2025, marketers who fail to prioritize voice search face the risk of losing significant market share to competitors who have adapted their strategies. The integration of voice commerce capabilities allows customers to make purchases through voice commands on various devices, opening entirely new revenue streams for innovative brands willing to invest in this emerging channel. Successful voice search strategies require understanding natural language patterns, optimizing content for featured snippets, and ensuring mobile-first design principles guide all development decisions. Brands must think carefully about how people naturally speak and ask questions in conversational language, not just how they type short search queries. Structured data markup becomes increasingly important for voice search success. Long-tail keywords and question-based queries naturally align with voice search patterns. Voice search results often prioritize direct answers and concise summaries. Local search optimization becomes critical as many voice searches have location-based intent."
+        content: "The proliferation of smart speakers, voice-activated mobile devices, and AI-powered voice assistants has fundamentally changed how consumers search for information and make purchasing decisions. Voice search optimization has become a critical component of modern digital marketing strategy that brands can no longer afford to ignore. With more than 50% of all searches now expected to be voice-based by 2026, marketers who fail to prioritize voice search face the risk of losing significant market share to competitors who have adapted their strategies. The integration of voice commerce capabilities allows customers to make purchases through voice commands on various devices, opening entirely new revenue streams for innovative brands willing to invest in this emerging channel. Successful voice search strategies require understanding natural language patterns, optimizing content for featured snippets, and ensuring mobile-first design principles guide all development decisions. Brands must think carefully about how people naturally speak and ask questions in conversational language, not just how they type short search queries. Structured data markup becomes increasingly important for voice search success. Long-tail keywords and question-based queries naturally align with voice search patterns. Voice search results often prioritize direct answers and concise summaries. Local search optimization becomes critical as many voice searches have location-based intent."
       },
       {
         subtitle: "Immersive Content and Virtual Reality",
@@ -50,7 +50,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         subtitle: "The Future Outlook",
-        content: "The digital marketing landscape will continue to evolve rapidly and unpredictably over the coming months and years. Success in 2025 and beyond will require agility, continuous innovation, and deep understanding of customer needs. Brands must stay informed about emerging technologies and trends while maintaining focus on fundamental principles: understanding their audience, delivering consistent value, and building genuine, lasting connections. The most successful digital marketing strategies will seamlessly integrate multiple channels, leverage data intelligently while respecting privacy, and create authentic experiences that resonate with increasingly discerning and informed consumers. Marketing teams must develop new competencies and adapt their skill sets to work effectively with emerging technologies. Continuous learning and regular experimentation will be essential for staying competitive. The brands that thrive will be those that balance innovation with customer-centricity, using new technologies as tools to create better customer experiences rather than as ends in themselves."
+        content: "The digital marketing landscape will continue to evolve rapidly and unpredictably over the coming months and years. Success in 2026 and beyond will require agility, continuous innovation, and deep understanding of customer needs. Brands must stay informed about emerging technologies and trends while maintaining focus on fundamental principles: understanding their audience, delivering consistent value, and building genuine, lasting connections. The most successful digital marketing strategies will seamlessly integrate multiple channels, leverage data intelligently while respecting privacy, and create authentic experiences that resonate with increasingly discerning and informed consumers. Marketing teams must develop new competencies and adapt their skill sets to work effectively with emerging technologies. Continuous learning and regular experimentation will be essential for staying competitive. The brands that thrive will be those that balance innovation with customer-centricity, using new technologies as tools to create better customer experiences rather than as ends in themselves."
       }
     ]
   },
@@ -61,7 +61,7 @@ export const blogPosts: BlogPost[] = [
     content: "From predictive analytics to dynamic content delivery, AI is transforming how businesses engage with customers. Learn how machine learning models can help tailor messaging, recommend products, and improve retention.",
     image: "/assets/blog/blog2.jpg",
     author: "Mukesh Kumar",
-    date: "2025-02-02",
+    date: "2026-02-02",
     readTime: "27 min read",
     category: "AI & Automation",
     slug: "ai-powered-personalization",
@@ -94,15 +94,15 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 3,
-    title: "Video Marketing Strategies That Convert in 2025",
+    title: "Video Marketing Strategies That Convert in 2026",
     excerpt: "Learn how to use short-form and long-form video content to drive engagement, build trust, and boost conversions.",
-    content: "Video remains one of the most powerful tools in digital marketing. In 2025, brands must focus on storytelling, mobile-first formats, and interactive video experiences to capture attention and drive action.",
+    content: "Video remains one of the most powerful tools in digital marketing. In 2026, brands must focus on storytelling, mobile-first formats, and interactive video experiences to capture attention and drive action.",
     image: "/assets/blog/blog3.jpg",
     author: "Mukesh Kumar",
-    date: "2025-03-10",
+    date: "2026-03-10",
     readTime: "26 min read",
     category: "Content Marketing",
-    slug: "video-marketing-strategies-2025",
+    slug: "video-marketing-strategies-2026",
     sections: [
       {
         subtitle: "The Dominance of Video Content",
@@ -137,7 +137,7 @@ export const blogPosts: BlogPost[] = [
     content: "With the rise of smart speakers and mobile voice assistants, optimizing for voice search is no longer optional. Learn how to structure your content, use natural language, and target conversational keywords.",
     image: "/assets/blog/blog4.jpg",
     author: "Mukesh Kumar",
-    date: "2025-04-05",
+    date: "2026-04-05",
     readTime: "25 min read",
     category: "SEO",
     slug: "voice-search-optimization",
@@ -175,7 +175,7 @@ export const blogPosts: BlogPost[] = [
     content: "Influencer marketing is evolving. Smaller creators with loyal audiences are delivering higher ROI than traditional celebrities. Learn how to identify the right influencers, build authentic partnerships, and measure success.",
     image: "/assets/blog/blog5.jpg",
     author: "Mukesh Kumar",
-    date: "2025-05-12",
+    date: "2026-05-12",
     readTime: "24 min read",
     category: "Social Media",
     slug: "influencer-marketing-beyond-basics",
@@ -209,7 +209,7 @@ export const blogPosts: BlogPost[] = [
     content: "SEO is more than keywords. In 2024 and beyond, Google prioritizes expertise, authority, and trustworthiness (E-A-T), along with technical performance like Core Web Vitals. This post breaks down what you need to do to rank higher.",
     image: "/assets/blog/blog6.jpg",
     author: "Mukesh Kumar",
-    date: "2025-06-20",
+    date: "2026-06-20",
     readTime: "28 min read",
     category: "SEO",
     slug: "seo-2024-eat-core-web-vitals",
@@ -247,7 +247,7 @@ export const blogPosts: BlogPost[] = [
     content: "Retailers are using AR to create immersive shopping experiences. Whether it is trying on clothes virtually or visualizing furniture in your home, AR is helping brands connect with customers in exciting new ways.",
     image: "/assets/blog/blog7.jpg",
     author: "Mukesh Kumar",
-    date: "2025-07-08",
+    date: "2026-07-08",
     readTime: "26 min read",
     category: "Emerging Tech",
     slug: "ar-in-retail-bridging-physical-digital",
@@ -281,7 +281,7 @@ export const blogPosts: BlogPost[] = [
     content: "As privacy regulations tighten, marketers must balance personalization with transparency. Learn how to collect and use data ethically, gain consent, and build trust through clear communication.",
     image: "/assets/blog/blog8.jpg",
     author: "Mukesh Kumar",
-    date: "2025-08-14",
+    date: "2026-08-14",
     readTime: "25 min read",
     category: "Compliance",
     slug: "data-privacy-marketing-gdpr-ccpa",
@@ -315,7 +315,7 @@ export const blogPosts: BlogPost[] = [
     content: "Blockchain is revolutionizing customer loyalty. By decentralizing rewards and making transactions transparent, brands can build trust and offer more flexible, personalized incentives.",
     image: "/assets/blog/blog9.jpg",
     author: "Mukesh Kumar",
-    date: "2025-09-03",
+    date: "2026-09-03",
     readTime: "27 min read",
     category: "Innovation",
     slug: "blockchain-brand-loyalty-programs",
