@@ -166,7 +166,7 @@ const ClientProjectView: FC<ClientProjectViewProps> = ({ slug }) => {
             Get in touch with us today!
           </p>
           <Button variant="primary" onClick={() => setIsEnquiryModalOpen(true)}>
-            Contact Us
+            Enquiry Now
           </Button>
         </div>
       </div>
