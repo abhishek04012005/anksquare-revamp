@@ -10,6 +10,7 @@ interface Quote {
   name: string
   phone: string
   service: string
+  source: string
   status: 'pending' | 'contacted' | 'completed' | 'archived'
   created_at: string
 }
@@ -140,6 +141,7 @@ const QuoteDashboard = () => {
                     <th>Name</th>
                     <th>Phone</th>
                     <th>Service</th>
+                    <th>Source</th>
                     <th>Status</th>
                     <th>Date</th>
                     <th>Actions</th>
@@ -151,6 +153,7 @@ const QuoteDashboard = () => {
                       <td className={styles.nameCell}>{quote.name}</td>
                       <td className={styles.phoneCell}>{quote.phone}</td>
                       <td className={styles.serviceCell}>{quote.service}</td>
+                      <td className={styles.sourceCell}>{quote.source}</td>
                       <td className={styles.statusCell}>
                         <span className={`${styles.statusBadge} ${styles[quote.status]}`}>
                           {getStatusIcon(quote.status)}
