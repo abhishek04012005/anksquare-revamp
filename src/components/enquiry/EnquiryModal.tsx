@@ -127,7 +127,7 @@ export default function EnquiryModal({
 
       // Reset form
       setFormData({
-        name: '',
+      name: '',
         phone: '',
         service: selectedService || defaultService
       })
